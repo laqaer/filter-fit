@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { pageSocial } from "@/lib/metadata";
+import { ogImage, twitterWithImage } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
 const title = "Privacy policy";
@@ -10,7 +10,17 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/privacy" },
-  ...pageSocial({ title, description, path: "/privacy" }),
+  openGraph: {
+    title,
+    description,
+    url: "/privacy",
+    images: [ogImage],
+  },
+  twitter: {
+    ...twitterWithImage,
+    title,
+    description,
+  },
 };
 
 export default function PrivacyPage() {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
-import { pageSocial } from "@/lib/metadata";
+import { ogImage, twitterWithImage } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
@@ -13,7 +13,17 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/about" },
-  ...pageSocial({ title, description, path: "/about" }),
+  openGraph: {
+    title,
+    description,
+    url: "/about",
+    images: [ogImage],
+  },
+  twitter: {
+    ...twitterWithImage,
+    title,
+    description,
+  },
 };
 
 export default function AboutPage() {
