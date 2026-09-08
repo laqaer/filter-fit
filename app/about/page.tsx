@@ -26,9 +26,9 @@ export default function AboutPage() {
           choke a 1-inch rack. We do not manufacture filters. We do not invent star ratings.
         </p>
         <p>
-          The site is published by <strong>{site.publisher}</strong>. The intended production
-          domain is <strong>{site.domain}</strong> (not wired yet). For corrections, measurement
-          edge cases, or OEM manual quotes we missed, write{" "}
+          The site is published by <strong>{site.publisher}</strong>. FilterFit is live at{" "}
+          <strong>{site.domain}</strong>. For corrections, measurement edge cases, or OEM
+          manual quotes we missed, write{" "}
           <a href={`mailto:${site.email}`}>{site.email}</a>.
         </p>
 
