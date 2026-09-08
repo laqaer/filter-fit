@@ -5,6 +5,7 @@ import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { sizeChart } from "@/lib/filters";
+import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd } from "@/lib/schema";
 
 const title = "Furnace filter size and depth chart";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/furnace-filter-size-depth-chart" },
-  openGraph: { title, description, url: "/furnace-filter-size-depth-chart" },
+  openGraph: { ...openGraphImage, title, description, url: "/furnace-filter-size-depth-chart" },
 };
 
 export default function SizeChartPage() {

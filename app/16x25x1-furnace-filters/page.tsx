@@ -5,6 +5,7 @@ import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
+import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd } from "@/lib/schema";
 
 const title = "16×25×1 furnace filters: MERV 8 vs 11 vs 13";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/16x25x1-furnace-filters" },
-  openGraph: { title, description, url: "/16x25x1-furnace-filters" },
+  openGraph: { ...openGraphImage, title, description, url: "/16x25x1-furnace-filters" },
 };
 
 export default function Size16x25Page() {

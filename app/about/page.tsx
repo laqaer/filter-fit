@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { pageSocial } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
+const title = "About FilterFit";
+const description =
+  "FilterFit is an independent furnace-filter directory from Laqaer Products. Editorial standards and contact.";
+
 export const metadata: Metadata = {
-  title: "About FilterFit",
-  description:
-    "FilterFit is an independent furnace-filter directory from Laqaer Products. Editorial standards and contact.",
+  title,
+  description,
   alternates: { canonical: "/about" },
+  ...pageSocial({ title, description, path: "/about" }),
 };
 
 export default function AboutPage() {

@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { pageSocial } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
+const title = "Privacy policy";
+const description =
+  "Privacy policy for FilterFit, a content and affiliate furnace-filter comparison site.";
+
 export const metadata: Metadata = {
-  title: "Privacy policy",
-  description:
-    "Privacy policy for FilterFit, a content and affiliate furnace-filter comparison site.",
+  title,
+  description,
   alternates: { canonical: "/privacy" },
+  ...pageSocial({ title, description, path: "/privacy" }),
 };
 
 export default function PrivacyPage() {
