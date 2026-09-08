@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
+import { ogImage, twitterWithImage } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
+const title = "Privacy policy";
+const description =
+  "Privacy policy for FilterFit, a content and affiliate furnace-filter comparison site.";
+
 export const metadata: Metadata = {
-  title: "Privacy policy",
-  description:
-    "Privacy policy for FilterFit, a content and affiliate furnace-filter comparison site.",
+  title,
+  description,
   alternates: { canonical: "/privacy" },
+  openGraph: {
+    title,
+    description,
+    url: "/privacy",
+    images: [ogImage],
+  },
+  twitter: {
+    ...twitterWithImage,
+    title,
+    description,
+  },
 };
 
 export default function PrivacyPage() {

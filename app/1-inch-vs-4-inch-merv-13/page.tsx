@@ -4,6 +4,7 @@ import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
+import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd } from "@/lib/schema";
 
 const title = "1-inch vs 4-inch MERV 13 furnace filters";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/1-inch-vs-4-inch-merv-13" },
-  openGraph: { title, description, url: "/1-inch-vs-4-inch-merv-13" },
+  openGraph: { ...openGraphImage, title, description, url: "/1-inch-vs-4-inch-merv-13" },
 };
 
 export default function InchVsFourPage() {

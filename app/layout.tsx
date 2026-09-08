@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, Newsreader } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
+import { ogImage, openGraphImage } from "@/lib/metadata";
 import { websiteJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -32,17 +33,17 @@ export const metadata: Metadata = {
   authors: [{ name: site.publisher }],
   alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
-    locale: site.locale,
+    ...openGraphImage,
     url: site.url,
-    siteName: site.name,
     title: "FilterFit — Furnace filters by MERV, size, and depth",
     description: site.description,
+    images: [ogImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.name,
     description: site.description,
+    images: [ogImage.url],
   },
   robots: { index: true, follow: true },
 };

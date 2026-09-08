@@ -4,6 +4,7 @@ import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
+import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd } from "@/lib/schema";
 
 const title = "Is MERV 13 safe for your furnace?";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/merv-13-safe-for-furnace" },
-  openGraph: { title, description, url: "/merv-13-safe-for-furnace" },
+  openGraph: { ...openGraphImage, title, description, url: "/merv-13-safe-for-furnace" },
 };
 
 export default function Merv13SafePage() {
