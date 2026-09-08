@@ -52,6 +52,7 @@ npm run build
 | `/` | Decision-tree hub: size → depth → MERV → brand-class table; links every guide |
 | `/merv-11-vs-13-1-inch` | 1-inch MERV 11 vs 13; pressure drop and short-cycle risk |
 | `/16x25x1-furnace-filters` | Common size, MERV 8 / 11 / 13, Filtrete / Aerostar / Filterbuy-style classes (no fake scores) |
+| `/20x25x1-furnace-filters` | Second-most-common retail face, MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/1-inch-vs-4-inch-merv-13` | Depth beats MERV; when to upgrade the cabinet |
 | `/merv-13-safe-for-furnace` | When MERV 13 is OK vs when it chokes blowers |
 | `/furnace-filter-size-depth-chart` | Nominal size + depth chart, how to measure |
