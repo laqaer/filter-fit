@@ -115,7 +115,8 @@ export default function Merv13SafePage() {
         </ol>
         <p>
           Common 16×25 shoppers can start on the{" "}
-          <Link href="/16x25x1-furnace-filters">16×25×1 page</Link>. Everyone else should{" "}
+          <Link href="/16x25x1-furnace-filters">16×25×1 page</Link>. 20×25 racks have their own{" "}
+          <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>. Everyone else should{" "}
           <Link href="/furnace-filter-size-depth-chart">confirm size and depth</Link> first.
         </p>
       </div>

@@ -210,7 +210,12 @@ export function recommend(
 ): Recommendation {
   const face = faceSizes.find((item) => item.id === faceId);
   const sizeLabel = face ? `${face.label}×${depth}` : `${faceId}×${depth}`;
-  const sixteen = faceId === "16x25";
+  const sizeGuide =
+    faceId === "16x25"
+      ? ["/16x25x1-furnace-filters"]
+      : faceId === "20x25"
+        ? ["/20x25x1-furnace-filters"]
+        : [];
 
   if (depth === 1 && merv === 13) {
     return {
@@ -222,7 +227,7 @@ export function recommend(
         "/merv-11-vs-13-1-inch",
         "/merv-13-safe-for-furnace",
         "/1-inch-vs-4-inch-merv-13",
-        ...(sixteen ? ["/16x25x1-furnace-filters"] : []),
+        ...sizeGuide,
       ],
     };
   }
@@ -236,7 +241,7 @@ export function recommend(
       related: [
         "/merv-11-vs-13-1-inch",
         "/furnace-filter-size-depth-chart",
-        ...(sixteen ? ["/16x25x1-furnace-filters"] : []),
+        ...sizeGuide,
       ],
     };
   }
@@ -248,7 +253,7 @@ export function recommend(
       related: [
         "/furnace-filter-size-depth-chart",
         "/1-inch-vs-4-inch-merv-13",
-        ...(sixteen ? ["/16x25x1-furnace-filters"] : []),
+        ...sizeGuide,
       ],
     };
   }
