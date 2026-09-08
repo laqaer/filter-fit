@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FilterFit">
+  <rect width="32" height="32" fill="#fffdf8"/>
+  <rect x="4" y="5" width="3" height="22" fill="#c45c26"/>
+  <rect x="9" y="5" width="3" height="22" fill="#2f5557"/>
+  <rect x="14" y="5" width="3" height="22" fill="#c45c26"/>
+  <rect x="19" y="5" width="3" height="22" fill="#2f5557"/>
+  <rect x="24" y="5" width="3" height="22" fill="#c45c26"/>
+</svg>
