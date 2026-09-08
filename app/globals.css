@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plex), "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Newsreader, ui-serif, Georgia, serif;
+  --color-paper: #f3ebe0;
+  --color-paper-deep: #e7dccb;
+  --color-card: #fffdf8;
+  --color-ink: #1f1a14;
+  --color-ink-soft: #4a433a;
+  --color-rule: #d4c6b0;
+  --color-copper: #c45c26;
+  --color-copper-dark: #8b3a12;
+  --color-air: #2f5557;
+  --color-air-soft: #d7e4e4;
+  --color-warn: #8a4b12;
+  --color-warn-soft: #f3e0c4;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 420px at 10% -10%, rgba(196, 92, 38, 0.08), transparent 55%),
+    radial-gradient(900px 380px at 100% 0%, rgba(47, 85, 87, 0.08), transparent 50%),
+    var(--color-paper);
+}
+
+::selection {
+  background: #f0c9a8;
+  color: var(--color-ink);
+}
+
+.pleat-rule {
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-copper) 0 3px,
+    var(--color-paper-deep) 3px 10px
+  );
+  opacity: 0.55;
+}
+
+.prose-fit {
+  color: var(--color-ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.prose-fit > * + * {
+  margin-top: 1.15rem;
+}
+
+.prose-fit h2 {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-top: 2.4rem;
+}
+
+.prose-fit h3 {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 560;
+  margin-top: 1.8rem;
+}
+
+.prose-fit a {
+  color: var(--color-air);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-fit a:hover {
+  color: var(--color-copper-dark);
+}
+
+.prose-fit ul,
+.prose-fit ol {
+  padding-left: 1.2rem;
+}
+
+.prose-fit li + li {
+  margin-top: 0.45rem;
+}
+
+.prose-fit ul {
+  list-style: disc;
+}
+
+.prose-fit ol {
+  list-style: decimal;
+}
+
+.prose-fit strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--color-rule);
+  background: var(--color-card);
+}
+
+.table-scroll table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table-scroll th,
+.table-scroll td {
+  border-bottom: 1px solid var(--color-rule);
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-scroll th {
+  background: var(--color-paper-deep);
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.table-scroll tr:last-child td {
+  border-bottom: 0;
+}
