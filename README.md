@@ -3,7 +3,7 @@
 Independent comparison directory for furnace filters by **MERV × nominal size × slot depth**. Helps people choose MERV 11 vs 13 without choking airflow.
 
 **Brand:** FilterFit  
-**Domain:** [filterfitguide.com](https://filterfitguide.com) (not wired yet)  
+**Domain:** [filterfitguide.com](https://filterfitguide.com) (live)  
 **Contact:** [hello@filterfitguide.com](mailto:hello@filterfitguide.com)  
 **Publisher:** Laqaer Products
 
@@ -42,7 +42,7 @@ npm run build
 1. Import `laqaer/filter-fit`.
 2. Framework preset: **Next.js**. Leave build/output commands at defaults (`next build`).
 3. No environment variables are required for the editorial site.
-4. Production domain `filterfitguide.com` is **not wired yet**. Use the Vercel hostname until DNS is attached.
+4. Production domain `filterfitguide.com` is live (apex; `www` redirects to apex).
 5. Replace `public/ads.txt` and add real retailer links before serving ads or affiliate clicks.
 
 ## Routes
