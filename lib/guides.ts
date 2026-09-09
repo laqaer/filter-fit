@@ -32,6 +32,14 @@ export const guides: Guide[] = [
       "Compare 20x25x1 furnace filters at MERV 8, 11, and 13. Brand-class notes for Filtrete, Aerostar, and Filterbuy-style filters.",
   },
   {
+    href: "/16x20x1-furnace-filters",
+    title: "16×20×1 furnace filters",
+    kicker: "16×20 face",
+    dek: "MERV 8 / 11 / 13 in a common 1-inch face often paired with a return grille — Filtrete-, Aerostar-, and Filterbuy-style brand classes, no fake scores.",
+    description:
+      "Compare 16x20x1 furnace filters at MERV 8, 11, and 13. Brand-class notes for Filtrete, Aerostar, and Filterbuy-style filters.",
+  },
+  {
     href: "/1-inch-vs-4-inch-merv-13",
     title: "1-inch vs 4-inch MERV 13",
     kicker: "Depth first",
