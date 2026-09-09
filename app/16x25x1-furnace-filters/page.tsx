@@ -43,7 +43,8 @@ export default function Size16x25Page() {
           on the carton. The{" "}
           <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> lists other
           faces the same way. If the rack is 20×25, use the{" "}
-          <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>.
+          <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>. If it is 16×20, use
+          the <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>.
         </p>
         <Callout title="Arrow toward the furnace">
           The airflow arrow on a 16×25×1 points at the equipment, not at the room. A backwards

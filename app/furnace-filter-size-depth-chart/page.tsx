@@ -65,7 +65,9 @@ export default function SizeChartPage() {
           Actuals below are the usual North American cardboard sizes, not a guarantee for every
           mill. Always match the spec line on the SKU. If you live on 16×25, continue to the{" "}
           <Link href="/16x25x1-furnace-filters">16×25×1 MERV comparison</Link>. If the rack is
-          20×25, use the <Link href="/20x25x1-furnace-filters">20×25×1 guide</Link>.
+          20×25, use the <Link href="/20x25x1-furnace-filters">20×25×1 guide</Link>. If it is
+          16×20 — often a furnace rack paired with a return-grille filter — use the{" "}
+          <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>.
         </p>
       </div>
 

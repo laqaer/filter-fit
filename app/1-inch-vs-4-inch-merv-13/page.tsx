@@ -46,7 +46,8 @@ export default function InchVsFourPage() {
           Pleated filters work by spreading airflow across media area. A 4-inch pack has a longer
           path and, in a competent design, much more media than a 1-inch pad of the same face
           (<Link href="/16x25x1-furnace-filters">16×25</Link>,{" "}
-          <Link href="/20x25x1-furnace-filters">20×25</Link>, and so on). Air slows down through that media. Lower velocity at the same
+          <Link href="/20x25x1-furnace-filters">20×25</Link>,{" "}
+          <Link href="/16x20x1-furnace-filters">16×20</Link>, and so on). Air slows down through that media. Lower velocity at the same
           MERV is how you keep pressure drop in a range a residential blower can live with.
         </p>
         <p>

@@ -43,7 +43,8 @@ export default function Size20x25Page() {
           on the carton. The{" "}
           <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> lists other
           faces the same way — including the more common{" "}
-          <Link href="/16x25x1-furnace-filters">16×25×1</Link>.
+          <Link href="/16x25x1-furnace-filters">16×25×1</Link> and{" "}
+          <Link href="/16x20x1-furnace-filters">16×20×1</Link>.
         </p>
         <Callout title="Arrow toward the furnace">
           The airflow arrow on a 20×25×1 points at the equipment, not at the room. A backwards
@@ -116,9 +117,10 @@ export default function Size20x25Page() {
         <h2>Do not order the neighbor size</h2>
         <p>
           20×25 is not 20×20, not 20×30, and not 16×25. A filter that “almost” fits either leaks or
-          collapses. Some houses use a 16×25×1 at the furnace and a 20×25×1 at a return grille —
-          they are two SKUs, not a six-pack of whichever was on sale. Confirm both slots before
-          you subscribe.
+          collapses. Some houses use a 16×25×1 or{" "}
+          <Link href="/16x20x1-furnace-filters">16×20×1</Link> at the furnace and a 20×25×1 at a
+          return grille — they are two SKUs, not a six-pack of whichever was on sale. Confirm both
+          slots before you subscribe.
         </p>
         <p>
           20×25 and 25×20 are the same cardboard rotated. Match the door so the pad seats flat and
