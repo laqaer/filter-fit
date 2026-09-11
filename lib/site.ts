@@ -9,11 +9,11 @@ export const site = {
   email: "hello@filterfitguide.com",
   publisher: "Laqaer Products",
   locale: "en_US",
-  updated: "2026-09-08",
+  updated: "2026-09-11",
 } as const;
 
 export const affiliateDisclosure =
-  "FilterFit is reader-supported. Some product mentions may become affiliate links. If you buy through a future retailer link, we may earn a commission at no extra cost to you. We do not sell numbered review scores.";
+  "FilterFit is reader-supported. Some outbound product links are Amazon Associates affiliate links. As an Amazon Associate I earn from qualifying purchases. If you buy through a retailer link, we may earn a commission at no extra cost to you. We do not sell numbered review scores.";
 
 export const hvacCaveat =
   "This is planning guidance, not a substitute for the furnace or air-handler manual. MERV alone does not tell you whether a filter is safe for your blower. Follow the manufacturer’s airflow and static-pressure limits, and hire a licensed HVAC technician if you see icing, limit-switch trips, or weak supply air.";

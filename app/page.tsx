@@ -73,7 +73,11 @@ export default function HomePage() {
         <h2 className="font-serif text-3xl text-ink">Guides</h2>
         <p className="mt-2 max-w-2xl text-ink-soft">
           Bookmark the page that matches the decision you are actually making — not a doorway list
-          of every size on earth.
+          of every size on earth. Size pages such as{" "}
+          <Link className="text-air underline underline-offset-3" href="/16x25x1-furnace-filters">
+            16×25×1 furnace filters
+          </Link>{" "}
+          include disclosed Amazon Associates search examples for that face.
         </p>
         <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {guides.map((guide) => (

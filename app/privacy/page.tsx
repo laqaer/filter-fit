@@ -57,7 +57,7 @@ export default function PrivacyPage() {
 
         <h2>Affiliate and advertising technology</h2>
         <p>
-          Some product mentions may become affiliate links. Clicking through to a retailer can
+          Some outbound product links are affiliate links. Clicking through to a retailer can
           cause that retailer or their network to set cookies, record that you came from FilterFit,
           and attribute a commission if you buy. Those companies have their own privacy policies.
           FilterFit does not receive your payment card number.
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
 
         <h2>Changes</h2>
         <p>
-          If the site adds accounts, a newsletter, or live ad/affiliate tags, we will update this
+          If the site adds accounts, a newsletter, or display ads, we will update this
           page and the date above.
         </p>
       </div>
