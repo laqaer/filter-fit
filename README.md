@@ -43,7 +43,7 @@ npm run build
 2. Framework preset: **Next.js**. Leave build/output commands at defaults (`next build`).
 3. No environment variables are required for the editorial site.
 4. Production domain `filterfitguide.com` is live (apex; `www` redirects to apex).
-5. Replace `public/ads.txt` and add real retailer links before serving ads or affiliate clicks.
+5. Amazon Associates search links (`tag=laqaer-20`) are live on the size comparison pages. Leave `public/ads.txt` as a placeholder until authorized sellers are listed.
 
 ## Routes
 

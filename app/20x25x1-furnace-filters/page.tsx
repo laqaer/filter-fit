@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -217,6 +218,7 @@ export default function Size20x25Page() {
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>
+      <AmazonShopExamples face="20x25x1" />
       <RelatedGuides except="/20x25x1-furnace-filters" />
     </article>
   );

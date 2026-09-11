@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionTree } from "@/components/decision-tree";
+import { amazonLinkAttrs, amazonSearchUrl } from "@/lib/amazon";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
 
@@ -73,7 +74,16 @@ export default function HomePage() {
         <h2 className="font-serif text-3xl text-ink">Guides</h2>
         <p className="mt-2 max-w-2xl text-ink-soft">
           Bookmark the page that matches the decision you are actually making — not a doorway list
-          of every size on earth.
+          of every size on earth. Size pages include disclosed Amazon search examples for that
+          face — for example{" "}
+          <a
+            className="text-air underline underline-offset-3"
+            href={amazonSearchUrl("16x25x1 furnace filter")}
+            {...amazonLinkAttrs}
+          >
+            16×25×1 furnace filters
+          </a>
+          .
         </p>
         <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {guides.map((guide) => (

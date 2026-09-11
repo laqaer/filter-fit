@@ -77,9 +77,9 @@ export default function AboutPage() {
 
         <h2>How the site is funded</h2>
         <p>
-          FilterFit is built as a useful bookmark. Some product mentions may later become affiliate
-          links. If that happens, a purchase through those links may earn {site.publisher} a
-          commission. Money does not buy a score here; we do not sell numbered ratings. See{" "}
+          FilterFit is built as a useful bookmark. Some outbound retailer links are affiliate
+          links. A purchase through those links may earn {site.publisher} a commission. Money
+          does not buy a score here; we do not sell numbered ratings. See{" "}
           <Link href="/privacy">privacy</Link> for how a content-and-affiliate site handles data.
         </p>
 
