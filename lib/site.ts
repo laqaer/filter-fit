@@ -9,7 +9,7 @@ export const site = {
   email: "hello@filterfitguide.com",
   publisher: "Laqaer Products",
   locale: "en_US",
-  updated: "2026-09-08",
+  updated: "2026-09-11",
 } as const;
 
 export const affiliateDisclosure =

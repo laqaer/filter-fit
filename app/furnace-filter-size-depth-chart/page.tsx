@@ -67,7 +67,9 @@ export default function SizeChartPage() {
           <Link href="/16x25x1-furnace-filters">16×25×1 MERV comparison</Link>. If the rack is
           20×25, use the <Link href="/20x25x1-furnace-filters">20×25×1 guide</Link>. If it is
           16×20 — often a furnace rack paired with a return-grille filter — use the{" "}
-          <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>.
+          <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>. If it is 14×25 — a
+          common upflow closet face — use the{" "}
+          <Link href="/14x25x1-furnace-filters">14×25×1 comparison</Link>.
         </p>
       </div>
 
