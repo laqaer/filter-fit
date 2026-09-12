@@ -217,7 +217,9 @@ export function recommend(
         ? ["/20x25x1-furnace-filters"]
         : faceId === "16x20"
           ? ["/16x20x1-furnace-filters"]
-          : [];
+          : faceId === "14x25"
+            ? ["/14x25x1-furnace-filters"]
+            : [];
 
   if (depth === 1 && merv === 13) {
     return {
