@@ -55,6 +55,7 @@ npm run build
 | `/20x25x1-furnace-filters` | Second-most-common retail face, MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/16x20x1-furnace-filters` | Common 1-inch face (often + return grille), MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/14x25x1-furnace-filters` | Common 1-inch upflow-closet face, MERV 8 / 11 / 13, same brand classes (no fake scores) |
+| `/20x20x1-furnace-filters` | Common 1-inch square return, MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/1-inch-vs-4-inch-merv-13` | Depth beats MERV; when to upgrade the cabinet |
 | `/merv-13-safe-for-furnace` | When MERV 13 is OK vs when it chokes blowers |
 | `/furnace-filter-size-depth-chart` | Nominal size + depth chart, how to measure |
