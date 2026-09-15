@@ -69,7 +69,9 @@ export default function SizeChartPage() {
           16×20 — often a furnace rack paired with a return-grille filter — use the{" "}
           <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>. If it is 14×25 — a
           common upflow closet face — use the{" "}
-          <Link href="/14x25x1-furnace-filters">14×25×1 comparison</Link>.
+          <Link href="/14x25x1-furnace-filters">14×25×1 comparison</Link>. If it is 20×20 — a
+          square return that is easy to rotate the wrong way — use the{" "}
+          <Link href="/20x20x1-furnace-filters">20×20×1 comparison</Link>.
         </p>
       </div>
 
