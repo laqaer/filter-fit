@@ -50,10 +50,8 @@ export default function Size14x20Page() {
           <Link href="/14x25x1-furnace-filters">14×25×1</Link>.
         </p>
         <Callout title="Arrow toward the furnace">
-          The airflow arrow on a 14×20×1 points at the equipment, not at the room. 14 and 20 are
-          different, so the pad does not fit every rotation — but a 20×14 still seats if you force
-          the long edge. A backwards filter still “fits.” It loads faster and can dump dust into
-          the blower.
+          The airflow arrow on a 14×20×1 points at the equipment, not at the room. A backwards
+          filter still “fits.” It loads faster and can dump dust into the blower.
         </Callout>
 
         <h2>Less face than 16×20 — still a 1-inch pack</h2>
