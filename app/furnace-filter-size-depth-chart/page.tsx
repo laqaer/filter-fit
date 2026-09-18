@@ -75,7 +75,9 @@ export default function SizeChartPage() {
           square return that is easy to rotate the wrong way — use the{" "}
           <Link href="/20x20x1-furnace-filters">20×20×1 comparison</Link>. If it is
           12×24 — a less-common face that hardware stores often skip — use the{" "}
-          <Link href="/12x24x1-furnace-filters">12×24×1 comparison</Link>.
+          <Link href="/12x24x1-furnace-filters">12×24×1 comparison</Link>. If it is 14×20 — a
+          smaller return and some older air handlers — use the{" "}
+          <Link href="/14x20x1-furnace-filters">14×20×1 comparison</Link>.
         </p>
       </div>
 
