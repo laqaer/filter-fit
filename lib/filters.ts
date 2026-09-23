@@ -122,9 +122,9 @@ export const sizeChart: SizeRow[] = [
   },
   {
     nominal: "16×25×4",
-    typicalActual: "~15⅜–15⅞ × 24⅜–24⅞ × 3¾",
-    commonDepths: "4",
-    notes: "Media-cabinet size. Do not force a 1-inch pad into a 4-inch rack without a proper adapter.",
+    typicalActual: "Varies by SKU; depth examples ~3⅝–4⅜ inches, not a compatibility range",
+    commonDepths: "4 (nominal; some replacements are sold as 5)",
+    notes: "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad without a manufacturer-approved adapter. See the linked guide for manufacturer examples.",
   },
   {
     nominal: "20×20×1",
@@ -222,6 +222,8 @@ export function recommend(
             : faceId === "20x20"
               ? ["/20x20x1-furnace-filters"]
               : [];
+  const cabinetGuide =
+    faceId === "16x25" && depth === 4 ? ["/16x25x4-furnace-filters"] : [];
 
   if (depth === 1 && merv === 13) {
     return {
@@ -288,6 +290,7 @@ export function recommend(
         "/1-inch-vs-4-inch-merv-13",
         "/merv-13-safe-for-furnace",
         "/furnace-filter-size-depth-chart",
+        ...cabinetGuide,
       ],
     };
   }
@@ -295,7 +298,11 @@ export function recommend(
   return {
     headline: `${sizeLabel}: MERV ${merv} in a ${depth}-inch cabinet leaves airflow room`,
     body: `With ${depth} inches of media, MERV ${merv} is rarely the limiting fitting — a dirty filter, a crushed flex return, or an undersized grille usually is. Use the extra depth for longer service intervals, not for forgetting the filter exists.`,
-    related: ["/1-inch-vs-4-inch-merv-13", "/furnace-filter-size-depth-chart"],
+    related: [
+      "/1-inch-vs-4-inch-merv-13",
+      "/furnace-filter-size-depth-chart",
+      ...cabinetGuide,
+    ],
   };
 }
 
