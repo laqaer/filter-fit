@@ -64,7 +64,9 @@ export default function SizeChartPage() {
         <p>
           Actuals below are the usual North American cardboard sizes, not a guarantee for every
           mill. Always match the spec line on the SKU. If you live on 16×25, continue to the{" "}
-          <Link href="/16x25x1-furnace-filters">16×25×1 MERV comparison</Link>. If the rack is
+          <Link href="/16x25x1-furnace-filters">16×25×1 MERV comparison</Link>. The 16×25×4 row
+          is that face in a media cabinet —{" "}
+          <Link href="/16x25x4-furnace-filters">16×25×4 comparison</Link>. If the rack is
           20×25, use the <Link href="/20x25x1-furnace-filters">20×25×1 guide</Link>. If it is
           16×20 — often a furnace rack paired with a return-grille filter — use the{" "}
           <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>. If it is 14×25 — a
@@ -92,7 +94,20 @@ export default function SizeChartPage() {
                 <td className="font-semibold text-ink">{row.nominal}</td>
                 <td>{row.typicalActual}</td>
                 <td>{row.commonDepths}</td>
-                <td>{row.notes}</td>
+                <td>
+                  {row.notes}
+                  {row.nominal === "16×25×4" ? (
+                    <>
+                      {" "}
+                      <Link
+                        className="text-air underline underline-offset-3 hover:text-copper-dark"
+                        href="/16x25x4-furnace-filters"
+                      >
+                        16×25×4 comparison
+                      </Link>.
+                    </>
+                  ) : null}
+                </td>
               </tr>
             ))}
           </tbody>
