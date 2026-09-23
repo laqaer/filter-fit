@@ -122,9 +122,9 @@ export const sizeChart: SizeRow[] = [
   },
   {
     nominal: "16×25×4",
-    typicalActual: "~15⅜–15⅞ × 24⅜–24⅞ × 3¾",
-    commonDepths: "4",
-    notes: "Media-cabinet size. Do not force a 1-inch pad into a 4-inch rack without a proper adapter.",
+    typicalActual: "Varies by SKU; depth examples ~3⅝–4⅜ inches, not a compatibility range",
+    commonDepths: "4 (nominal; some replacements are sold as 5)",
+    notes: "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad without a manufacturer-approved adapter. See the linked guide for manufacturer examples.",
   },
   {
     nominal: "20×20×1",
