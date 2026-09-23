@@ -33,25 +33,34 @@ export default function Size16x25x4Page() {
       <GuideHero
         kicker="Media cabinet"
         title="16×25×4 furnace filters and air filters are the same pad"
-        dek="Furnace filter and air filter are two names for this 4-inch 16×25. MERV 8, 11, and 13, with an actual size near 15⅜–15⅞ × 24⅜–24⅞ × 3¾ — not a 1-inch rack."
+        dek="Furnace filter and air filter are two names for this nominal 16×25 media filter. MERV 8, 11, and 13 — match the cabinet model and all three actual dimensions, not the nominal depth alone."
       />
 
       <div className="prose-fit mt-10">
         <p>
-          <strong>16×25×4</strong> is a nominal. The cardboard that seats in a media cabinet is
-          usually <strong>~15⅜–15⅞ × 24⅜–24⅞ × 3¾ inches</strong>, not 16.00 by 25.00 by
-          4.00. That range is wider than the 1-inch 15½ × 24½ × ¾ because 4-inch mills do not share
-          one actual. Measure the opening, then match the spec line on the carton. The{" "}
-          <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> lists this row
-          as a media-cabinet depth. If the door is a 1-inch slide-in, use the{" "}
-          <Link href="/16x25x1-furnace-filters">16×25×1 comparison</Link> instead of crushing a
-          4-inch pad into it.
+          <strong>16×25×4</strong> is a nominal size, not a single set of actual dimensions.
+          Width, height, and depth vary by manufacturer and product family. Depth examples span
+          roughly <strong>3⅝–4⅜ inches</strong>; that is not a compatibility range, and filters
+          within it are not interchangeable. Match all three actual dimensions and the approved
+          replacement part for your cabinet model before ordering. The{" "}
+          <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> is a starting
+          point, not a substitute for the cabinet specifications. For a 1-inch slide-in, use the{" "}
+          <Link href="/16x25x1-furnace-filters">16×25×1 comparison</Link> instead.
         </p>
-        <Callout title="Do not stand a 1-inch pad in a 4-inch rack" tone="warn">
-          A 16×25×1 does not become a 16×25×4 because the cabinet is deep. Air bypasses a thin pad,
-          or the pad tips and leaks around the gasket. Do not force a 1-inch filter into this rack,
-          and do not crush a 4-inch filter into a 1-inch door. Use the depth the cabinet was built
-          for.
+        <p>
+          For example, <a href="https://filterbuy.com/air-filters/16x25x4/">Filterbuy lists its
+          standard 16×25×4 at 15.5 × 24.5 × 3.63 inches</a>. Its{" "}
+          <a href="https://filterbuy.com/brand/pro1-iaq-air-filters/pro1-iaq-f1612-16x25x4replacement-filter/merv-11/">
+            Honeywell compatibility note
+          </a> points some nominal 4-inch cabinet replacements to a product sold as 16×25×5,
+          measuring 15.75 × 24.75 × 4.38 inches. A different nominal label can describe the
+          required replacement; it does not authorize fitting an arbitrary 5-inch filter.
+        </p>
+        <Callout title="Do not substitute a thinner pad without an approved adapter" tone="warn">
+          A 16×25×1 does not become the correct media-cabinet replacement because the face size
+          matches. A loose pad can tip or allow air to bypass it. Use the cabinet-approved filter
+          and depth, or a manufacturer-approved adapter; do not crush a thicker filter into a
+          thinner slot.
         </Callout>
 
         <h2>Why 4-inch instead of 1-inch on this face</h2>
@@ -140,8 +149,9 @@ export default function Size16x25x4Page() {
           Hardware walls are thick with 16×25×1 and thinner on 4-inch. Some Filtrete-style media
           cabinets exist; the size run is narrower than the 1-inch aisle. You are often buying an
           MPR number. Treat MPR 1000 as the everyday MERV 11-class comparison and higher MPR as a
-          class label, not a lab conversion. Confirm the carton is a 4-inch actual near 3¾, not a
-          1-inch pad that shares the 16×25 face.
+          class label, not a lab conversion. Compare the exact product family and all three actual
+          dimensions with the cabinet requirements; do not assume every nominal 4-inch filter is
+          3¾ inches deep.
         </p>
         <h3>Value pleated (Aerostar-style)</h3>
         <p>
@@ -153,9 +163,9 @@ export default function Size16x25x4Page() {
         <h3>Direct / cut-to-size (Filterbuy-style)</h3>
         <p>
           The same 16×25 face is sold as 16×25×1, 16×25×2, 16×25×4, and 16×25×5. The cabinet
-          decides. If the slot is 4 inches, order 16×25×4. A 5-inch pad belongs in a deep media
-          cabinet, not this one. A 1-inch pad standing in this slot wastes the media area you
-          already paid for.
+          model and approved replacement part decide which one fits. A nominal 4-inch label at
+          one brand can correspond to a nominal 5-inch replacement at another. Match actual
+          width, height, and depth rather than choosing by either label alone.
         </p>
 
         <h2>Change intervals</h2>
