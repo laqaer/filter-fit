@@ -25,6 +25,10 @@ for (const face of faceSizes) {
         assert.ok(result.related.includes("/16x25x1-furnace-filters"),
           "The existing one-inch guide must remain reachable");
       }
+      if (face.id === "12x24" && inches === 1) {
+        assert.ok(result.related.includes("/12x24x1-furnace-filters"),
+          "The 12×24 one-inch guide must be reachable from the picker");
+      }
       assert.equal(new Set(result.related).size, result.related.length,
         "Related guides must not contain duplicates");
       cases += 1;
