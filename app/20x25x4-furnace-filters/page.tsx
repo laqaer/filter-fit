@@ -48,7 +48,8 @@ export default function Size20x25x4Page() {
           replacement part for your cabinet model before ordering. The{" "}
           <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> is a starting
           point, not a substitute for the cabinet specifications. For a 1-inch slide-in, use the{" "}
-          <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>. A 16×25×4 will not
+          <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>. A{" "}
+          <Link href="/16x25x4-furnace-filters">16×25×4</Link> will not
           cover a 20-inch-wide cabinet.
         </p>
         <p>

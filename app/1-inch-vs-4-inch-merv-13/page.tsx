@@ -118,9 +118,13 @@ export default function InchVsFourPage() {
         <h2>5-inch, 2-inch, and “almost 4”</h2>
         <p>
           Five-inch media cabinets are the same idea as four-inch: more media, lower velocity.
-          Two-inch is a halfway rack — better than one inch, not a media cleaner. Never assume a
-          16×25×4 will drop into a 5-inch cabinet without a spacer the manufacturer specified.
-          Confirm depth on the{" "}
+          Two-inch is a halfway rack — better than one inch, not a media cleaner. Never assume a{" "}
+          <Link href="/16x25x4-furnace-filters">16×25×4</Link> will drop into a 5-inch cabinet
+          without a spacer the manufacturer specified. The same depth check applies to a{" "}
+          <Link href="/16x20x4-furnace-filters">16×20×4</Link>,{" "}
+          <Link href="/20x20x4-furnace-filters">20×20×4</Link>,{" "}
+          <Link href="/20x25x4-furnace-filters">20×25×4</Link>, or{" "}
+          <Link href="/20x30x4-furnace-filters">20×30×4</Link> cabinet. Confirm depth on the{" "}
           <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link>.
         </p>
         <p>

@@ -46,8 +46,11 @@ export default function Merv11Vs13Page() {
         <p>
           If you are shopping the common 16×25 face, start at the{" "}
           <Link href="/16x25x1-furnace-filters">16×25×1 comparison</Link>. The same 1-inch MERV
-          argument applies to <Link href="/20x25x1-furnace-filters">20×25×1</Link> and{" "}
-          <Link href="/16x20x1-furnace-filters">16×20×1</Link>. If you can change the
+          argument applies to <Link href="/20x25x1-furnace-filters">20×25×1</Link>,{" "}
+          <Link href="/16x20x1-furnace-filters">16×20×1</Link>, and the less-common{" "}
+          <Link href="/12x24x1-furnace-filters">12×24×1</Link>,{" "}
+          <Link href="/24x24x1-furnace-filters">24×24×1</Link>, and{" "}
+          <Link href="/24x30x1-furnace-filters">24×30×1</Link>. If you can change the
           cabinet, read{" "}
           <Link href="/1-inch-vs-4-inch-merv-13">1-inch vs 4-inch MERV 13</Link> first.
         </p>

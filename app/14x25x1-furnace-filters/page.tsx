@@ -123,7 +123,8 @@ export default function Size14x25Page() {
 
         <h2>Do not order the neighbor size</h2>
         <p>
-          14×25 is not 16×25, not 14×20, and not 16×20. A filter that “almost” fits either leaks or
+          14×25 is not 16×25, not <Link href="/14x20x1-furnace-filters">14×20</Link>, and not 16×20.
+          A filter that “almost” fits either leaks or
           collapses. The two-inch width gap versus{" "}
           <Link href="/16x25x1-furnace-filters">16×25×1</Link> is the usual mix-up — hardware-store
           walls stock the larger face first. Confirm the closet slot, not the SKU that was on sale.
