@@ -173,6 +173,13 @@ export const sizeChart: SizeRow[] = [
     notes: "Larger returns. Watch sag on cheap 1-inch frames.",
   },
   {
+    nominal: "20×30×4",
+    typicalActual: "Varies by SKU; depth examples ~3⅝–4⅜ inches, not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad. See the linked guide.",
+  },
+  {
     nominal: "24×24×1",
     typicalActual: "23½ × 23½ × ¾",
     commonDepths: "1",
@@ -249,6 +256,7 @@ export function recommend(
     "16x25": "/16x25x4-furnace-filters",
     "20x20": "/20x20x4-furnace-filters",
     "20x25": "/20x25x4-furnace-filters",
+    "20x30": "/20x30x4-furnace-filters",
   };
   const sizeGuide = oneInchGuides[faceId] ? [oneInchGuides[faceId]] : [];
   const cabinetGuide = depth === 4 && fourInchGuides[faceId] ? [fourInchGuides[faceId]] : [];

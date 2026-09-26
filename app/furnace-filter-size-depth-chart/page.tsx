@@ -14,6 +14,7 @@ const chartGuideHref: Record<string, string> = {
   "16×25×4": "/16x25x4-furnace-filters",
   "20×20×4": "/20x20x4-furnace-filters",
   "20×25×4": "/20x25x4-furnace-filters",
+  "20×30×4": "/20x30x4-furnace-filters",
 };
 
 const title = "Furnace filter size and depth chart";
@@ -76,8 +77,9 @@ export default function SizeChartPage() {
           is that face in a media cabinet —{" "}
           <Link href="/16x25x4-furnace-filters">16×25×4 comparison</Link>. The same rule covers{" "}
           <Link href="/20x25x4-furnace-filters">20×25×4</Link>,{" "}
-          <Link href="/16x20x4-furnace-filters">16×20×4</Link>, and{" "}
-          <Link href="/20x20x4-furnace-filters">20×20×4</Link>. If the rack is
+          <Link href="/16x20x4-furnace-filters">16×20×4</Link>,{" "}
+          <Link href="/20x20x4-furnace-filters">20×20×4</Link>, and{" "}
+          <Link href="/20x30x4-furnace-filters">20×30×4</Link>. If the rack is
           20×25, use the <Link href="/20x25x1-furnace-filters">20×25×1 guide</Link>. If it is
           16×20 — often a furnace rack paired with a return-grille filter — use the{" "}
           <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>. If it is 14×25 — a

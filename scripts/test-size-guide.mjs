@@ -21,6 +21,7 @@ const cabinetGuides = {
   "16x25": "/16x25x4-furnace-filters",
   "20x20": "/20x20x4-furnace-filters",
   "20x25": "/20x25x4-furnace-filters",
+  "20x30": "/20x30x4-furnace-filters",
 };
 let cases = 0;
 
@@ -176,7 +177,38 @@ const fourInch16x20 = recommend("16x20", 4, 13);
 assert.ok(fourInch16x20.related.includes("/16x20x4-furnace-filters"));
 assert.equal(fourInch16x20.related.includes("/16x20x1-furnace-filters"), false);
 
-for (const nominal of ["16×20×4", "20×20×4", "20×25×4"]) {
+const page20x30x4 = readFileSync("app/20x30x4-furnace-filters/page.tsx", "utf8");
+assert.match(page20x30x4, /furnace filters and air filters are the same pad/);
+assert.match(page20x30x4, /Depth examples span\s+roughly/);
+assert.match(page20x30x4, /3⅝–4⅜/);
+assert.match(page20x30x4, /not a compatibility range/);
+assert.match(page20x30x4, /all three actual dimensions/);
+assert.match(page20x30x4, /href="\/20x30x1-furnace-filters"/);
+assert.match(page20x30x4, /href="\/20x25x4-furnace-filters"/);
+assert.match(page20x30x4, /href="\/16x25x4-furnace-filters"/);
+assert.doesNotMatch(page20x30x4, /19⅜–19⅞ × 29⅜–29⅞ × 3¾/);
+assert.doesNotMatch(page20x30x4, /19½ × 29½ × 3¾/);
+assert.doesNotMatch(page20x30x4, /actual size near /);
+assert.doesNotMatch(page20x30x4, /carryover from/);
+assert.doesNotMatch(page20x30x4, /24x30x4-furnace-filters/);
+assert.doesNotMatch(page20x30x4, /amazon\.com|B0[A-Z0-9]{8}/);
+const row20x30x4 = sizeChart.find((item) => item.nominal === "20×30×4");
+assert.ok(row20x30x4, "The shared size chart must include 20×30×4");
+assert.match(row20x30x4.typicalActual, /3⅝–4⅜/);
+assert.doesNotMatch(row20x30x4.typicalActual, /19⅜/);
+assert.doesNotMatch(row20x30x4.typicalActual, /29½/);
+const guide20x30x4 = guides.find((item) => item.href === "/20x30x4-furnace-filters");
+assert.match(guide20x30x4.title, /furnace and air filters/);
+assert.match(guide20x30x4.description, /same pad/);
+assert.match(chartPage, /"20×30×4": "\/20x30x4-furnace-filters"/);
+const oneInch20x30 = recommend("20x30", 1, 11);
+assert.ok(oneInch20x30.related.includes("/20x30x1-furnace-filters"));
+assert.equal(oneInch20x30.related.includes("/20x30x4-furnace-filters"), false);
+const fourInch20x30 = recommend("20x30", 4, 13);
+assert.ok(fourInch20x30.related.includes("/20x30x4-furnace-filters"));
+assert.equal(fourInch20x30.related.includes("/20x30x1-furnace-filters"), false);
+
+for (const nominal of ["16×20×4", "20×20×4", "20×25×4", "20×30×4"]) {
   const cabinetRow = sizeChart.find((item) => item.nominal === nominal);
   assert.ok(cabinetRow, `size chart must include ${nominal}`);
   assert.match(cabinetRow.typicalActual, /not a compatibility range/);
