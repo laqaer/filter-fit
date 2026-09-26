@@ -58,6 +58,7 @@ npm run build
 | `/20x20x1-furnace-filters` | Common 1-inch square return, MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/14x20x1-furnace-filters` | 1-inch smaller-return / older-handler face, MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/20x30x1-furnace-filters` | Long 1-inch return (watch frame sag), MERV 8 / 11 / 13, same brand classes (no fake scores) |
+| `/24x24x1-furnace-filters` | Large 1-inch square return, MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/24x30x1-furnace-filters` | Large 1-inch return grille (watch frame sag), MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/16x25x4-furnace-filters` | 16×25×4 media cabinet; furnace filter and air filter are the same pad; MERV 8 / 11 / 13, brand classes (no fake scores) |
 | `/20x25x4-furnace-filters` | 20×25×4 media cabinet; furnace filter and air filter are the same pad; MERV 8 / 11 / 13, brand classes (no fake scores) |

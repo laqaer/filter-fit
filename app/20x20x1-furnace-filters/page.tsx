@@ -121,7 +121,8 @@ export default function Size20x20Page() {
 
         <h2>Do not order the neighbor size</h2>
         <p>
-          20×20 is not 20×25, not 16×20, and not 24×24. A filter that “almost” fits either leaks or
+          20×20 is not 20×25, not 16×20, and not{" "}
+          <Link href="/24x24x1-furnace-filters">24×24</Link>. A filter that “almost” fits either leaks or
           collapses. The five-inch height gap versus{" "}
           <Link href="/20x25x1-furnace-filters">20×25×1</Link> is the usual mix-up — hardware-store
           walls stock the rectangle first. Confirm the square slot, not the SKU that was on sale.

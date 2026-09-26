@@ -44,8 +44,9 @@ export default function Size24x30Page() {
           on the carton. The{" "}
           <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> lists this face
           as a large return grille — and lists the sizes people order by mistake the same way:{" "}
-          <Link href="/20x30x1-furnace-filters">20×30×1</Link> (four inches narrow), 24×24×1 (six
-          inches short on the long side), and{" "}
+          <Link href="/20x30x1-furnace-filters">20×30×1</Link> (four inches narrow),{" "}
+          <Link href="/24x24x1-furnace-filters">24×24×1</Link> (six inches short on the long
+          side), and{" "}
           <Link href="/20x25x1-furnace-filters">20×25×1</Link> (the hardware-store rectangle, short
           on both sides).
         </p>
@@ -129,13 +130,15 @@ export default function Size24x30Page() {
 
         <h2>Do not order the neighbor size</h2>
         <p>
-          24×30 is not <Link href="/20x30x1-furnace-filters">20×30</Link>, not 24×24, and not{" "}
+          24×30 is not <Link href="/20x30x1-furnace-filters">20×30</Link>, not{" "}
+          <Link href="/24x24x1-furnace-filters">24×24</Link>, and not{" "}
           <Link href="/20x25x1-furnace-filters">20×25</Link>. A filter that “almost” fits either
           leaks or will not enter the slot. The four-inch gap versus 20×30×1 is the usual mix-up —
           same 30-inch length, wrong width, and a 20×30 leaves an open side in a 24×30 grille.
-          24×24×1 is six inches short on the long side; it is a different square, not a rotated
-          24×30. 20×25×1 is what the hardware-store wall stocks first, and it is short on both
-          sides. Confirm the grille, not the SKU that was on sale.
+          <Link href="/24x24x1-furnace-filters">24×24×1</Link> is six inches short on the long
+          side; it is a different square, not a rotated 24×30. 20×25×1 is what the hardware-store
+          wall stocks first, and it is short on both sides. Confirm the grille, not the SKU that
+          was on sale.
         </p>
         <p>
           24×30 and 30×24 are the same cardboard rotated. Match the door so the pad seats flat and
@@ -196,7 +199,8 @@ export default function Size24x30Page() {
           24×30×1 will bow across thirty inches and leak around the sides, which defeats the MERV
           you paid for. Confirm the actual (not nominal) dimensions before you buy a six-pack —
           23½ × 29½ is not a leftover{" "}
-          <Link href="/20x30x1-furnace-filters">20×30</Link> or a 24×24.
+          <Link href="/20x30x1-furnace-filters">20×30</Link> or a{" "}
+          <Link href="/24x24x1-furnace-filters">24×24</Link>.
         </p>
         <h3>Direct / cut-to-size (Filterbuy-style)</h3>
         <p>

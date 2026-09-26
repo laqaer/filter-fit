@@ -92,7 +92,9 @@ export default function SizeChartPage() {
           long return where cheap 1-inch frames sag — use the{" "}
           <Link href="/20x30x1-furnace-filters">20×30×1 comparison</Link>. If it is
           24×30 — a large return grille — use the{" "}
-          <Link href="/24x30x1-furnace-filters">24×30×1 comparison</Link>.
+          <Link href="/24x30x1-furnace-filters">24×30×1 comparison</Link>. If it is
+          24×24 — a less-common square return — use the{" "}
+          <Link href="/24x24x1-furnace-filters">24×24×1 comparison</Link>.
         </p>
       </div>
 
