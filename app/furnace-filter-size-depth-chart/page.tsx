@@ -73,7 +73,9 @@ export default function SizeChartPage() {
           common upflow closet face — use the{" "}
           <Link href="/14x25x1-furnace-filters">14×25×1 comparison</Link>. If it is 20×20 — a
           square return that is easy to rotate the wrong way — use the{" "}
-          <Link href="/20x20x1-furnace-filters">20×20×1 comparison</Link>.
+          <Link href="/20x20x1-furnace-filters">20×20×1 comparison</Link>. If it is
+          12×24 — a less-common face that hardware stores often skip — use the{" "}
+          <Link href="/12x24x1-furnace-filters">12×24×1 comparison</Link>.
         </p>
       </div>
 

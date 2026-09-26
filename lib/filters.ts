@@ -10,6 +10,7 @@ export type FaceSize = {
 };
 
 export const faceSizes: FaceSize[] = [
+  { id: "12x24", label: "12×24", width: 12, height: 24, common: false },
   { id: "14x20", label: "14×20", width: 14, height: 20, common: true },
   { id: "14x25", label: "14×25", width: 14, height: 25, common: true },
   { id: "16x20", label: "16×20", width: 16, height: 20, common: true },
@@ -96,6 +97,12 @@ export type SizeRow = {
 };
 
 export const sizeChart: SizeRow[] = [
+  {
+    nominal: "12×24×1",
+    typicalActual: "11½ × 23½ × ¾",
+    commonDepths: "1",
+    notes: "Less-common face. Measure the slot; do not substitute 16×24 or 12×20.",
+  },
   {
     nominal: "14×20×1",
     typicalActual: "13½ × 19½ × ¾",
@@ -221,7 +228,9 @@ export function recommend(
             ? ["/14x25x1-furnace-filters"]
             : faceId === "20x20"
               ? ["/20x20x1-furnace-filters"]
-              : [];
+              : faceId === "12x24"
+                ? ["/12x24x1-furnace-filters"]
+                : [];
   const cabinetGuide =
     faceId === "16x25" && depth === 4 ? ["/16x25x4-furnace-filters"] : [];
 
