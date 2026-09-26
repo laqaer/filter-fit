@@ -60,7 +60,7 @@ npm run build
 | `/20x30x1-furnace-filters` | Long 1-inch return (watch frame sag), MERV 8 / 11 / 13, same brand classes (no fake scores) |
 | `/16x25x4-furnace-filters` | 16×25×4 media cabinet; furnace filter and air filter are the same pad; MERV 8 / 11 / 13, brand classes (no fake scores) |
 | `/20x25x4-furnace-filters` | 20×25×4 media cabinet; furnace filter and air filter are the same pad; MERV 8 / 11 / 13, brand classes (no fake scores) |
-| `/16x20x4-furnace-filters` | 16×20×4 media cabinet; do not borrow a 16×25; MERV 8 / 11 / 13, brand classes (no fake scores) |
+| `/16x20x4-furnace-filters` | 16×20×4 media cabinet; furnace filter and air filter are the same pad; MERV 8 / 11 / 13, brand classes (no fake scores) |
 | `/20x20x4-furnace-filters` | 20×20×4 square media cabinet; actual depth is not one number; MERV 8 / 11 / 13, brand classes (no fake scores) |
 | `/1-inch-vs-4-inch-merv-13` | Depth beats MERV; when to upgrade the cabinet |
 | `/merv-13-safe-for-furnace` | When MERV 13 is OK vs when it chokes blowers |
