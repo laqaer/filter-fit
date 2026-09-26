@@ -241,6 +241,7 @@ export function recommend(
     "20x20": "/20x20x1-furnace-filters",
     "20x25": "/20x25x1-furnace-filters",
     "20x30": "/20x30x1-furnace-filters",
+    "24x30": "/24x30x1-furnace-filters",
   };
   const fourInchGuides: Record<string, string> = {
     "16x20": "/16x20x4-furnace-filters",
