@@ -92,6 +92,22 @@ assert.match(page, /all three actual dimensions/);
 assert.match(page, /not a compatibility range/);
 assert.doesNotMatch(page, /actual size near 15⅜–15⅞ × 24⅜–24⅞ × 3¾/);
 
+const page20x25x4 = readFileSync("app/20x25x4-furnace-filters/page.tsx", "utf8");
+assert.match(page20x25x4, /furnace filters and air filters are the same pad/);
+assert.match(page20x25x4, /Depth examples span\s+roughly/);
+assert.match(page20x25x4, /3⅝–4⅜/);
+assert.match(page20x25x4, /not a compatibility range/);
+assert.doesNotMatch(page20x25x4, /19⅜–19⅞ × 24⅜–24⅞ × 3¾/);
+assert.doesNotMatch(page20x25x4, /actual size near /);
+assert.doesNotMatch(page20x25x4, /carryover from/);
+const row20x25x4 = sizeChart.find((item) => item.nominal === "20×25×4");
+assert.ok(row20x25x4, "The shared size chart must include 20×25×4");
+assert.match(row20x25x4.typicalActual, /3⅝–4⅜/);
+assert.doesNotMatch(row20x25x4.typicalActual, /19⅜/);
+const guide20x25x4 = guides.find((item) => item.href === "/20x25x4-furnace-filters");
+assert.match(guide20x25x4.title, /furnace and air filters/);
+assert.match(guide20x25x4.description, /same pad/);
+
 for (const nominal of ["16×20×4", "20×20×4", "20×25×4"]) {
   const cabinetRow = sizeChart.find((item) => item.nominal === nominal);
   assert.ok(cabinetRow, `size chart must include ${nominal}`);

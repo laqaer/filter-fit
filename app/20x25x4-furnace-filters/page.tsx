@@ -10,9 +10,9 @@ import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
-const title = "20×25×4 furnace filters: MERV 8 vs 11 vs 13";
+const title = "20×25×4 furnace filters and air filters: MERV 8 vs 11 vs 13";
 const description =
-  "Compare 20x25x4 furnace filters at MERV 8, 11, and 13. Nominal 4-inch is not one actual depth. Brand classes, no fake scores.";
+  "20x25x4 furnace filters and air filters are the same pad. MERV 8, 11, and 13 in a media cabinet — actual size, 4-inch vs 1-inch, and brand classes, no fake scores.";
 
 export const metadata: Metadata = {
   title,
@@ -34,27 +34,36 @@ export default function Size20x25x4Page() {
       />
       <GuideHero
         kicker="Media cabinet"
-        title="20×25×4 furnace filters, compared without a fake depth range"
-        dek="The second-most-common face, in a media cabinet. MERV 8, 11, and 13 — after you match the cabinet’s actual width, height, and depth."
+        title="20×25×4 furnace filters and air filters are the same pad"
+        dek="Furnace filter and air filter are two names for this nominal 20×25 media filter. MERV 8, 11, and 13 — match the cabinet model and all three actual dimensions, not the nominal depth alone."
       />
 
       <div className="prose-fit mt-10">
         <p>
-          <strong>20×25×4</strong> is a nominal size, not a single set of actual dimensions. Width,
-          height, and depth are manufacturer-specific.{" "}
-          <a href="https://filterbuy.com/air-filters/20x25x4/">Filterbuy lists its standard
-          20×25×4 at 19.5 × 24.5 × 3.63 inches</a> and, on that same page, warns that some brands
-          print 20×25×4 on filters that are actually about 4.38 inches deep. Those pads are not
-          interchangeable. A span of depths is not a compatibility range. Match all three actual
-          dimensions and the cabinet-approved replacement part before ordering. For the 1-inch
-          slide-in on this face, use the{" "}
+          <strong>20×25×4</strong> is a nominal size, not a single set of actual dimensions.
+          Cartons may say furnace filter or air filter; it is the same pad. Width, height, and
+          depth are manufacturer-specific and vary by product family. Depth examples span
+          roughly <strong>3⅝–4⅜ inches</strong>; that is not a compatibility range, and filters
+          within it are not interchangeable. Match all three actual dimensions and the approved
+          replacement part for your cabinet model before ordering. The{" "}
+          <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> is a starting
+          point, not a substitute for the cabinet specifications. For a 1-inch slide-in, use the{" "}
           <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>. A 16×25×4 will not
           cover a 20-inch-wide cabinet.
+        </p>
+        <p>
+          For example,{" "}
+          <a href="https://filterbuy.com/air-filters/20x25x4/">Filterbuy lists its standard
+          20×25×4 at 19.5 × 24.5 × 3.63 inches</a> and, on that same page, warns that some brands
+          print 20×25×4 on filters that are actually about 4.38 inches deep. A different depth
+          under the same nominal label can be the required replacement; it does not authorize
+          fitting an arbitrary 4-inch filter.
         </p>
         <Callout title="Do not substitute a thinner pad without an approved adapter" tone="warn">
           A 20×25×1 does not become the correct media-cabinet replacement because the face size
           matches. A loose pad can tip or let air bypass it. Use the cabinet-approved filter and
-          depth, or a manufacturer-approved adapter.
+          depth, or a manufacturer-approved adapter; do not crush a thicker filter into a thinner
+          slot.
         </Callout>
 
         <h2>Why 4-inch instead of 1-inch on this face</h2>
@@ -145,20 +154,22 @@ export default function Size20x25x4Page() {
           Hardware walls are thick with 20×25×1 and thinner on 4-inch. You are often buying an MPR
           number. Treat MPR 1000 as the everyday MERV 11-class comparison and higher MPR as a class
           label, not a lab conversion. Compare the exact product family and all three actual
-          dimensions with the cabinet requirements.
+          dimensions with the cabinet requirements; do not assume every nominal 4-inch filter is
+          3¾ inches deep.
         </p>
         <h3>Value pleated (Aerostar-style)</h3>
         <p>
           Usually printed MERV 8 / 11 / 13, sold in multi-packs online. Inspect the frame: a floppy
           4-inch pad leaks at the cabinet gasket, which defeats the MERV you paid for. Confirm the
-          actual dimensions before a six-pack. A 19½-inch width is not a 20.00-inch pad.
+          actual dimensions before a six-pack — 19⅜ is not the same pad as 19⅞, and 3⅝ is not the
+          same depth as 4⅜.
         </p>
         <h3>Direct / cut-to-size (Filterbuy-style)</h3>
         <p>
           The same 20×25 face is sold as 20×25×1, 20×25×2, 20×25×4, and 20×25×5. The cabinet model
-          decides which one fits. A nominal 4-inch label at one brand can describe a deeper pad at
-          another. Match actual width, height, and depth rather than choosing by the printed third
-          number alone.
+          and approved replacement part decide which one fits. A nominal 4-inch label at one brand
+          can describe a deeper pad at another. Match actual width, height, and depth rather than
+          choosing by the printed third number alone.
         </p>
 
         <h2>Change intervals</h2>
@@ -170,9 +181,12 @@ export default function Size20x25x4Page() {
         </p>
         <p>
           Honest habits on this face, matching the table: MERV 8 often 30–90 days depending on dust
-          and runtime; MERV 11 often 60–90 days in 4-inch; MERV 13 is not set-and-forget. If the
-          current filter is packed early, fix the dust load or the return before you chase a higher
-          MERV. Still unsure whether 13 is appropriate for the blower? Use{" "}
+          and runtime; MERV 11 often 60–90 days in 4-inch; MERV 13 is not set-and-forget. A loaded
+          20×25×4 is a different product than a clean one. If the current filter is packed early,
+          fix the dust load or the return before you chase a higher MERV.
+        </p>
+        <p>
+          Still unsure whether 13 is appropriate for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>

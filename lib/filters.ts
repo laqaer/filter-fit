@@ -161,7 +161,7 @@ export const sizeChart: SizeRow[] = [
   },
   {
     nominal: "20×25×4",
-    typicalActual: "Varies by SKU; not a compatibility range",
+    typicalActual: "Varies by SKU; depth examples ~3⅝–4⅜ inches, not a compatibility range",
     commonDepths: "4 (nominal)",
     notes:
       "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad. See the linked guide.",
