@@ -105,11 +105,11 @@ export const guides: Guide[] = [
   },
   {
     href: "/20x25x4-furnace-filters",
-    title: "20×25×4 furnace filters",
+    title: "20×25×4 furnace and air filters",
     kicker: "Media cabinet",
-    dek: "MERV 8 / 11 / 13 in a 20×25 media cabinet. Nominal 4-inch is not one actual depth — brand classes, no fake scores.",
+    dek: "Furnace filter and air filter name the same 20×25×4 pad. MERV 8 / 11 / 13 in a media cabinet — actual size, brand classes, no fake scores.",
     description:
-      "Compare 20x25x4 furnace filters at MERV 8, 11, and 13. Actual depth varies, including pads sold near 4.38 inches. No fake scores.",
+      "Compare 20x25x4 furnace filters and air filters — the same pad — at MERV 8, 11, and 13. Actual size, 4-inch vs 1-inch, and brand-class notes.",
   },
   {
     href: "/1-inch-vs-4-inch-merv-13",
