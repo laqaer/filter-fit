@@ -88,6 +88,14 @@ export const guides: Guide[] = [
       "Compare 20x30x1 furnace filters at MERV 8, 11, and 13. Brand-class notes for Filtrete, Aerostar, and Filterbuy-style filters.",
   },
   {
+    href: "/20x30x4-furnace-filters",
+    title: "20×30×4 furnace and air filters",
+    kicker: "Media cabinet",
+    dek: "Furnace filter and air filter name the same 20×30×4 pad. MERV 8 / 11 / 13 in a media cabinet — actual size, brand classes, no fake scores.",
+    description:
+      "Compare 20x30x4 furnace filters and air filters — the same pad — at MERV 8, 11, and 13. Actual size, 4-inch vs 1-inch, and brand-class notes.",
+  },
+  {
     href: "/12x24x1-furnace-filters",
     title: "12×24×1 furnace filters",
     kicker: "12×24 face",

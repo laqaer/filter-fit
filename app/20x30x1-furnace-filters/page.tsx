@@ -134,7 +134,9 @@ export default function Size20x30Page() {
         <p>
           20×30 and 30×20 are the same cardboard rotated. Match the door so the pad seats flat and
           the arrow still faces the equipment. A 20×30×4 will not crush into a 1-inch grille; a
-          1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. See{" "}
+          1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. If
+          the rack is already 4 inches, use the{" "}
+          <Link href="/20x30x4-furnace-filters">20×30×4 comparison</Link>. See also{" "}
           <Link href="/1-inch-vs-4-inch-merv-13">1-inch vs 4-inch MERV 13</Link>.
         </p>
 
@@ -196,7 +198,8 @@ export default function Size20x30Page() {
           why the size chart lists 1-inch and 4-inch as the common depths. The door still decides:
           if it says 20×30×1, do not order a 4-inch pad and crush it. A large return grille often
           cannot take a media cabinet without a remodel. If a technician already installed a deep
-          rack, do not keep stuffing 1-inch pads in it — use the depth you already paid for.
+          rack, do not keep stuffing 1-inch pads in it — use the depth you already paid for, and
+          start with the <Link href="/20x30x4-furnace-filters">20×30×4 comparison</Link>.
         </p>
 
         <h2>Change interval: hours beat the calendar</h2>
