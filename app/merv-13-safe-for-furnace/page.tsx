@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -122,6 +123,26 @@ export default function Merv13SafePage() {
           <Link href="/furnace-filter-size-depth-chart">confirm size and depth</Link> first.
         </p>
       </div>
+      <AmazonGuideExamples
+        note="These are Amazon searches for a MERV 13 furnace filter, a 4-inch MERV 13, and a 1-inch MERV 11, not a ranked list and not products we tested."
+        examples={[
+          {
+            label: "MERV 13 furnace filters",
+            keywords: "merv 13 furnace filter",
+            subtag: "ff-guide-merv13-safe",
+          },
+          {
+            label: "4-inch MERV 13 furnace filters",
+            keywords: "4 inch merv 13 furnace filter",
+            subtag: "ff-guide-merv13-safe-4in",
+          },
+          {
+            label: "1-inch MERV 11 furnace filters",
+            keywords: "1 inch merv 11 furnace filter",
+            subtag: "ff-guide-merv13-safe-1in-merv11",
+          },
+        ]}
+      />
       <RelatedGuides except="/merv-13-safe-for-furnace" />
     </article>
   );

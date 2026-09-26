@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -128,6 +129,21 @@ export default function InchVsFourPage() {
           for that blower and duct system.
         </p>
       </div>
+      <AmazonGuideExamples
+        note="These are Amazon searches for a 1-inch MERV 13 and a 4-inch MERV 13 furnace filter, not a ranked list and not products we tested."
+        examples={[
+          {
+            label: "1-inch MERV 13 furnace filters",
+            keywords: "1 inch merv 13 furnace filter",
+            subtag: "ff-guide-1v4-merv13-1in",
+          },
+          {
+            label: "4-inch MERV 13 furnace filters",
+            keywords: "4 inch merv 13 furnace filter",
+            subtag: "ff-guide-1v4-merv13-4in",
+          },
+        ]}
+      />
       <RelatedGuides except="/1-inch-vs-4-inch-merv-13" />
     </article>
   );

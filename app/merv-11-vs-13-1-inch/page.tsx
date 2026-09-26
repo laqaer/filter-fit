@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -136,6 +137,21 @@ export default function Merv11Vs13Page() {
           1-inch slot.
         </p>
       </div>
+      <AmazonGuideExamples
+        note="These are Amazon searches for a 1-inch MERV 11 and a 1-inch MERV 13 furnace filter, not a ranked list and not products we tested."
+        examples={[
+          {
+            label: "1-inch MERV 11 furnace filters",
+            keywords: "1 inch merv 11 furnace filter",
+            subtag: "ff-guide-merv11v13-1in-merv11",
+          },
+          {
+            label: "1-inch MERV 13 furnace filters",
+            keywords: "1 inch merv 13 furnace filter",
+            subtag: "ff-guide-merv11v13-1in-merv13",
+          },
+        ]}
+      />
       <RelatedGuides except="/merv-11-vs-13-1-inch" />
     </article>
   );
