@@ -41,11 +41,11 @@ export const guides: Guide[] = [
   },
   {
     href: "/16x20x4-furnace-filters",
-    title: "16×20×4 furnace filters",
+    title: "16×20×4 furnace and air filters",
     kicker: "Media cabinet",
-    dek: "MERV 8 / 11 / 13 in a 16×20 media cabinet. Actual size varies by brand — match the cabinet, no fake scores.",
+    dek: "Furnace filter and air filter name the same 16×20×4 pad. MERV 8 / 11 / 13 in a media cabinet — actual size, brand classes, no fake scores.",
     description:
-      "Compare 16x20x4 furnace filters at MERV 8, 11, and 13. Actual dimensions vary by cabinet. Brand-class notes, no fake scores.",
+      "Compare 16x20x4 furnace filters and air filters — the same pad — at MERV 8, 11, and 13. Actual size, 4-inch vs 1-inch, and brand-class notes.",
   },
   {
     href: "/14x25x1-furnace-filters",
