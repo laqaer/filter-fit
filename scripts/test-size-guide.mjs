@@ -12,7 +12,19 @@ const sandbox = { exports: {} };
 vm.runInNewContext(compiled.outputText, sandbox, { timeout: 1000 });
 const { faceSizes, depths, mervOptions, recommend, sizeChart } = sandbox.exports;
 const guide = "/16x25x4-furnace-filters";
+const face14 = "/14x20x1-furnace-filters";
 let cases = 0;
+
+const guidesSource = readFileSync("lib/guides.ts", "utf8");
+const guidesCompiled = ts.transpileModule(guidesSource, {
+  compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
+});
+const guidesSandbox = { exports: {} };
+vm.runInNewContext(guidesCompiled.outputText, guidesSandbox, { timeout: 1000 });
+const { guides } = guidesSandbox.exports;
+for (const href of [face14, "/12x24x1-furnace-filters", guide]) {
+  assert.ok(guides.some((item) => item.href === href), `guides registry must include ${href}`);
+}
 
 for (const face of faceSizes) {
   for (const { inches } of depths) {
@@ -29,6 +41,11 @@ for (const face of faceSizes) {
         assert.ok(result.related.includes("/12x24x1-furnace-filters"),
           "The 12×24 one-inch guide must be reachable from the picker");
       }
+      assert.equal(
+        result.related.includes(face14),
+        face.id === "14x20" && inches === 1,
+        `${face.id}, depth ${inches}, MERV ${value}: incorrect 14×20 guide`,
+      );
       assert.equal(new Set(result.related).size, result.related.length,
         "Related guides must not contain duplicates");
       cases += 1;
@@ -36,6 +53,11 @@ for (const face of faceSizes) {
   }
 }
 assert.ok(cases > 0, "The selector matrix must not be empty");
+
+const face14Page = readFileSync(`app${face14}/page.tsx`, "utf8");
+assert.doesNotMatch(face14Page, /therefore raises resistance unless/);
+assert.match(face14Page, /manufacturer-specific/);
+assert.match(face14Page, /data sheet/);
 
 const row = sizeChart.find((item) => item.nominal === "16×25×4");
 assert.ok(row, "The shared size chart must include the media-cabinet row");
@@ -60,22 +82,28 @@ if (process.env.SMOKE_BASE_URL) {
     assert.equal(response.status, 200, `${path} must return HTTP 200`);
     return response.text();
   }
-  const html = await readRoute(guide);
   const sitemap = await readRoute("/sitemap.xml");
-  const canonical = `https://filterfitguide.com${guide}`;
-  assert.ok(html.includes(`href="${canonical}"`), "Canonical URL missing from rendered page");
-  assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), "Guide missing from sitemap");
-  assert.match(html.replace(/\s+/g, " "), /As an Amazon Associate I earn from qualifying purchases/);
-  const links = Array.from(html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g),
-    (match) => new URL(match[1].replaceAll("&amp;", "&"), base));
-  const searches = links.filter((url) =>
-    ["amazon.com", "www.amazon.com"].includes(url.hostname) &&
-    url.pathname === "/s" && url.searchParams.get("k")?.startsWith("16x25x4 "));
-  assert.equal(searches.length, 3, "Expected exactly three size-specific Amazon searches");
-  for (const merv of [8, 11, 13]) {
-    assert.ok(searches.some((url) =>
-      url.searchParams.get("k") === `16x25x4 merv ${merv} furnace filter` &&
-      url.searchParams.get("tag") === "laqaer-20"), `MERV ${merv} affiliate search missing`);
+
+  async function assertSizeSmoke(path, faceKey) {
+    const html = await readRoute(path);
+    const canonical = `https://filterfitguide.com${path}`;
+    assert.ok(html.includes(`href="${canonical}"`), `${path}: canonical URL missing`);
+    assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), `${path}: missing from sitemap`);
+    assert.match(html.replace(/\s+/g, " "), /As an Amazon Associate I earn from qualifying purchases/);
+    const links = Array.from(html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g),
+      (match) => new URL(match[1].replaceAll("&amp;", "&"), base));
+    const searches = links.filter((url) =>
+      ["amazon.com", "www.amazon.com"].includes(url.hostname) &&
+      url.pathname === "/s" && url.searchParams.get("k")?.startsWith(`${faceKey} `));
+    assert.equal(searches.length, 3, `${path}: expected exactly three size-specific Amazon searches`);
+    for (const merv of [8, 11, 13]) {
+      assert.ok(searches.some((url) =>
+        url.searchParams.get("k") === `${faceKey} merv ${merv} furnace filter` &&
+        url.searchParams.get("tag") === "laqaer-20"), `${path}: MERV ${merv} affiliate search missing`);
+    }
   }
+
+  await assertSizeSmoke(guide, "16x25x4");
+  await assertSizeSmoke(face14, "14x20x1");
   console.log("PASS: local HTTP, canonical, sitemap, disclosure, and three affiliate searches");
 }

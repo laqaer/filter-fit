@@ -71,10 +71,11 @@ export default function Size14x20Page() {
 
         <h2>MERV 8 / 11 / 13 on this exact face</h2>
         <p>
-          The face area is fixed. Raising MERV on a 1-inch 14×20 therefore raises resistance unless
-          you also add depth. ASHRAE 52.2 MERV is a particle-size efficiency scale, not a comfort
-          score and not a medical claim. We will not invent a Pascal number for a SKU we did not
-          test. Read the data sheet’s initial resistance and the furnace or air-handler manual.
+          The face area is fixed. A higher-MERV 1-inch 14×20 SKU often lists a higher initial
+          resistance than a lower-MERV pad of the same depth, but that ΔP is manufacturer-specific
+          — MERV is an efficiency scale, not a pressure-drop rating. We will not invent a Pascal
+          number for a SKU we did not test. Read the data sheet’s initial resistance and the
+          furnace or air-handler manual.
         </p>
       </div>
 
