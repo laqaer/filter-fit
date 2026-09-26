@@ -106,6 +106,8 @@ export default function Size20x30Page() {
         </table>
       </div>
 
+      <AmazonShopExamples face="20x30x1" />
+
       <div className="prose-fit mt-10">
         <p>
           On this face, MERV 8 is still the low-resistance everyday pad — if you change it. MERV 11
@@ -226,7 +228,6 @@ export default function Size20x30Page() {
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>
-      <AmazonShopExamples face="20x30x1" />
       <RelatedGuides except="/20x30x1-furnace-filters" />
     </article>
   );

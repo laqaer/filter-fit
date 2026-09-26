@@ -122,6 +122,13 @@ export const sizeChart: SizeRow[] = [
     notes: "Often paired with a second filter on a return grille.",
   },
   {
+    nominal: "16×20×4",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad. See the linked guide.",
+  },
+  {
     nominal: "16×25×1",
     typicalActual: "15½ × 24½ × ¾",
     commonDepths: "1, 2, 4, 5",
@@ -140,6 +147,13 @@ export const sizeChart: SizeRow[] = [
     notes: "Square returns; easy to rotate the wrong way. Arrow still faces the furnace.",
   },
   {
+    nominal: "20×20×4",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad. See the linked guide.",
+  },
+  {
     nominal: "20×25×1",
     typicalActual: "19½ × 24½ × ¾",
     commonDepths: "1, 2, 4, 5",
@@ -147,9 +161,10 @@ export const sizeChart: SizeRow[] = [
   },
   {
     nominal: "20×25×4",
-    typicalActual: "~19⅜–19⅞ × 24⅜–24⅞ × 3¾",
-    commonDepths: "4",
-    notes: "Typical aftermarket media-cabinet upgrade size.",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad. See the linked guide.",
   },
   {
     nominal: "20×30×1",
@@ -217,26 +232,24 @@ export function recommend(
 ): Recommendation {
   const face = faceSizes.find((item) => item.id === faceId);
   const sizeLabel = face ? `${face.label}×${depth}` : `${faceId}×${depth}`;
-  const sizeGuide =
-    faceId === "16x25"
-      ? ["/16x25x1-furnace-filters"]
-      : faceId === "20x25"
-        ? ["/20x25x1-furnace-filters"]
-        : faceId === "16x20"
-          ? ["/16x20x1-furnace-filters"]
-          : faceId === "14x25"
-            ? ["/14x25x1-furnace-filters"]
-            : faceId === "20x20"
-              ? ["/20x20x1-furnace-filters"]
-              : faceId === "12x24"
-                ? ["/12x24x1-furnace-filters"]
-                : faceId === "14x20"
-                  ? ["/14x20x1-furnace-filters"]
-                  : faceId === "20x30"
-                    ? ["/20x30x1-furnace-filters"]
-                    : [];
-  const cabinetGuide =
-    faceId === "16x25" && depth === 4 ? ["/16x25x4-furnace-filters"] : [];
+  const oneInchGuides: Record<string, string> = {
+    "12x24": "/12x24x1-furnace-filters",
+    "14x20": "/14x20x1-furnace-filters",
+    "14x25": "/14x25x1-furnace-filters",
+    "16x20": "/16x20x1-furnace-filters",
+    "16x25": "/16x25x1-furnace-filters",
+    "20x20": "/20x20x1-furnace-filters",
+    "20x25": "/20x25x1-furnace-filters",
+    "20x30": "/20x30x1-furnace-filters",
+  };
+  const fourInchGuides: Record<string, string> = {
+    "16x20": "/16x20x4-furnace-filters",
+    "16x25": "/16x25x4-furnace-filters",
+    "20x20": "/20x20x4-furnace-filters",
+    "20x25": "/20x25x4-furnace-filters",
+  };
+  const sizeGuide = oneInchGuides[faceId] ? [oneInchGuides[faceId]] : [];
+  const cabinetGuide = depth === 4 && fourInchGuides[faceId] ? [fourInchGuides[faceId]] : [];
 
   if (depth === 1 && merv === 13) {
     return {

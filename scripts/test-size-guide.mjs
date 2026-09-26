@@ -14,6 +14,12 @@ const { faceSizes, depths, mervOptions, recommend, sizeChart } = sandbox.exports
 const guide = "/16x25x4-furnace-filters";
 const face14 = "/14x20x1-furnace-filters";
 const face20x30 = "/20x30x1-furnace-filters";
+const cabinetGuides = {
+  "16x20": "/16x20x4-furnace-filters",
+  "16x25": "/16x25x4-furnace-filters",
+  "20x20": "/20x20x4-furnace-filters",
+  "20x25": "/20x25x4-furnace-filters",
+};
 let cases = 0;
 
 const guidesSource = readFileSync("lib/guides.ts", "utf8");
@@ -23,7 +29,7 @@ const guidesCompiled = ts.transpileModule(guidesSource, {
 const guidesSandbox = { exports: {} };
 vm.runInNewContext(guidesCompiled.outputText, guidesSandbox, { timeout: 1000 });
 const { guides } = guidesSandbox.exports;
-for (const href of [face14, face20x30, "/12x24x1-furnace-filters", guide]) {
+for (const href of [face14, face20x30, "/12x24x1-furnace-filters", guide, ...Object.values(cabinetGuides)]) {
   assert.ok(guides.some((item) => item.href === href), `guides registry must include ${href}`);
 }
 
@@ -52,6 +58,13 @@ for (const face of faceSizes) {
         face.id === "20x30" && inches === 1,
         `${face.id}, depth ${inches}, MERV ${value}: incorrect 20×30 guide`,
       );
+      for (const [cabinetFace, cabinetHref] of Object.entries(cabinetGuides)) {
+        assert.equal(
+          result.related.includes(cabinetHref),
+          face.id === cabinetFace && inches === 4,
+          `${face.id}, depth ${inches}, MERV ${value}: incorrect ${cabinetHref}`,
+        );
+      }
       assert.equal(new Set(result.related).size, result.related.length,
         "Related guides must not contain duplicates");
       cases += 1;
@@ -78,6 +91,50 @@ const page = readFileSync(`app${guide}/page.tsx`, "utf8");
 assert.match(page, /all three actual dimensions/);
 assert.match(page, /not a compatibility range/);
 assert.doesNotMatch(page, /actual size near 15⅜–15⅞ × 24⅜–24⅞ × 3¾/);
+
+for (const nominal of ["16×20×4", "20×20×4", "20×25×4"]) {
+  const cabinetRow = sizeChart.find((item) => item.nominal === nominal);
+  assert.ok(cabinetRow, `size chart must include ${nominal}`);
+  assert.match(cabinetRow.typicalActual, /not a compatibility range/);
+  assert.match(cabinetRow.notes, /all three actual dimensions/);
+  assert.doesNotMatch(cabinetRow.typicalActual, /19⅜|15⅜/);
+}
+
+for (const [cabinetFace, cabinetHref] of Object.entries(cabinetGuides)) {
+  const cabinetPage = readFileSync(`app${cabinetHref}/page.tsx`, "utf8");
+  assert.match(cabinetPage, /manufacturer-specific/);
+  assert.match(cabinetPage, /data-sheet/);
+  assert.match(cabinetPage, /not a compatibility range/);
+  assert.doesNotMatch(cabinetPage, /therefore raises resistance unless/);
+  const shopAt = cabinetPage.indexOf("<AmazonShopExamples");
+  const brandsAt = cabinetPage.indexOf("Brand classes, not a leaderboard");
+  assert.ok(shopAt > 0 && brandsAt > shopAt, `${cabinetHref}: shop links must precede the brand essay`);
+  assert.equal(
+    cabinetPage.split("<AmazonShopExamples").length - 1,
+    1,
+    `${cabinetHref}: exactly one shop block`,
+  );
+  assert.match(cabinetPage, new RegExp(`face="${cabinetFace}x4"`));
+}
+
+const amazonSource = readFileSync("lib/amazon.ts", "utf8");
+const amazonCompiled = ts.transpileModule(amazonSource, {
+  compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
+});
+const amazonSandbox = { exports: {}, URLSearchParams };
+vm.runInNewContext(amazonCompiled.outputText, amazonSandbox, { timeout: 1000 });
+const picked = new URL(amazonSandbox.exports.amazonSearchUrl("16x25x1 merv 11 furnace filter", "ff-picker-16x25x1-merv11"));
+assert.equal(picked.searchParams.get("tag"), "laqaer-20");
+assert.equal(picked.searchParams.get("k"), "16x25x1 merv 11 furnace filter");
+assert.equal(picked.searchParams.get("ascsubtag"), "ff-picker-16x25x1-merv11");
+assert.equal(picked.hostname, "www.amazon.com");
+assert.equal(picked.pathname, "/s");
+
+const pickerSource = readFileSync("components/decision-tree.tsx", "utf8");
+assert.match(pickerSource, /amazonSearchUrl\(/);
+assert.match(pickerSource, /As an Amazon Associate I earn from qualifying purchases/);
+assert.match(pickerSource, /ascsubtag|ff-picker-/);
+
 console.log(`PASS: ${cases} selector cases and cabinet-sizing regression assertions`);
 
 // CI supplies only a loopback Next server. No retailer or production URL is fetched.
@@ -116,5 +173,8 @@ if (process.env.SMOKE_BASE_URL) {
   await assertSizeSmoke(guide, "16x25x4");
   await assertSizeSmoke(face14, "14x20x1");
   await assertSizeSmoke(face20x30, "20x30x1");
+  for (const [cabinetFace, cabinetHref] of Object.entries(cabinetGuides)) {
+    await assertSizeSmoke(cabinetHref, `${cabinetFace}x4`);
+  }
   console.log("PASS: local HTTP, canonical, sitemap, disclosure, and three affiliate searches");
 }

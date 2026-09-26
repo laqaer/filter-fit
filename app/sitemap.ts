@@ -8,7 +8,7 @@ const staticRoutes = ["/", "/about", "/privacy"] as const;
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date(site.updated);
+  const lastModified = new Date(site.contentUpdated);
 
   return [
     ...staticRoutes.map((path) => ({

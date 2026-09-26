@@ -100,6 +100,8 @@ export default function Size16x20Page() {
         </table>
       </div>
 
+      <AmazonShopExamples face="16x20x1" />
+
       <div className="prose-fit mt-10">
         <p>
           On this face, MERV 8 is still the low-resistance everyday pad — if you change it. MERV 11
@@ -125,7 +127,9 @@ export default function Size16x20Page() {
         <p>
           16×20 and 20×16 are the same cardboard rotated. Match the door so the pad seats flat and
           the arrow still faces the equipment. A 16×20×4 will not crush into a 1-inch door; a
-          1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. See{" "}
+          1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. If
+          the rack is already 4 inches, use the{" "}
+          <Link href="/16x20x4-furnace-filters">16×20×4 comparison</Link>. See also{" "}
           <Link href="/1-inch-vs-4-inch-merv-13">1-inch vs 4-inch MERV 13</Link>.
         </p>
 
@@ -185,7 +189,8 @@ export default function Size16x20Page() {
           The same 16×20 face is also sold as 16×20×4, which is the usual aftermarket media-cabinet
           upgrade on this opening. That is the reason this class exists. If your door says
           16×20×1, do not order a 4-inch pad and crush it. If you have a media cabinet, do not keep
-          stuffing 1-inch pads in the deep slot — use the depth you already paid for.
+          stuffing 1-inch pads in the deep slot — use the depth you already paid for, and start
+          with the <Link href="/16x20x4-furnace-filters">16×20×4 comparison</Link>.
         </p>
 
         <h2>Change interval: hours beat the calendar</h2>
@@ -217,7 +222,6 @@ export default function Size16x20Page() {
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>
-      <AmazonShopExamples face="16x20x1" />
       <RelatedGuides except="/16x20x1-furnace-filters" />
     </article>
   );
