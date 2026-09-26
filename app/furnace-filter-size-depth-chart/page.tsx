@@ -8,6 +8,13 @@ import { sizeChart } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd } from "@/lib/schema";
 
+const chartGuideHref: Record<string, string> = {
+  "16×20×4": "/16x20x4-furnace-filters",
+  "16×25×4": "/16x25x4-furnace-filters",
+  "20×20×4": "/20x20x4-furnace-filters",
+  "20×25×4": "/20x25x4-furnace-filters",
+};
+
 const title = "Furnace filter size and depth chart";
 const description =
   "Nominal vs actual furnace filter sizes and 1 / 2 / 4 / 5-inch slot depths. How to measure the rack before you order.";
@@ -66,7 +73,10 @@ export default function SizeChartPage() {
           mill. Always match the spec line on the SKU. If you live on 16×25, continue to the{" "}
           <Link href="/16x25x1-furnace-filters">16×25×1 MERV comparison</Link>. The 16×25×4 row
           is that face in a media cabinet —{" "}
-          <Link href="/16x25x4-furnace-filters">16×25×4 comparison</Link>. If the rack is
+          <Link href="/16x25x4-furnace-filters">16×25×4 comparison</Link>. The same rule covers{" "}
+          <Link href="/20x25x4-furnace-filters">20×25×4</Link>,{" "}
+          <Link href="/16x20x4-furnace-filters">16×20×4</Link>, and{" "}
+          <Link href="/20x20x4-furnace-filters">20×20×4</Link>. If the rack is
           20×25, use the <Link href="/20x25x1-furnace-filters">20×25×1 guide</Link>. If it is
           16×20 — often a furnace rack paired with a return-grille filter — use the{" "}
           <Link href="/16x20x1-furnace-filters">16×20×1 comparison</Link>. If it is 14×25 — a
@@ -102,15 +112,16 @@ export default function SizeChartPage() {
                 <td>{row.commonDepths}</td>
                 <td>
                   {row.notes}
-                  {row.nominal === "16×25×4" ? (
+                  {chartGuideHref[row.nominal] ? (
                     <>
                       {" "}
                       <Link
                         className="text-air underline underline-offset-3 hover:text-copper-dark"
-                        href="/16x25x4-furnace-filters"
+                        href={chartGuideHref[row.nominal]}
                       >
-                        16×25×4 comparison
-                      </Link>.
+                        {row.nominal} comparison
+                      </Link>
+                      .
                     </>
                   ) : null}
                 </td>

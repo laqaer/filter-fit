@@ -23,7 +23,10 @@ export function AmazonShopExamples({ face }: AmazonShopExamplesProps) {
           <li key={merv}>
             <a
               className="text-air underline underline-offset-3 hover:text-copper-dark"
-              href={amazonSearchUrl(`${face} merv ${merv} furnace filter`)}
+              href={amazonSearchUrl(
+                `${face} merv ${merv} furnace filter`,
+                `ff-${face}-merv${merv}`,
+              )}
               {...amazonLinkAttrs}
             >
               MERV {merv} {faceLabel} furnace filters

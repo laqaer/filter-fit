@@ -39,7 +39,7 @@ export default function Size16x25x4Page() {
       <div className="prose-fit mt-10">
         <p>
           <strong>16×25×4</strong> is a nominal size, not a single set of actual dimensions.
-          Width, height, and depth vary by manufacturer and product family. Depth examples span
+          Width, height, and depth are manufacturer-specific and vary by product family. Depth examples span
           roughly <strong>3⅝–4⅜ inches</strong>; that is not a compatibility range, and filters
           within it are not interchangeable. Match all three actual dimensions and the approved
           replacement part for your cabinet model before ordering. The{" "}
@@ -106,6 +106,8 @@ export default function Size16x25x4Page() {
           </tbody>
         </table>
       </div>
+
+      <AmazonShopExamples face="16x25x4" />
 
       <div className="prose-fit mt-10">
         <h2>Brand classes, not a leaderboard</h2>
@@ -186,7 +188,6 @@ export default function Size16x25x4Page() {
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>
-      <AmazonShopExamples face="16x25x4" />
       <RelatedGuides except="/16x25x4-furnace-filters" />
     </article>
   );

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { amazonLinkAttrs, amazonSearchUrl } from "@/lib/amazon";
 import {
   brandClasses,
   brandsForDepth,
@@ -121,6 +122,22 @@ export function DecisionTree() {
             {result.caution}
           </p>
         ) : null}
+
+        <a
+          className="mt-5 inline-flex min-h-11 items-center border border-copper bg-copper px-4 py-2 text-sm font-semibold text-white hover:bg-copper-dark"
+          href={amazonSearchUrl(
+            `${faceId}x${depth} merv ${merv} furnace filter`,
+            `ff-picker-${faceId}x${depth}-merv${merv}`,
+          )}
+          {...amazonLinkAttrs}
+        >
+          Shop MERV {merv} {face?.label ?? faceId}×{depth} filters on Amazon
+        </a>
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-ink-soft">
+          Affiliate link. As an Amazon Associate I earn from qualifying purchases, at no extra
+          cost to you. This opens an Amazon search for that nominal size, depth, and MERV. It is
+          not a test and not a ranking.
+        </p>
 
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
           {result.related.map((href) => {

@@ -87,6 +87,8 @@ export default function Size16x25Page() {
         </table>
       </div>
 
+      <AmazonShopExamples face="16x25x1" />
+
       <div className="prose-fit mt-10">
         <h2>Brand classes, not a leaderboard</h2>
         <p>
@@ -151,15 +153,15 @@ export default function Size16x25Page() {
           the pad. Stop staying 1-inch if you want MERV 13 as a lifestyle, if the current pad is
           always packed at 30 days, or if the installer already noted high static. Then the next
           page is{" "}
-          <Link href="/1-inch-vs-4-inch-merv-13">upgrading the cabinet</Link>, not a thicker
-          marketing claim on the same thin pad.
+          <Link href="/1-inch-vs-4-inch-merv-13">upgrading the cabinet</Link>, or the{" "}
+          <Link href="/16x25x4-furnace-filters">16×25×4 comparison</Link> if that cabinet is
+          already installed — not a thicker marketing claim on the same thin pad.
         </p>
         <p>
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>
-      <AmazonShopExamples face="16x25x1" />
       <RelatedGuides except="/16x25x1-furnace-filters" />
     </article>
   );

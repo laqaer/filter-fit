@@ -42,7 +42,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3100 > "$RUNNER_TEMP/filter-fit-next.log" 2>&1 &
+          # output: export cannot use `next start`. Serve the static export instead.
+          node scripts/serve-export.mjs > "$RUNNER_TEMP/filter-fit-static.log" 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           ready=0
@@ -54,7 +55,7 @@ jobs:
             sleep 1
           done
           if [ "$ready" -ne 1 ]; then
-            cat "$RUNNER_TEMP/filter-fit-next.log"
+            cat "$RUNNER_TEMP/filter-fit-static.log"
             exit 1
           fi
           SMOKE_BASE_URL=http://127.0.0.1:3100 node scripts/test-size-guide.mjs

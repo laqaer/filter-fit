@@ -9,7 +9,10 @@ export const site = {
   email: "hello@filterfitguide.com",
   publisher: "Laqaer Products",
   locale: "en_US",
+  /** Privacy-policy date. Do not bump this when only guides change. */
   updated: "2026-09-11",
+  /** Guide and sitemap stamp. Privacy policy text still uses `updated`. */
+  contentUpdated: "2026-09-26",
 } as const;
 
 export const affiliateDisclosure =
