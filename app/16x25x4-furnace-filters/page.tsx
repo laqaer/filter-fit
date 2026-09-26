@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,50 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "16×25×4 furnace filters and air filters: MERV 8 vs 11 vs 13";
 const description =
   "16x25x4 furnace filters and air filters are the same pad. MERV 8, 11, and 13 in a media cabinet — actual size, 4-inch vs 1-inch, and brand classes, no fake scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "Is a 16×25×4 furnace filter the same as an air filter?",
+    answer: [
+      "Yes. Furnace filter and air filter are two names for this nominal 16×25 media filter. The carton wording does not change the pad. Match the cabinet model and all three actual dimensions.",
+    ],
+  },
+  {
+    question: "Should a 4-inch 16×25 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the conservative pick in this cabinet: easy airflow and finer household dust. MERV 13 is how most homes should run that rating on this media-cabinet face — more media, lower velocity, slower loading — and ASHRAE 52.2 requires at least 50% efficiency in the 0.3–1.0 μm band. That is finer household dust, not a HEPA room filter, and a loaded MERV 13 is a different product than a clean one. A 4-inch label is not a promise that every SKU is gentle. Read the data-sheet initial resistance and the furnace or air-handler manual. Depth versus a 1-inch pad is the ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch guide" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 16×25×1 filter in a 16×25×4 rack?",
+    answer: [
+      "No. A 16×25×1 does not become the correct media-cabinet replacement because the face size matches. A loose pad can tip or allow air to bypass it. Use the cabinet-approved filter and depth, or a manufacturer-approved adapter; do not crush a thicker filter into a thinner slot. The slide-in slot is the ",
+      { href: "/16x25x1-furnace-filters", label: "16×25×1 comparison" },
+      ".",
+    ],
+  },
+  {
+    question: "What is the actual size of a nominal 16×25×4 filter?",
+    answer: [
+      "There is no single interchangeable actual size. Width, height, and depth are manufacturer-specific and vary by product family. Depth examples span roughly 3⅝–4⅜ inches; that is not a compatibility range, and filters within it are not interchangeable. Filterbuy lists its standard 16×25×4 at 15.5 × 24.5 × 3.63 inches. Some nominal 4-inch cabinet replacements are sold as 16×25×5 and measure 15.75 × 24.75 × 4.38 inches. A different nominal label can describe the required replacement; it does not authorize fitting an arbitrary 5-inch filter. 15⅜ is not the same pad as 15⅞. Match all three actual dimensions and the approved replacement part. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " is a starting point, not a substitute for the cabinet specifications.",
+    ],
+  },
+  {
+    question: "How often should I change a 16×25×4 filter?",
+    answer: [
+      "Change it by dust and runtime. Four inches of media loads slower than a 1-inch 16×25, so the interval stretches. It does not disappear. On this face, MERV 8 is often 30–90 days, MERV 11 is often 60–90 days, and MERV 13 is not set-and-forget. A printed “6 month” or “12 month” claim is a marketing interval. Pets, renovation dust, and a furnace that runs all winter still write the calendar.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +70,7 @@ export default function Size16x25x4Page() {
           path: "/16x25x4-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Media cabinet"
         title="16×25×4 furnace filters and air filters are the same pad"
@@ -187,6 +228,24 @@ export default function Size16x25x4Page() {
           Still unsure whether 13 is appropriate for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/16x25x4-furnace-filters" />
     </article>

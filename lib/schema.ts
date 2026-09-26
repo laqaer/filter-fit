@@ -45,6 +45,32 @@ export function articleJsonLd(input: {
   };
 }
 
+export type FaqPart = string | { href: string; label: string };
+
+export type FaqEntry = {
+  question: string;
+  answer: readonly FaqPart[];
+};
+
+function faqAnswerText(answer: readonly FaqPart[]) {
+  return answer.map((part) => (typeof part === "string" ? part : part.label)).join("");
+}
+
+export function faqPageJsonLd(faqs: readonly FaqEntry[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faqAnswerText(item.answer),
+      },
+    })),
+  };
+}
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
