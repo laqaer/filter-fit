@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -164,6 +165,21 @@ export default function SizeChartPage() {
           blower: <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
       </div>
+      <AmazonGuideExamples
+        note="These are Amazon searches for two common nominal sizes, 16×25×1 and 16×25×4, not a ranked list and not products we tested."
+        examples={[
+          {
+            label: "16×25×1 furnace filters",
+            keywords: "16x25x1 furnace filter",
+            subtag: "ff-guide-chart-16x25x1",
+          },
+          {
+            label: "16×25×4 furnace filters",
+            keywords: "16x25x4 furnace filter",
+            subtag: "ff-guide-chart-16x25x4",
+          },
+        ]}
+      />
       <RelatedGuides except="/furnace-filter-size-depth-chart" />
     </article>
   );
