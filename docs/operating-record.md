@@ -59,15 +59,23 @@ Inherited revenue and new revenue cannot be separated until Associates reporting
 - Cursor agent sessions are not a 24/7 worker. A daily timer in this agent conversation is a follow-up queue, not a deployed business runtime.
 - Stop the watch by disabling the GitHub Actions workflow. Stop the agent follow-up from the Cursor agent run.
 
-## Verification on 2026-09-26 before deploy
+## Verification on 2026-09-26
+
+Local, before merge:
 
 - `npm run lint`, `npm run typecheck`, and `node scripts/test-size-guide.mjs` passed (132 selector cases).
 - `npm run build` wrote the static export, including the three new routes.
 - `node scripts/serve-export.mjs` plus `SMOKE_BASE_URL=http://127.0.0.1:3100` passed the affiliate smoke (exactly three tagged searches per size page, canonicals, sitemap, disclosure).
-- The same server passed `WATCH_BASE_URL=http://127.0.0.1:3100 node scripts/production-watch.mjs`.
 - Exported homepage HTML contains the default picker link `tag=laqaer-20` and `ascsubtag=ff-picker-16x25x1-merv11`.
-- This is local static verification. Production `filterfitguide.com` does not have these pages until Vercel deploys `main`.
+
+Production, after merge of PR #15 (`2e9e041`) and Vercel deployment `dpl_DxJ3eFWx5ipSPsSkCvWhriDkQqzk` (state READY):
+
+- `node scripts/production-watch.mjs` against `https://filterfitguide.com` passed: homepage, three existing money pages, and the three new cabinet pages returned 200 with the disclosure, `tag=laqaer-20`, and the MERV 11 search.
+- Homepage HTML on the custom domain contains `ascsubtag=ff-picker-16x25x1-merv11`.
+- A datacenter HEAD request to the Amazon search URL returned 503. That is not evidence the link is broken for a browser. It was not retried as a purchase.
+
+The daily GitHub Action has not fired yet. Configured is not the same as an unattended run.
 
 ## Next action
 
-After this change is on `main` and Vercel has deployed it, run `node scripts/production-watch.mjs` against production. Then wait for the scheduled workflow. Do not buy traffic.
+Wait for the 13:17 UTC production-watch run and for Search Console or Associates evidence. Do not buy traffic. Do not add more sizes until FF-EXP-001’s 14-day indexation window says something.
