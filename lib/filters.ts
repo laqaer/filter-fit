@@ -232,7 +232,9 @@ export function recommend(
                 ? ["/12x24x1-furnace-filters"]
                 : faceId === "14x20"
                   ? ["/14x20x1-furnace-filters"]
-                  : [];
+                  : faceId === "20x30"
+                    ? ["/20x30x1-furnace-filters"]
+                    : [];
   const cabinetGuide =
     faceId === "16x25" && depth === 4 ? ["/16x25x4-furnace-filters"] : [];
 

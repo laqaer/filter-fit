@@ -13,6 +13,7 @@ vm.runInNewContext(compiled.outputText, sandbox, { timeout: 1000 });
 const { faceSizes, depths, mervOptions, recommend, sizeChart } = sandbox.exports;
 const guide = "/16x25x4-furnace-filters";
 const face14 = "/14x20x1-furnace-filters";
+const face20x30 = "/20x30x1-furnace-filters";
 let cases = 0;
 
 const guidesSource = readFileSync("lib/guides.ts", "utf8");
@@ -22,7 +23,7 @@ const guidesCompiled = ts.transpileModule(guidesSource, {
 const guidesSandbox = { exports: {} };
 vm.runInNewContext(guidesCompiled.outputText, guidesSandbox, { timeout: 1000 });
 const { guides } = guidesSandbox.exports;
-for (const href of [face14, "/12x24x1-furnace-filters", guide]) {
+for (const href of [face14, face20x30, "/12x24x1-furnace-filters", guide]) {
   assert.ok(guides.some((item) => item.href === href), `guides registry must include ${href}`);
 }
 
@@ -46,6 +47,11 @@ for (const face of faceSizes) {
         face.id === "14x20" && inches === 1,
         `${face.id}, depth ${inches}, MERV ${value}: incorrect 14×20 guide`,
       );
+      assert.equal(
+        result.related.includes(face20x30),
+        face.id === "20x30" && inches === 1,
+        `${face.id}, depth ${inches}, MERV ${value}: incorrect 20×30 guide`,
+      );
       assert.equal(new Set(result.related).size, result.related.length,
         "Related guides must not contain duplicates");
       cases += 1;
@@ -58,6 +64,10 @@ const face14Page = readFileSync(`app${face14}/page.tsx`, "utf8");
 assert.doesNotMatch(face14Page, /therefore raises resistance unless/);
 assert.match(face14Page, /manufacturer-specific/);
 assert.match(face14Page, /data sheet/);
+const face20x30Page = readFileSync(`app${face20x30}/page.tsx`, "utf8");
+assert.doesNotMatch(face20x30Page, /therefore raises resistance unless/);
+assert.match(face20x30Page, /manufacturer-specific/);
+assert.match(face20x30Page, /data sheet/);
 
 const row = sizeChart.find((item) => item.nominal === "16×25×4");
 assert.ok(row, "The shared size chart must include the media-cabinet row");
@@ -105,5 +115,6 @@ if (process.env.SMOKE_BASE_URL) {
 
   await assertSizeSmoke(guide, "16x25x4");
   await assertSizeSmoke(face14, "14x20x1");
+  await assertSizeSmoke(face20x30, "20x30x1");
   console.log("PASS: local HTTP, canonical, sitemap, disclosure, and three affiliate searches");
 }
