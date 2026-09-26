@@ -128,7 +128,8 @@ export default function Size20x30Page() {
           will not enter the slot. The five-inch gap versus{" "}
           <Link href="/20x25x1-furnace-filters">20×25×1</Link> is the usual mix-up — hardware-store
           walls stock the shorter rectangle first, and a 20×25 leaves an open end in a 20×30 rack.
-          A 24×30 is four inches too wide. Confirm the long side, not the SKU that was on sale.
+          A <Link href="/24x30x1-furnace-filters">24×30×1</Link> is four inches too wide. Confirm
+          the long side, not the SKU that was on sale.
         </p>
         <p>
           20×30 and 30×20 are the same cardboard rotated. Match the door so the pad seats flat and

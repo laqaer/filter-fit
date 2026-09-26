@@ -90,7 +90,9 @@ export default function SizeChartPage() {
           smaller return and some older air handlers — use the{" "}
           <Link href="/14x20x1-furnace-filters">14×20×1 comparison</Link>. If it is 20×30 — a
           long return where cheap 1-inch frames sag — use the{" "}
-          <Link href="/20x30x1-furnace-filters">20×30×1 comparison</Link>.
+          <Link href="/20x30x1-furnace-filters">20×30×1 comparison</Link>. If it is
+          24×30 — a large return grille — use the{" "}
+          <Link href="/24x30x1-furnace-filters">24×30×1 comparison</Link>.
         </p>
       </div>
 

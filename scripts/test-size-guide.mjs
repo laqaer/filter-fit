@@ -14,6 +14,7 @@ const { faceSizes, depths, mervOptions, recommend, sizeChart } = sandbox.exports
 const guide = "/16x25x4-furnace-filters";
 const face14 = "/14x20x1-furnace-filters";
 const face20x30 = "/20x30x1-furnace-filters";
+const face24x30 = "/24x30x1-furnace-filters";
 const cabinetGuides = {
   "16x20": "/16x20x4-furnace-filters",
   "16x25": "/16x25x4-furnace-filters",
@@ -29,7 +30,7 @@ const guidesCompiled = ts.transpileModule(guidesSource, {
 const guidesSandbox = { exports: {} };
 vm.runInNewContext(guidesCompiled.outputText, guidesSandbox, { timeout: 1000 });
 const { guides } = guidesSandbox.exports;
-for (const href of [face14, face20x30, "/12x24x1-furnace-filters", guide, ...Object.values(cabinetGuides)]) {
+for (const href of [face14, face20x30, face24x30, "/12x24x1-furnace-filters", guide, ...Object.values(cabinetGuides)]) {
   assert.ok(guides.some((item) => item.href === href), `guides registry must include ${href}`);
 }
 
@@ -58,6 +59,11 @@ for (const face of faceSizes) {
         face.id === "20x30" && inches === 1,
         `${face.id}, depth ${inches}, MERV ${value}: incorrect 20×30 guide`,
       );
+      assert.equal(
+        result.related.includes(face24x30),
+        face.id === "24x30" && inches === 1,
+        `${face.id}, depth ${inches}, MERV ${value}: incorrect 24×30 guide`,
+      );
       for (const [cabinetFace, cabinetHref] of Object.entries(cabinetGuides)) {
         assert.equal(
           result.related.includes(cabinetHref),
@@ -81,6 +87,20 @@ const face20x30Page = readFileSync(`app${face20x30}/page.tsx`, "utf8");
 assert.doesNotMatch(face20x30Page, /therefore raises resistance unless/);
 assert.match(face20x30Page, /manufacturer-specific/);
 assert.match(face20x30Page, /data sheet/);
+const face24x30Page = readFileSync(`app${face24x30}/page.tsx`, "utf8");
+assert.doesNotMatch(face24x30Page, /therefore raises resistance unless/);
+assert.match(face24x30Page, /manufacturer-specific/);
+assert.match(face24x30Page, /data sheet/);
+assert.match(face24x30Page, /23½ × 29½ × ¾/);
+assert.doesNotMatch(face24x30Page, /23½[–-]|29½[–-]|¾[–-]/);
+assert.doesNotMatch(face24x30Page, /amazon\.com|B0[A-Z0-9]{8}/);
+assert.match(face24x30Page, /face="24x30x1"/);
+assert.equal(face24x30Page.split("<AmazonShopExamples").length - 1, 1);
+const shopAt24 = face24x30Page.indexOf("<AmazonShopExamples");
+const brandsAt24 = face24x30Page.indexOf("Brand classes, not a leaderboard");
+assert.ok(shopAt24 > 0 && brandsAt24 > shopAt24, "24×30 shop links must precede the brand essay");
+const chartPage = readFileSync("app/furnace-filter-size-depth-chart/page.tsx", "utf8");
+assert.match(chartPage, /href="\/24x30x1-furnace-filters"/);
 
 const row = sizeChart.find((item) => item.nominal === "16×25×4");
 assert.ok(row, "The shared size chart must include the media-cabinet row");
@@ -215,6 +235,7 @@ if (process.env.SMOKE_BASE_URL) {
   await assertSizeSmoke(guide, "16x25x4");
   await assertSizeSmoke(face14, "14x20x1");
   await assertSizeSmoke(face20x30, "20x30x1");
+  await assertSizeSmoke(face24x30, "24x30x1");
   for (const [cabinetFace, cabinetHref] of Object.entries(cabinetGuides)) {
     await assertSizeSmoke(cabinetHref, `${cabinetFace}x4`);
   }
