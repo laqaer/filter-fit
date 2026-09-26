@@ -42,12 +42,10 @@ export default function Size20x25x4Page() {
         <p>
           <strong>20×25×4</strong> is a nominal size, not a single set of actual dimensions.
           Cartons may say furnace filter or air filter; it is the same pad. Width, height, and
-          depth are manufacturer-specific and vary by product family. A common carryover from
-          1-inch racks is to expect about <strong>19⅜–19⅞ × 24⅜–24⅞ × 3¾</strong>. That figure
-          is not a compatibility range, and filters inside it are not interchangeable. Depth
-          examples on this nominal span roughly <strong>3⅝–4⅜ inches</strong>. Match all three
-          actual dimensions and the approved replacement part for your cabinet model before
-          ordering. The{" "}
+          depth are manufacturer-specific and vary by product family. Depth examples span
+          roughly <strong>3⅝–4⅜ inches</strong>; that is not a compatibility range, and filters
+          within it are not interchangeable. Match all three actual dimensions and the approved
+          replacement part for your cabinet model before ordering. The{" "}
           <Link href="/furnace-filter-size-depth-chart">size and depth chart</Link> is a starting
           point, not a substitute for the cabinet specifications. For a 1-inch slide-in, use the{" "}
           <Link href="/20x25x1-furnace-filters">20×25×1 comparison</Link>. A 16×25×4 will not
