@@ -43,8 +43,8 @@ Set before the pages in this change were treated as a result.
 
 | Item | Amount | Evidence |
 | --- | --- | --- |
-| Cash collected | $0 observed | No Associates or other payment mail in the connected mailbox. |
-| Earned revenue | Unknown, not verified | Tag is live in HTML. Clicks and shipments are not visible here. |
+| Cash collected | $0 observed | No Associates payment mail as of 2026-09-26 14:22 UTC. Rechecked the connected mailbox for filterfitguide.com Search Console mail and Amazon Associates payment or performance mail newer than 2 days: none. |
+| Earned revenue | Unknown, not verified | Tag is live in HTML. Clicks and shipments are not visible here. The 14:22 UTC recheck did not add a report. |
 | Expenses paid | $0 new | No new vendor was purchased. Vercel hobby plan was already active. Team invoices were not readable (403). |
 | Costs incurred, not billed | Not visible | Hobby plan can still generate overages this token cannot see. |
 | Customer liabilities | None | No subscriptions, no prepaid FilterFit orders. |
@@ -55,8 +55,8 @@ Inherited revenue and new revenue cannot be separated until Associates reporting
 ## Unattended operation
 
 - Configured: `.github/workflows/production-watch.yml` runs `scripts/production-watch.mjs` daily at 13:17 UTC and on manual dispatch. It only requests `filterfitguide.com`.
-- Not true yet: a passing unattended run. The first scheduled run is the evidence. A workflow file is not a completed run.
-- Cursor agent sessions are not a 24/7 worker. A daily timer in this agent conversation is a follow-up queue, not a deployed business runtime.
+- Unattended-tested: GitHub Actions run `36245087685` fired from `schedule` at 2026-09-26 13:25 UTC (cron delay from 13:17) on `main` and succeeded in 9s. The log line is `PASS: production watch https://filterfitguide.com (7 pages)`. No secrets and no paid API. The job is read-only, so a retry cannot double-charge or double-message.
+- The daily agent timer `filterfit-daily-ops` is a follow-up queue in the Cursor conversation. It is not itself a deployed worker. This 14:22 UTC pass is that timer reading the Actions result.
 - Stop the watch by disabling the GitHub Actions workflow. Stop the agent follow-up from the Cursor agent run.
 
 ## Verification on 2026-09-26
@@ -74,8 +74,15 @@ Production, after merge of PR #15 (`2e9e041`) and Vercel deployment `dpl_DxJ3eFW
 - Homepage HTML on the custom domain contains `ascsubtag=ff-picker-16x25x1-merv11`.
 - A datacenter HEAD request to the Amazon search URL returned 503. That is not evidence the link is broken for a browser. It was not retried as a purchase.
 
-The daily GitHub Action has not fired yet. Configured is not the same as an unattended run.
+The first scheduled production-watch run has now succeeded. See Unattended operation.
+
+## Daily check 2026-09-26 14:22 UTC
+
+- Production watch run `36245087685` passed. No site change in this check.
+- Mailbox search found no new Search Console or Associates mail. FF-EXP-001 still has no indexation mail and no commission evidence. Indexation window runs through 2026-10-10. Commission window runs through 2026-11-10. No new size pages in this check.
+- `main` at the start of this check was `2513955` (later content commits from other work). This check did not alter those pages.
+- Spend this check: $0.
 
 ## Next action
 
-Wait for the 13:17 UTC production-watch run and for Search Console or Associates evidence. Do not buy traffic. Do not add more sizes until FF-EXP-001’s 14-day indexation window says something.
+Read the 2026-09-27 13:17 UTC production-watch run. Keep spend at $0. Do not add sizes until FF-EXP-001 shows an indexation or commission signal.
