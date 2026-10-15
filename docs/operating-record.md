@@ -43,14 +43,14 @@ Set before the pages in this change were treated as a result.
 
 | Item | Amount | Evidence |
 | --- | --- | --- |
-| Cash collected | $0 observed | No Associates payment mail as of 2026-09-26 14:22 UTC. Rechecked the connected mailbox for filterfitguide.com Search Console mail and Amazon Associates payment or performance mail newer than 2 days: none. |
-| Earned revenue | Unknown, not verified | Tag is live in HTML. Clicks and shipments are not visible here. The 14:22 UTC recheck did not add a report. |
+| Cash collected | $0 observed | 2026-10-15: the Associates report for `laqaer-20` had no rows for the last 30 days. No Associates payment mail as of 2026-09-26 14:22 UTC. Rechecked the connected mailbox for filterfitguide.com Search Console mail and Amazon Associates payment or performance mail newer than 2 days: none. |
+| Earned revenue | $0 recorded for the 30 days to 2026-10-15 | The owner read the Associates report for `laqaer-20` on 2026-10-15: no rows, so 0 recorded clicks and 0 orders. The tag is shared with other sites, so this is also a 0 for FilterFit alone. |
 | Expenses paid | $0 new | No new vendor was purchased. Vercel hobby plan was already active. Team invoices were not readable (403). |
 | Costs incurred, not billed | Not visible | Hobby plan can still generate overages this token cannot see. |
 | Customer liabilities | None | No subscriptions, no prepaid FilterFit orders. |
 | Net operating profit | Unverified. Do not read $0 revenue as proof of $0 profit or of a loss. | |
 
-Inherited revenue and new revenue cannot be separated until Associates reporting exists.
+Inherited revenue and new revenue cannot be separated until Associates reporting shows rows. On 2026-10-15 there were none to separate.
 
 ## Unattended operation
 
@@ -83,6 +83,14 @@ The first scheduled production-watch run has now succeeded. See Unattended opera
 - `main` at the start of this check was `2513955` (later content commits from other work). This check did not alter those pages.
 - Spend this check: $0.
 
+## Associates check 2026-10-15
+
+- The owner opened Amazon Associates reporting for tag `laqaer-20` on 2026-10-15. The report showed no rows for the last 30 days.
+- Recorded result: 0 clicks and 0 ordered items through `laqaer-20` from about 2026-09-15 to 2026-10-15. This covers every site that uses the tag, so FilterFit's share is also 0.
+- This is day 19 of the 45-day commission window (FF-EXP-001 started 2026-09-26). The window still runs through 2026-11-10.
+- Indexation is not recorded here. The 14-day indexation window ended 2026-10-10; record its result separately before the stop-or-pivot call.
+- No site change in this check. Spend this check: $0.
+
 ## Next action
 
-Read the 2026-09-27 13:17 UTC production-watch run. Keep spend at $0. Do not add sizes until FF-EXP-001 shows an indexation or commission signal.
+On or before 2026-11-10, make the FF-EXP-001 stop-or-pivot decision. Inputs: this 0-click record, a fresh Associates read, and the indexation status of the three 4-inch cabinet URLs. If both are still empty, stop adding sizes and change the offer or the page that earns the click. Keep spend at $0.
