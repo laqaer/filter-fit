@@ -1,6 +1,6 @@
 # FilterFit operating record
 
-Updated: 2026-09-26. This file is the handoff. It is not a claim that the business is profitable.
+Updated: 2026-10-15. This file is the handoff. It is not a claim that the business is profitable.
 
 ## Mission and offer
 
@@ -91,6 +91,31 @@ The first scheduled production-watch run has now succeeded. See Unattended opera
 - Indexation is not recorded here. The 14-day indexation window ended 2026-10-10; record its result separately before the stop-or-pivot call.
 - No site change in this check. Spend this check: $0.
 
+## Discovery check 2026-10-15
+
+**Finding: no technical indexing blocker was demonstrated. Google index status, impressions, search clicks and human visits remain unknown because authenticated evidence was unavailable. Unknown is not zero or “not indexed.”**
+
+The production audit requested pages at 23:06–23:07 UTC (16:06–16:07 PDT). Source was `a7e71639c2318c27b1bbe1a90f8ed16b6b425266`, the merged PR #29 revision. Vercel reported production deployment `dpl_6DjWDfvFQuaUg93abN5QFaW1Pme5` READY for that SHA; the live HTML referenced the same deployment.
+
+| FF-EXP-001 guide | Live technical checks | Public search appearance | Google index status / impressions / search clicks / human visits |
+| --- | --- | --- | --- |
+| [20×25×4](https://filterfitguide.com/20x25x4-furnace-filters) | 200; self-canonical; index/follow; sitemap; direct homepage link | Found in the audit's public search results | All unknown; authenticated reports unavailable |
+| [16×20×4](https://filterfitguide.com/16x20x4-furnace-filters) | 200; self-canonical; index/follow; sitemap; direct homepage link | Found in the audit's public search results | All unknown; authenticated reports unavailable |
+| [20×20×4](https://filterfitguide.com/20x20x4-furnace-filters) | 200; self-canonical; index/follow; sitemap; direct homepage link | Found in the audit's public search results | All unknown; authenticated reports unavailable |
+
+- All 22 sitemap URLs returned 200 with matching canonicals. `robots.txt` allows crawling and advertises the production sitemap. The three guides have no observed `X-Robots-Tag` restriction and contain their content in the initial HTML.
+- Each target is linked from all 21 other sitemap pages, including shared navigation; this count is not a measure of editorial authority. Contextual links also exist from the size/depth chart, depth comparison and corresponding 1-inch guide. Each guide has exactly three correctly sized MERV 8/11/13 Amazon search links with `tag=laqaer-20`, subtag parameters and disclosure. No retailer links were followed during the audit.
+- Trailing-slash target URLs return 308 to the non-slash canonical and then 200. The `www` homepage returns 307 to the apex; HTTP returns 308 to HTTPS. The earlier “Page with redirect” notice does not establish a problem with these canonical pages.
+- Public search returned all three guides, but the search tool does not establish Google's current URL Inspection verdict, ranking, impressions or customer traffic. Another search provider returned no matches. These are discovery observations, not exhaustive index inventories.
+- Search Console opened to its public sign-in landing page. The connected mailbox is different from the historical Search Console recipient recorded above; an empty mail search in that mailbox is not evidence that Google sent no notices. The Vercel observability schema request returned 404 and yielded no traffic measurements. No visitor analytics integration was identified in the inspected source/HTML. No new tracking service was added.
+- Today's existing scheduled [production watch](https://github.com/laqaer/filter-fit/actions/runs/38743470225) passed all seven commercial-page checks at 13:31 UTC using source `f2c079cb1028823ed61251f5bcc79ed5ae21b8ae`. That is availability/link validation, not indexation or customer evidence.
+
+**Recommendation:** obtain the three URL Inspection results and exact-page Search Performance reports before changing the offer. Zero recorded Associates clicks without a traffic denominator cannot distinguish insufficient exposure from weak click-through. Day 19 leaves 26 days until the existing 2026-11-10 commercial decision; elapsed time alone is not evidence that more waiting will work. The 2026-10-10 indexation checkpoint remains unverified, not failed. This check made no site-code changes and authorized no spend or content expansion.
+
+Detailed evidence, collection procedure and the conditional stop/pivot decision are in [the discovery review](ff-exp-001-discovery-2026-10-15.md), with a [production observation snapshot](evidence/ff-exp-001-discovery-2026-10-15.json). The original experiment decision rule and deadline are unchanged.
+
 ## Next action
 
-On or before 2026-11-10, make the FF-EXP-001 stop-or-pivot decision. Inputs: this 0-click record, a fresh Associates read, and the indexation status of the three 4-inch cabinet URLs. If both are still empty, stop adding sizes and change the offer or the page that earns the click. Keep spend at $0.
+1. Obtain authenticated Search Console evidence for the three exact canonical URLs: indexed verdict, Google-selected canonical, last crawl, sitemap status, and impressions/clicks/CTR/position since 2026-09-26 through the latest complete reporting date. Preserve the report's dates and filters. Search clicks are not unique visitors. Record missing access as unknown.
+2. Keep new discretionary spend at **$0**, hold further size-page expansion, and retain the existing production watch. Make only a scoped repair if evidence demonstrates a technical problem. If traffic is established but affiliate clicks remain absent, prioritize one existing page's fit-selection and shopping path over additional sizes.
+3. On **2026-11-10**, combine a fresh Associates read with Google evidence. If affiliate activity remains absent **and Google confirms the new URLs are not indexed**, apply the established stop/pivot rule: stop adding sizes and change the offer or the page that earns the click. If indexed but unseen, address search demand/visibility; if visited but not earning affiliate clicks, investigate the offer/CTA and attribution. If reports are still inaccessible, record “commercially unvalidated; measurement incomplete,” keep expansion stopped, and do not substitute missing access for a failed-indexing result or automatically extend the experiment.

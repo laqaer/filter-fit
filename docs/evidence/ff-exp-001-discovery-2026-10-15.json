@@ -1,0 +1,353 @@
+{
+  "experiment": "FF-EXP-001",
+  "source_sha": "a7e71639c2318c27b1bbe1a90f8ed16b6b425266",
+  "production_deployment": "dpl_6DjWDfvFQuaUg93abN5QFaW1Pme5",
+  "user_agent": "FilterFitDiscoveryAudit/1.0",
+  "google_url_inspection": "not_accessible",
+  "google_impressions": null,
+  "google_clicks": null,
+  "human_visitors": null,
+  "robots": {
+    "requested_url": "https://filterfitguide.com/robots.txt",
+    "observed_at_utc": "2026-10-15T23:06:35.596318+00:00",
+    "status": 200,
+    "final_url": "https://filterfitguide.com/robots.txt",
+    "redirects": [],
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "server": "Vercel",
+      "x-vercel-id": "cle1::kxc8v-1792105598808-42ee0b5c88f1"
+    },
+    "sha256": "dac43e85e9b6e07dd211a354afb47468d9db0044b735b12372b20badab7ef298",
+    "body": "User-Agent: *\nAllow: /\n\nHost: filterfitguide.com\nSitemap: https://filterfitguide.com/sitemap.xml\n"
+  },
+  "sitemap": {
+    "requested_url": "https://filterfitguide.com/sitemap.xml",
+    "observed_at_utc": "2026-10-15T23:06:35.597129+00:00",
+    "status": 200,
+    "sha256": "892e640efdd855e8c30671d905927f68c2dadf7f5579c092d16fee64919c2ee3",
+    "urls": [
+      "https://filterfitguide.com",
+      "https://filterfitguide.com/about",
+      "https://filterfitguide.com/privacy",
+      "https://filterfitguide.com/merv-11-vs-13-1-inch",
+      "https://filterfitguide.com/16x25x1-furnace-filters",
+      "https://filterfitguide.com/20x25x1-furnace-filters",
+      "https://filterfitguide.com/16x20x1-furnace-filters",
+      "https://filterfitguide.com/16x20x4-furnace-filters",
+      "https://filterfitguide.com/14x25x1-furnace-filters",
+      "https://filterfitguide.com/20x20x1-furnace-filters",
+      "https://filterfitguide.com/20x20x4-furnace-filters",
+      "https://filterfitguide.com/14x20x1-furnace-filters",
+      "https://filterfitguide.com/20x30x1-furnace-filters",
+      "https://filterfitguide.com/20x30x4-furnace-filters",
+      "https://filterfitguide.com/12x24x1-furnace-filters",
+      "https://filterfitguide.com/24x24x1-furnace-filters",
+      "https://filterfitguide.com/24x30x1-furnace-filters",
+      "https://filterfitguide.com/16x25x4-furnace-filters",
+      "https://filterfitguide.com/20x25x4-furnace-filters",
+      "https://filterfitguide.com/1-inch-vs-4-inch-merv-13",
+      "https://filterfitguide.com/merv-13-safe-for-furnace",
+      "https://filterfitguide.com/furnace-filter-size-depth-chart"
+    ],
+    "all_22_urls_returned_200": true,
+    "all_canonicals_match": true
+  },
+  "targets": [
+    {
+      "requested_url": "https://filterfitguide.com/20x25x4-furnace-filters",
+      "observed_at_utc": "2026-10-15T23:06:51.003367+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/20x25x4-furnace-filters",
+      "redirects": [],
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Vercel",
+        "x-vercel-id": "cle1::vdhp2-1792105613702-1663dc0efcf8"
+      },
+      "sha256": "3a8a2c1dfcbc2c558d196a1cc467591a625035a94b40ad69bf4aa3174367f393",
+      "canonicals": [
+        "https://filterfitguide.com/20x25x4-furnace-filters"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "title": "20×25×4 furnace filters and air filters: MERV 8 vs 11 vs 13 · FilterFit",
+      "h1": "20×25×4 furnace filters and air filters are the same pad",
+      "disclosure": true,
+      "sitemap_entries": 1,
+      "homepage_links": true,
+      "inbound_source_count": 21,
+      "inbound_count_includes_shared_navigation": true,
+      "affiliate_links": [
+        {
+          "href": "https://www.amazon.com/s?k=20x25x4+merv+8+furnace+filter&tag=laqaer-20&ascsubtag=ff-20x25x4-merv8",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "20x25x4 merv 8 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-20x25x4-merv8"
+            ]
+          }
+        },
+        {
+          "href": "https://www.amazon.com/s?k=20x25x4+merv+11+furnace+filter&tag=laqaer-20&ascsubtag=ff-20x25x4-merv11",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "20x25x4 merv 11 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-20x25x4-merv11"
+            ]
+          }
+        },
+        {
+          "href": "https://www.amazon.com/s?k=20x25x4+merv+13+furnace+filter&tag=laqaer-20&ascsubtag=ff-20x25x4-merv13",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "20x25x4 merv 13 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-20x25x4-merv13"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "requested_url": "https://filterfitguide.com/16x20x4-furnace-filters",
+      "observed_at_utc": "2026-10-15T23:06:42.472143+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/16x20x4-furnace-filters",
+      "redirects": [],
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Vercel",
+        "x-vercel-id": "cle1::8rj8k-1792105605153-6a7cd8d88912"
+      },
+      "sha256": "18ed06a32dba7ab58a3d068da3c03b68319086f15bd4168ed61857d78dc7b213",
+      "canonicals": [
+        "https://filterfitguide.com/16x20x4-furnace-filters"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "title": "16×20×4 furnace filters and air filters: MERV 8 vs 11 vs 13 · FilterFit",
+      "h1": "16×20×4 furnace filters and air filters are the same pad",
+      "disclosure": true,
+      "sitemap_entries": 1,
+      "homepage_links": true,
+      "inbound_source_count": 21,
+      "inbound_count_includes_shared_navigation": true,
+      "affiliate_links": [
+        {
+          "href": "https://www.amazon.com/s?k=16x20x4+merv+8+furnace+filter&tag=laqaer-20&ascsubtag=ff-16x20x4-merv8",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "16x20x4 merv 8 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-16x20x4-merv8"
+            ]
+          }
+        },
+        {
+          "href": "https://www.amazon.com/s?k=16x20x4+merv+11+furnace+filter&tag=laqaer-20&ascsubtag=ff-16x20x4-merv11",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "16x20x4 merv 11 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-16x20x4-merv11"
+            ]
+          }
+        },
+        {
+          "href": "https://www.amazon.com/s?k=16x20x4+merv+13+furnace+filter&tag=laqaer-20&ascsubtag=ff-16x20x4-merv13",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "16x20x4 merv 13 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-16x20x4-merv13"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "requested_url": "https://filterfitguide.com/20x20x4-furnace-filters",
+      "observed_at_utc": "2026-10-15T23:06:45.295463+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/20x20x4-furnace-filters",
+      "redirects": [],
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Vercel",
+        "x-vercel-id": "cle1::fpjmq-1792105607981-bfa31d4db035"
+      },
+      "sha256": "a73c5c9b5c8ed2917e3ed359db47a0ac78cad1823392c3927458f75d2a956adc",
+      "canonicals": [
+        "https://filterfitguide.com/20x20x4-furnace-filters"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "title": "20×20×4 furnace filters: MERV 8 vs 11 vs 13 · FilterFit",
+      "h1": "20×20×4 furnace filters, compared without trusting one depth",
+      "disclosure": true,
+      "sitemap_entries": 1,
+      "homepage_links": true,
+      "inbound_source_count": 21,
+      "inbound_count_includes_shared_navigation": true,
+      "affiliate_links": [
+        {
+          "href": "https://www.amazon.com/s?k=20x20x4+merv+8+furnace+filter&tag=laqaer-20&ascsubtag=ff-20x20x4-merv8",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "20x20x4 merv 8 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-20x20x4-merv8"
+            ]
+          }
+        },
+        {
+          "href": "https://www.amazon.com/s?k=20x20x4+merv+11+furnace+filter&tag=laqaer-20&ascsubtag=ff-20x20x4-merv11",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "20x20x4 merv 11 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-20x20x4-merv11"
+            ]
+          }
+        },
+        {
+          "href": "https://www.amazon.com/s?k=20x20x4+merv+13+furnace+filter&tag=laqaer-20&ascsubtag=ff-20x20x4-merv13",
+          "rel": "nofollow sponsored noopener noreferrer",
+          "params": {
+            "k": [
+              "20x20x4 merv 13 furnace filter"
+            ],
+            "tag": [
+              "laqaer-20"
+            ],
+            "ascsubtag": [
+              "ff-20x20x4-merv13"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "redirect_variants": [
+    {
+      "requested_url": "https://www.filterfitguide.com/",
+      "observed_at_utc": "2026-10-15T23:06:56.719541+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/",
+      "redirects": [
+        {
+          "url": "https://www.filterfitguide.com/",
+          "status": 307,
+          "location": "https://filterfitguide.com/"
+        }
+      ]
+    },
+    {
+      "requested_url": "http://filterfitguide.com/",
+      "observed_at_utc": "2026-10-15T23:06:56.720038+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/",
+      "redirects": [
+        {
+          "url": "http://filterfitguide.com/",
+          "status": 308,
+          "location": "https://filterfitguide.com/"
+        }
+      ]
+    },
+    {
+      "requested_url": "https://filterfitguide.com/20x25x4-furnace-filters/",
+      "observed_at_utc": "2026-10-15T23:06:56.720740+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/20x25x4-furnace-filters",
+      "redirects": [
+        {
+          "url": "https://filterfitguide.com/20x25x4-furnace-filters/",
+          "status": 308,
+          "location": "/20x25x4-furnace-filters"
+        }
+      ]
+    },
+    {
+      "requested_url": "https://filterfitguide.com/16x20x4-furnace-filters/",
+      "observed_at_utc": "2026-10-15T23:07:00.789975+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/16x20x4-furnace-filters",
+      "redirects": [
+        {
+          "url": "https://filterfitguide.com/16x20x4-furnace-filters/",
+          "status": 308,
+          "location": "/16x20x4-furnace-filters"
+        }
+      ]
+    },
+    {
+      "requested_url": "https://filterfitguide.com/20x20x4-furnace-filters/",
+      "observed_at_utc": "2026-10-15T23:07:00.827837+00:00",
+      "status": 200,
+      "final_url": "https://filterfitguide.com/20x20x4-furnace-filters",
+      "redirects": [
+        {
+          "url": "https://filterfitguide.com/20x20x4-furnace-filters/",
+          "status": 308,
+          "location": "/20x20x4-furnace-filters"
+        }
+      ]
+    }
+  ]
+}
