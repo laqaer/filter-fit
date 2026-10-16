@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,56 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "16×20×1 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 16x20x1 furnace filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 16×20×1 filter?",
+    answer: [
+      "Usually about 15½ × 19½ × ¾ inches. 16×20×1 is a nominal. If a “16×20” pad is truly 16.00 by 20.00, it will buckle or refuse the door. Measure the opening, then confirm the actual dimensions on the carton. 15½ × 19½ is not close enough to a leftover 16×25. 16×20 is not 16×25, not 14×20, and not 20×20. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " lists the other faces.",
+    ],
+  },
+  {
+    question: "Should a 1-inch 16×20 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the usual 1-inch step when the return is healthy. A 16×20 opening is about a fifth less face than a 16×25, and far less than a 20×25, so the same system CFM raises face velocity. That makes this rack a poorer place to step up to MERV 13 than a larger 1-inch slot. MERV 13 is the tightest common 1-inch combo, and it is less plausible here: same thin pack, less cardboard. ASHRAE 52.2 MERV 13 requires at least 50% efficiency in the 0.3–1.0 μm band. That is finer household dust, not a HEPA room filter. A dirty MERV 11 can out-restrict a clean MERV 13. The argument is ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13 in 1-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 16×20×4 filter in a 16×20×1 rack?",
+    answer: [
+      "No. A 16×20×4 will not crush into a 1-inch door, and a 1-inch pad standing in a 4-inch cabinet wastes the media you already paid for. 16×20 and 20×16 are the same cardboard rotated — match the door so the pad seats flat. If the rack is already 4 inches, use the ",
+      { href: "/16x20x4-furnace-filters", label: "16×20×4 comparison" },
+      ". Depth versus a thin pad is the ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch guide" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 16×20×1 filter?",
+    answer: [
+      "Change it by dust and runtime. The smaller face does not give you extra days, and this slot often shares the airstream with a grille filter. On this face, MERV 8 is often 30–90 days, MERV 11 is closer to 30–60 days with pets, and MERV 13 only if you will pull it on a short interval and the equipment still moves design CFM. A printed “90-day” or “six-month” claim is a marketing interval. A black 16×20×1 is a blower restriction no matter what MERV it started as. If two pads are in the airstream, change both.",
+    ],
+  },
+  {
+    question: "Does a 16×20×1 at the furnace replace a return-grille filter?",
+    answer: [
+      "No. Many 16×20×1 cabinets sit at the furnace while a second pad lives in a return grille — often a different face, such as a ",
+      { href: "/20x25x1-furnace-filters", label: "20×25×1" },
+      " or a ",
+      { href: "/16x25x1-furnace-filters", label: "16×25×1" },
+      ". They are two SKUs. Changing only the easy grille and leaving the furnace pad felted is how a clean house still short-cycles. The arrow on both pads points at the equipment, not at the living room. A backwards filter still fits. It loads faster and can dump dust into the blower.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +76,7 @@ export default function Size16x20Page() {
           path: "/16x20x1-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="16×20 face"
         title="16×20×1 furnace filters, compared without fake scores"
@@ -222,6 +269,24 @@ export default function Size16x20Page() {
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/16x20x1-furnace-filters" />
     </article>
