@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,60 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "16×25×1 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 16x25x1 furnace filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 16×25×1 filter?",
+    answer: [
+      "Usually about 15½ × 24½ × ¾ inches. 16×25×1 is a nominal. If a “16×25” pad is truly 16.00 by 25.00, it will buckle or refuse the door. Measure the opening, then confirm the actual dimensions on the carton. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " lists other faces the same way. A 20×25 rack, a 16×20 rack, and a 14×25 upflow closet are different openings — see the ",
+      { href: "/20x25x1-furnace-filters", label: "20×25×1" },
+      ", ",
+      { href: "/16x20x1-furnace-filters", label: "16×20×1" },
+      ", and ",
+      { href: "/14x25x1-furnace-filters", label: "14×25×1" },
+      " comparisons.",
+    ],
+  },
+  {
+    question: "Should a 1-inch 16×25 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the usual everyday target on this hardware-store face: better on 1–3 μm household dust, and the default step most 1-inch systems tolerate when the return is healthy. The face area is fixed, so raising MERV on a 1-inch 16×25 raises resistance unless you also add depth. MERV 13 is the highest common 1-inch resistance. It can be fine on a variable-speed air handler with a large return, and it can choke a PSC furnace with a small 1-inch slot. ASHRAE 52.2 MERV 13 requires at least 50% efficiency in the 0.3–1.0 μm band. That is finer household dust, not a HEPA room filter. A loaded MERV 13 is a different product than a clean one. The argument is ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13 in 1-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 16×25×4 filter in a 16×25×1 door?",
+    answer: [
+      "No. If the door says 16×25×1, do not order a 4-inch pad and crush it. If you already have a media cabinet, do not keep stuffing 1-inch pads in the deep slot — use the depth you already paid for. Stay 1-inch when the cabinet is 1-inch and MERV 8 or 11 meets the house. Stop staying 1-inch if you want MERV 13 as a lifestyle, if the pad is always packed at 30 days, or if the installer already noted high static. The cabinet page is the ",
+      { href: "/16x25x4-furnace-filters", label: "16×25×4 comparison" },
+      ", and depth versus a thin pad is the ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch guide" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 16×25×1 filter?",
+    answer: [
+      "Change it by dust and runtime. This is the size most people buy, and a 1-inch pack loads faster than the 4-inch version of the same face. On this slot, MERV 8 is often 30–90 days, MERV 11 is closer to 30–60 days with pets, and MERV 13 is not set-and-forget. A printed “90-day” claim is a marketing interval. A black 1-inch MERV 8 is already a blower restriction. A floppy 16×25×1 that bows in the rack leaks around the sides, which defeats the MERV you paid for even if you change it on time.",
+    ],
+  },
+  {
+    question: "Which way does the arrow on a 16×25×1 point?",
+    answer: [
+      "Toward the furnace, not the room. A backwards filter still fits. It loads faster and can dump dust into the blower. Retail boxes on this face often print an MPR number instead of MERV. Treat MPR 1000 as the everyday MERV 11-class pad, not a lab conversion. Still unsure whether MERV 13 is appropriate for the blower? Use ",
+      { href: "/merv-13-safe-for-furnace", label: "Is MERV 13 safe for your furnace?" },
+      ".",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +80,7 @@ export default function Size16x25Page() {
           path: "/16x25x1-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Common size"
         title="16×25×1 furnace filters, compared without fake scores"
@@ -161,6 +212,24 @@ export default function Size16x25Page() {
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/16x25x1-furnace-filters" />
     </article>
