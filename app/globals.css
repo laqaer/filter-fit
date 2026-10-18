@@ -138,3 +138,130 @@ body {
 .table-scroll tr:last-child td {
   border-bottom: 0;
 }
+
+/* Hero airflow. The stage size is reserved up front so the graphic cannot shift layout. */
+.ff-stage {
+  width: min(100%, 20rem);
+  aspect-ratio: 4 / 3;
+  margin-inline: auto;
+  pointer-events: none;
+}
+
+.ff-flow,
+.ff-mote {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.ff-flow {
+  stroke: var(--color-air);
+  stroke-width: 3;
+  stroke-dasharray: 16 12;
+  animation: ff-flow 1.8s linear infinite;
+}
+
+.ff-flow-b {
+  animation-delay: -0.6s;
+  stroke-width: 2.4;
+}
+
+.ff-flow-c {
+  animation-delay: -1.2s;
+  stroke-width: 2;
+  opacity: 0.8;
+}
+
+.ff-flow-clean {
+  stroke-dasharray: 26 12;
+  stroke-width: 2.5;
+  opacity: 1;
+}
+
+.ff-mote {
+  stroke: var(--color-copper-dark);
+  stroke-width: 5;
+  stroke-dasharray: 0.01 26;
+  animation: ff-flow 1.5s linear infinite;
+}
+
+.ff-mote-b {
+  animation-duration: 1.9s;
+  animation-delay: -0.9s;
+  stroke-width: 3.5;
+  opacity: 0.75;
+}
+
+@keyframes ff-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -72;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.motion-card {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.motion-card:hover,
+.motion-card:focus-within {
+  border-color: var(--color-copper);
+  background-color: #fff4ea;
+  box-shadow: 0 10px 22px -12px rgba(139, 58, 18, 0.55);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition:
+      color 160ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: ff-reveal linear both;
+      animation-duration: auto;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes ff-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ff-flow,
+  .ff-mote,
+  .reveal,
+  .motion-card,
+  a,
+  button {
+    animation: none;
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
