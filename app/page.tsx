@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionTree } from "@/components/decision-tree";
+import { FilterAirflow } from "@/components/filter-airflow";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
 
@@ -13,18 +14,21 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <section className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper-dark">
-          Independent filter directory
-        </p>
-        <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-          Pick a furnace filter by size, slot depth, then MERV
-        </h1>
-        <p className="mt-5 text-lg leading-8 text-ink-soft">
-          FilterFit is a comparison hub for homeowners who want MERV 11 or 13 without turning the
-          return into a plugged straw. Nominal size tells you the face. Depth tells you how much
-          media you actually have. MERV is last — not first.
-        </p>
+      <section className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper-dark">
+            Independent filter directory
+          </p>
+          <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
+            Pick a furnace filter by size, slot depth, then MERV
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-ink-soft">
+            FilterFit is a comparison hub for homeowners who want MERV 11 or 13 without turning the
+            return into a plugged straw. Nominal size tells you the face. Depth tells you how much
+            media you actually have. MERV is last — not first.
+          </p>
+        </div>
+        <FilterAirflow />
       </section>
 
       <section id="picker" className="mt-10 scroll-mt-8">
@@ -32,7 +36,7 @@ export default function HomePage() {
       </section>
 
       <section className="mt-16 grid gap-6 md:grid-cols-3">
-        <article className="border border-rule bg-card p-5">
+        <article className="motion-card reveal border border-rule bg-card p-5">
           <h2 className="font-serif text-2xl text-ink">MERV is not a safety rating</h2>
           <p className="mt-3 text-sm leading-6 text-ink-soft">
             ASHRAE 52.2 MERV describes particle-size efficiency. It does not say your blower can
@@ -43,7 +47,7 @@ export default function HomePage() {
             .
           </p>
         </article>
-        <article className="border border-rule bg-card p-5">
+        <article className="motion-card reveal border border-rule bg-card p-5">
           <h2 className="font-serif text-2xl text-ink">Depth beats a printed MERV</h2>
           <p className="mt-3 text-sm leading-6 text-ink-soft">
             Four inches of MERV 13 usually flows more like a thin MERV 8–11 than like a 1-inch MERV
@@ -54,7 +58,7 @@ export default function HomePage() {
             .
           </p>
         </article>
-        <article className="border border-rule bg-card p-5">
+        <article className="motion-card reveal border border-rule bg-card p-5">
           <h2 className="font-serif text-2xl text-ink">Measure the rack</h2>
           <p className="mt-3 text-sm leading-6 text-ink-soft">
             A “16×25×1” is a nominal. The cardboard is usually closer to 15½ × 24½ × ¾. Use the{" "}
@@ -81,7 +85,7 @@ export default function HomePage() {
         </p>
         <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {guides.map((guide) => (
-            <li key={guide.href} className="border border-rule bg-card p-5">
+            <li key={guide.href} className="motion-card reveal border border-rule bg-card p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-copper-dark">
                 {guide.kicker}
               </p>

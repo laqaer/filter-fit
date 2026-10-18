@@ -13,7 +13,7 @@ export function RelatedGuides({ except }: RelatedGuidesProps) {
       <h2 className="font-serif text-2xl text-ink">Related FilterFit guides</h2>
       <ul className="mt-4 grid gap-4 md:grid-cols-2">
         {items.map((guide) => (
-          <li key={guide.href} className="border border-rule bg-card p-4">
+          <li key={guide.href} className="motion-card border border-rule bg-card p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-copper-dark">
               {guide.kicker}
             </p>
