@@ -1,0 +1,43 @@
+{
+  "url": "http://127.0.0.1:4321/",
+  "clicks": [
+    {
+      "name": "MERV 13",
+      "pressed": true
+    }
+  ],
+  "headline": "16×25×1: 1-inch MERV 13 is the tightest common combo",
+  "h1": "Pick a furnace filter by size, slot depth, then MERV",
+  "resultLinks": [
+    {
+      "name": "Shop MERV 13 16×25×1 filters on Amazon",
+      "href": "https://www.amazon.com/s?k=16x25x1+merv+13+furnace+filter&tag=laqaer-20&ascsubtag=ff-picker-16x25x1-merv13"
+    },
+    {
+      "name": "MERV 11 vs 13 in a 1-inch slot",
+      "href": "/merv-11-vs-13-1-inch"
+    },
+    {
+      "name": "Is MERV 13 safe for your furnace?",
+      "href": "/merv-13-safe-for-furnace"
+    },
+    {
+      "name": "1-inch vs 4-inch MERV 13",
+      "href": "/1-inch-vs-4-inch-merv-13"
+    },
+    {
+      "name": "16×25×1 furnace filters",
+      "href": "/16x25x1-furnace-filters"
+    }
+  ],
+  "followed": {
+    "name": "Is MERV 13 safe for your furnace?",
+    "href": "/merv-13-safe-for-furnace",
+    "status": 200,
+    "title": "Is MERV 13 safe for your furnace? · FilterFit",
+    "h1": "When MERV 13 is fine — and when it chokes the blower"
+  },
+  "screenshot": "/workspace/.cursor/skills/verify-filter-fit/evidence/decision-hub/picker.png",
+  "capturedAt": "2026-10-21T06:24:49.742Z",
+  "feature": "decision-hub"
+}

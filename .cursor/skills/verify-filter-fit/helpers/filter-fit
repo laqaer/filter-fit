@@ -498,10 +498,16 @@ function parseRest(argv) {
   return { positional, opts };
 }
 
+function quoteArg(arg) {
+  if (arg !== "" && /^[A-Za-z0-9_./:@%=+-]+$/.test(arg)) return arg;
+  return `'${String(arg).replace(/'/g, `'\\''`)}'`;
+}
+
 function appendProof(dir, feature, extra) {
   if (!feature) return;
   fs.mkdirSync(dir, { recursive: true });
-  const block = [`feature: ${feature}`, `command: filter-fit ${process.argv.slice(2).join(" ")}`, `at: ${new Date().toISOString()}`, extra, ""].filter(Boolean).join("\n") + "\n";
+  const command = ["filter-fit", ...process.argv.slice(2).map(quoteArg)].join(" ");
+  const block = [`feature: ${feature}`, `command: ${command}`, `at: ${new Date().toISOString()}`, extra, ""].filter(Boolean).join("\n") + "\n";
   fs.appendFileSync(path.join(dir, "PROOF.txt"), block);
 }
 

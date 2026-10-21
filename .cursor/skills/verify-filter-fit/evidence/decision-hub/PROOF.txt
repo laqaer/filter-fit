@@ -1,0 +1,12 @@
+feature: decision-hub
+command: filter-fit click --name 'MERV 13' --expect '16×25×1: 1-inch MERV 13 is the tightest common combo' --follow-name 'Is MERV 13 safe for your furnace?' --expect 'When MERV 13 is fine — and when it chokes the blower' --dir .cursor/skills/verify-filter-fit/evidence/decision-hub --screenshot .cursor/skills/verify-filter-fit/evidence/decision-hub/picker.png --feature decision-hub
+at: 2026-10-21T06:24:49.742Z
+headline: 16×25×1: 1-inch MERV 13 is the tightest common combo
+feature: decision-hub
+command: filter-fit follow --from / --name 'Thin media' --expect 'MERV 11 vs 13 when the rack is only an inch deep' --dir .cursor/skills/verify-filter-fit/evidence/decision-hub --action thin-media.txt --feature decision-hub
+at: 2026-10-21T06:24:49.955Z
+followed Thin media -> /merv-11-vs-13-1-inch
+feature: decision-hub
+command: filter-fit snapshot / --dir .cursor/skills/verify-filter-fit/evidence/decision-hub --as home --screenshot --feature decision-hub
+at: 2026-10-21T06:25:10.113Z
+snapshot /
