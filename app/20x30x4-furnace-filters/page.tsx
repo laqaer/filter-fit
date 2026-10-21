@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,12 +8,49 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 const title = "20×30×4 furnace filters and air filters: MERV 8 vs 11 vs 13";
 const description =
   "20x30x4 furnace filters and air filters are the same pad. MERV 8, 11, and 13 in a media cabinet — actual size, 4-inch vs 1-inch, and brand classes, no fake scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 20×30×4 filter?",
+    answer: [
+      "There is no single interchangeable actual size. Furnace filter and air filter are two names for this pad. Width, height, and depth are manufacturer-specific and vary by product family. Depth examples span roughly 3⅝–4⅜ inches. That is not a compatibility range, and filters within it are not interchangeable. Filterbuy lists its standard 20×30×4 at 19.5 × 29.5 × 3.63 inches. That is one product family’s cut. A different depth under the same nominal label can be the required replacement. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " is a starting point, not a substitute for the cabinet specifications.",
+    ],
+  },
+  {
+    question: "Should a 4-inch 20×30 cabinet use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the conservative pick in this cabinet: easy airflow and finer household dust. MERV 13 is how most homes should run that rating here, with more media, lower velocity, and slower loading. The face is a fifth more area than a 20×25 before depth even enters, and the extra depth is extra media, so the same MERV usually runs at lower velocity than a 1-inch 20×30. ASHRAE 52.2 requires at least 50% efficiency in the 0.3–1.0 μm band. That is finer household dust, not a HEPA room filter. It is not a promise that every 4-inch SKU is gentle. A frame that bows along the 30-inch span lets air around the media no matter which MERV is printed on the carton. Read the data-sheet initial resistance and the furnace or air-handler manual.",
+    ],
+  },
+  {
+    question: "Can I put a 1-inch filter in a 20×30×4 rack?",
+    answer: [
+      "No. A 20×30×1 does not become the correct media-cabinet replacement because the face size matches. A loose pad can tip or let air bypass it. Use the cabinet-approved filter and depth, or a manufacturer-approved adapter. Do not crush a thicker filter into a thinner slot. The slide-in slot is the ",
+      { href: "/20x30x1-furnace-filters", label: "20×30×1 comparison" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 20×30×4 filter?",
+    answer: [
+      "Change it by dust and runtime. Four inches of media loads slower than a 1-inch 20×30, so the interval stretches. It does not disappear. On this face, MERV 8 is often 30–90 days depending on dust and runtime, MERV 11 is often 60–90 days in 4-inch, and MERV 13 is not set-and-forget. A printed “6 month” or “12 month” claim is a marketing interval. On this span the middle can load while the ends still look gray. Judge the center of the pad, not the clean corners.",
+    ],
+  },
+  {
+    question: "Can I use a 20×25×4 in a 20×30×4 cabinet?",
+    answer: [
+      "No. A 20×25×4 is five nominal inches short on the long side and leaves an open end in this cabinet. A 20×20×4 is a square and will not fill the 30-inch side. A 16×25×4 will not cover a 20-by-30 opening. A 24×30×1 is four inches too wide and is the wrong depth. If the only box on the hook is a 20×25×4, do not make it fit.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -32,6 +70,7 @@ export default function Size20x30x4Page() {
           dateModified: site.contentUpdated,
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Media cabinet"
         title="20×30×4 furnace filters and air filters are the same pad"
@@ -198,6 +237,24 @@ export default function Size20x30x4Page() {
           Still unsure whether 13 is appropriate for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/20x30x4-furnace-filters" />
     </article>
