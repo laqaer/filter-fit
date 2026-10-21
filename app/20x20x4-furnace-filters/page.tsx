@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,12 +8,49 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 const title = "20×20×4 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 20x20x4 furnace filters at MERV 8, 11, and 13. Actual depth is not one number. Brand classes, no fake scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 20×20×4 filter?",
+    answer: [
+      "There is no single interchangeable actual size. Filterbuy’s product spec on its 20×20×4 page lists 19.50 × 19.50 × 3.63 inches. The same page also says actual dimensions typically measure 19.5 × 19.5 × 3.75 inches. Those are not the same depth. A nominal 4-inch label is not a compatibility range. Match all three actual dimensions and the cabinet-approved replacement.",
+    ],
+  },
+  {
+    question: "Should a 4-inch 20×20 cabinet use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the conservative pick in this cabinet: easy airflow and finer household dust. MERV 13 is how most homes should run that rating here, with more media, lower velocity, and slower loading. ASHRAE 52.2 requires at least 50% efficiency in the 0.3–1.0 μm band. That is finer household dust, not a HEPA room filter, and a loaded MERV 13 is a different product than a clean one. Extra depth is extra media, which is the reason to run a finer MERV here. Read the data-sheet initial resistance and the equipment manual. Depth versus a 1-inch pad is the ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch guide" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 1-inch filter in a 20×20×4 rack?",
+    answer: [
+      "No. A 4-inch pad will not crush into a 1-inch grille, and a 1-inch pad standing in a 4-inch cabinet wastes the media area. Rotating the square does not fix the depth. 20×20 turned is still 20×20. Many ceiling grilles cannot take a media cabinet without a different rack. The door, not the square face, decides. The slide-in slot is the ",
+      { href: "/20x20x1-furnace-filters", label: "20×20×1 comparison" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 20×20×4 filter?",
+    answer: [
+      "Change it by dust and runtime. Four inches loads slower than a 1-inch 20×20. It does not make the filter invisible. On this face, MERV 8 is often 30–90 days depending on dust and runtime, MERV 11 is often 60–90 days in 4-inch, and MERV 13 is not set-and-forget. A printed “6 month” or “12 month” claim is a marketing interval.",
+    ],
+  },
+  {
+    question: "Can I use a 20×25×4 in a 20×20×4 cabinet?",
+    answer: [
+      "No. A 20×25×4 is five nominal inches taller and will not “almost” seat. A floppy square leaks on all four sides, so confirm the actual cut, including the depth, before a multi-pack. 3.63 inches and 3.75 inches are both being described as this nominal, and they are not the same pad.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -32,6 +70,7 @@ export default function Size20x20x4Page() {
           dateModified: site.contentUpdated,
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Media cabinet"
         title="20×20×4 furnace filters, compared without trusting one depth"
@@ -165,6 +204,24 @@ export default function Size20x20x4Page() {
           set-and-forget. If the blower’s limit is the open question, use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/20x20x4-furnace-filters" />
     </article>

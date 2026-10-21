@@ -30,7 +30,7 @@ Preconditions:
 
 ## Gotchas
 
-- Not every size page emits `FAQPage`. Require it for `/16x25x1-furnace-filters`, `/16x20x1-furnace-filters`, `/20x25x1-furnace-filters`, `/16x25x4-furnace-filters`, `/16x20x4-furnace-filters`, and `/20x25x4-furnace-filters`. Do not fail the others for its absence.
+- Not every size page emits `FAQPage`. Require it for `/16x25x1-furnace-filters`, `/16x20x1-furnace-filters`, `/20x25x1-furnace-filters`, `/14x25x1-furnace-filters`, `/20x20x1-furnace-filters`, `/16x25x4-furnace-filters`, `/16x20x4-furnace-filters`, `/20x25x4-furnace-filters`, `/20x20x4-furnace-filters`, and `/20x30x4-furnace-filters`. Do not fail the others for its absence.
 - `16×24` is selectable in the picker and has no size guide. Do not add a route to make a journey pass.
 - `/12x24x1-furnace-filters` is a real guide. The README route table does not list it. Drive the app, not that table.
 - Shop-example anchors use `rel="nofollow sponsored noopener noreferrer"` and `tag=laqaer-20`. Seeing them in the HTML is the side effect to record. Requesting them is out of bounds.
