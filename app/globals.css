@@ -37,9 +37,11 @@
 }
 
 html {
+  --ff-header-offset: 11rem;
   background: var(--color-paper);
   color: var(--color-ink);
   scrollbar-color: #1e4d3a #e4dfd2;
+  scroll-padding-top: var(--ff-header-offset);
 }
 
 body {
@@ -218,7 +220,6 @@ body {
 }
 
 .ff-band {
-  scroll-margin-top: 5.5rem;
   background: #e7e2d4;
   border-block: 1px solid var(--color-rule);
   padding-block: 2.75rem 3.1rem;
