@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,54 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "20×30×1 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 20x30x1 furnace filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 20×30×1 filter?",
+    answer: [
+      "Usually about 19½ × 29½ × ¾ inches. 20×30×1 is a nominal, not a 20.00 by 30.00 pad. If the cardboard is truly 20.00 by 30.00, it will buckle or refuse the door. Measure the opening, then confirm the actual dimensions on the carton. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " lists this face as a larger return. 20×30 is not 20×25, not 24×30, and not 20×20.",
+    ],
+  },
+  {
+    question: "Should a 1-inch 20×30 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the usual 1-inch step most houses can take when the return is healthy. MERV 13 is more plausible here than in a small 16×25 slot because of the extra face, and it is still the tightest common 1-inch combo. A nominal 20×30 opening is 600 square inches, a fifth more face than a 20×25 and half again a 16×25. The square inches are not a 4-inch pack. A dirty MERV 11 can out-restrict a clean MERV 13, and a 30-inch frame sags sooner once it loads. The argument is ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13 in 1-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 20×30×4 filter in a 20×30×1 rack?",
+    answer: [
+      "No. A 20×30×4 will not crush into a 1-inch grille, and a 1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. The size chart flags this face as commonly 1-inch or 4-inch. If the rack is already 4 inches, use the ",
+      { href: "/20x30x4-furnace-filters", label: "20×30×4 comparison" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 20×30×1 filter?",
+    answer: [
+      "Change it by dust and runtime. Extra face area does not buy extra months when runtime, pets, or renovation dust load a 1-inch pack. On this span the middle can felt while the ends still look gray. On this face, MERV 8 is often 30–90 days, MERV 11 is closer to 30–60 days with pets, and MERV 13 only if you will pull it on a short interval and the equipment still moves design CFM. A printed “90-day” or “six-month” claim is a marketing interval. A black 20×30×1 is a blower restriction no matter what MERV it started as.",
+    ],
+  },
+  {
+    question: "Will a 20×25×1 fit a 20×30×1 slot?",
+    answer: [
+      "No. The five-inch gap versus ",
+      { href: "/20x25x1-furnace-filters", label: "20×25×1" },
+      " is the usual mix-up. Hardware-store walls stock the shorter rectangle first, and a 20×25 leaves an open end in a 20×30 rack. A ",
+      { href: "/24x30x1-furnace-filters", label: "24×30×1" },
+      " is four inches too wide. 20×30 is not 20×25, not 24×30, and not 20×20. A filter that “almost” fits either leaks or will not enter the slot. 20×30 and 30×20 are the same cardboard rotated. The airflow arrow points at the equipment, not at the room.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +74,7 @@ export default function Size20x30Page() {
           path: "/20x30x1-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="20×30 face"
         title="20×30×1 furnace filters, compared without fake scores"
@@ -231,6 +276,24 @@ export default function Size20x30Page() {
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/20x30x1-furnace-filters" />
     </article>

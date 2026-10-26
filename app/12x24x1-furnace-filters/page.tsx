@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,52 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "12×24×1 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 12x24x1 furnace filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 12×24×1 filter?",
+    answer: [
+      "Usually about 11½ × 23½ × ¾ inches. 12×24×1 is a nominal, not a 12.00 by 24.00 pad. If the cardboard is truly 12.00 by 24.00, it will buckle or refuse the door. Measure the opening, then confirm the actual dimensions on the carton. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " lists this face as less common. 11½ × 23½ is not “close enough” to a leftover 16×25.",
+    ],
+  },
+  {
+    question: "Should a 1-inch 12×24 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the usual 1-inch step most houses can take when the return is healthy. MERV 13 is the tightest common 1-inch combo, and it is less plausible here than in a 16×25 or 20×25 slot. Same thin pack, less cardboard, often a compact return. A 12×24 opening is a bit more than a quarter less face area than a 16×25 or a 20×20. A 12×24×1 slot is a poor place to “just step up to MERV 13.” A dirty MERV 11 can out-restrict a clean MERV 13. The argument is ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13 in 1-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 4-inch filter in a 12×24×1 slot?",
+    answer: [
+      "No. A 12×24×4 will not crush into a 1-inch door, and a 1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. The size chart lists this face as commonly 1-inch only. If a technician already installed a deep rack, use the depth you already paid for. See ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch MERV 13" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 12×24×1 filter?",
+    answer: [
+      "Change it by dust and runtime. The smaller face does not give you extra days. The size is uncommon and the slot is often in a closet or at a grille, so it is easy to forget. On this face, MERV 8 is often 30–90 days, MERV 11 is closer to 30–60 days with pets, and MERV 13 only if you will pull it on a short interval and the equipment still moves design CFM. A printed “90-day” or “six-month” claim is a marketing interval. A black 12×24×1 is a blower restriction no matter what MERV it started as.",
+    ],
+  },
+  {
+    question: "Will a 16×25×1 fit a 12×24×1 slot?",
+    answer: [
+      "No. If the only reason you are looking at 12×24 is that ",
+      { href: "/16x25x1-furnace-filters", label: "16×25×1" },
+      " was out of stock, stop. A 4-inch width gap will not “squeeze in.” The long side is also close to a 16×25, which is how the wrong pad gets bought. 12×24 is not 16×24, not 12×20, and not 16×20. A pad that almost fits either leaks around the frame or collapses when you force the door. 12×24 and 24×12 are the same cardboard rotated. The airflow arrow points at the equipment, not at the grille.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +72,7 @@ export default function Size12x24Page() {
           path: "/12x24x1-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="12×24 face"
         title="12×24×1 furnace filters, compared without fake scores"
@@ -237,6 +280,24 @@ export default function Size12x24Page() {
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/12x24x1-furnace-filters" />
     </article>

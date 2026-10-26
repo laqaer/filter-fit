@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,56 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "24×24×1 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 24x24x1 furnace filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 24×24×1 filter?",
+    answer: [
+      "Usually about 23½ × 23½ × ¾ inches. 24×24×1 is a nominal, not a 24.00 by 24.00 pad. If the cardboard is truly 24.00 by 24.00, it will buckle or refuse the door. Measure the opening, then confirm the actual dimensions on the carton. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " lists this face as a less-common square return. 24×24 is not 20×20, not 20×25, and not 24×30.",
+    ],
+  },
+  {
+    question: "Should a 1-inch 24×24 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the usual 1-inch step most houses can take when the return is healthy. MERV 13 is more plausible here than in a 20×20 slot because of the extra face, and it is still the tightest common 1-inch combo. A nominal 24×24 opening is 576 square inches, more face than a 20×20. The square inches are not a 4-inch pack. A dirty MERV 11 can out-restrict a clean MERV 13, and a 24-inch frame can sag on both sides once it loads. The argument is ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13 in 1-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a thicker filter in a 24×24×1 grille?",
+    answer: [
+      "No. A thicker pad will not crush into a 1-inch grille, and a 1-inch pad standing in a deep cabinet wastes the media area you already paid for. The size chart lists this face as commonly 1-inch only. A ceiling grille often cannot take a media cabinet without a remodel. If a technician already installed a deep rack, use the depth you already paid for. See ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch MERV 13" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 24×24×1 filter?",
+    answer: [
+      "Change it by dust and runtime. Extra face area does not buy extra months when runtime, pets, or renovation dust load a 1-inch pack. On this span the middle can felt while the corners still look gray. On this face, MERV 8 is often 30–90 days, MERV 11 is closer to 30–60 days with pets, and MERV 13 only if you will pull it on a short interval and the equipment still moves design CFM. A printed “90-day” or “six-month” claim is a marketing interval. A black 24×24×1 is a blower restriction no matter what MERV it started as.",
+    ],
+  },
+  {
+    question: "Will a 20×20×1 fit a 24×24×1 slot?",
+    answer: [
+      "No. The four-inch gap versus ",
+      { href: "/20x20x1-furnace-filters", label: "20×20×1" },
+      " is the usual square mix-up. Same shape, wrong face, and a 20×20 leaves an open border in a 24×24 grille. ",
+      { href: "/20x25x1-furnace-filters", label: "20×25×1" },
+      " is what the hardware-store wall stocks first. It is four inches narrow and one inch long. ",
+      { href: "/24x30x1-furnace-filters", label: "24×30×1" },
+      " is six inches too long on one side. It is a rectangle, not a rotated 24×24. 24×24 rotated is still 24×24. A backwards square still fits. The airflow arrow points at the equipment, not at the room.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +76,7 @@ export default function Size24x24Page() {
           path: "/24x24x1-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="24×24 face"
         title="24×24×1 furnace filters, compared without fake scores"
@@ -240,6 +287,24 @@ export default function Size24x24Page() {
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/24x24x1-furnace-filters" />
     </article>
