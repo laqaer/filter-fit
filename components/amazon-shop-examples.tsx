@@ -50,7 +50,6 @@ type AmazonGuideExamplesProps = {
   examples: readonly AmazonGuideExample[];
 };
 
-/** Compact search block for guide pages. Same disclosure and link attrs as size pages. */
 export function AmazonGuideExamples({ note, examples }: AmazonGuideExamplesProps) {
   return (
     <section className="ff-shop mt-10 border border-rule bg-card p-5">
