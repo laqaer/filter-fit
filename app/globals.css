@@ -1,8 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Source Sans 3 Fallback";
+  src: local("Arial");
+  ascent-override: 109.21%;
+  descent-override: 42.66%;
+  line-gap-override: 0%;
+  size-adjust: 93.76%;
+}
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Times New Roman");
+  ascent-override: 84.71%;
+  descent-override: 22.09%;
+  line-gap-override: 0%;
+  size-adjust: 115.45%;
+}
+
 @theme {
-  --font-sans: var(--font-source), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), Fraunces, ui-serif, Georgia, serif;
+  --font-sans: var(--font-source), "Source Sans 3 Fallback", "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), "Fraunces Fallback", Fraunces, ui-serif, Georgia, serif;
   --color-paper: #f3f1ea;
   --color-paper-deep: #e4dfd2;
   --color-card: #fbfaf6;

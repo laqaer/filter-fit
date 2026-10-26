@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
@@ -9,18 +9,25 @@ import { websiteJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const source = Source_Sans_3({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const source = localFont({
+  src: [
+    { path: "./fonts/source-sans-3-latin.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/source-sans-3-latin.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/source-sans-3-latin.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-source",
   display: "swap",
+  adjustFontFallback: false,
 });
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["500", "600"],
+const fraunces = localFont({
+  src: [
+    { path: "./fonts/fraunces-latin.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/fraunces-latin.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-fraunces",
   display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
