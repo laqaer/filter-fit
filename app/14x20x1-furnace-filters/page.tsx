@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonShopExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,54 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "14×20×1 furnace filter and 14×20×1 air filter: MERV 8 vs 11 vs 13";
 const description =
   "Compare 14x20x1 furnace filters and 14x20x1 air filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "What is the actual size of a nominal 14×20×1 filter?",
+    answer: [
+      "Usually about 13½ × 19½ × ¾ inches. 14×20×1 is a nominal, not a 14.00 by 20.00 pad. If the cardboard is truly 14.00 by 20.00, it will buckle or refuse the door. Measure the opening, then confirm the actual dimensions on the carton. Cartons may say furnace filter or air filter; the face is the same. The ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      " lists this face as a smaller return and some older air handlers.",
+    ],
+  },
+  {
+    question: "Should a 1-inch 14×20 slot use MERV 11 or MERV 13?",
+    answer: [
+      "MERV 11 is the usual 1-inch step most houses can take when the return is healthy. MERV 13 is the tightest common 1-inch combo, and it is less plausible here than in a 16×25 or 20×25 slot. A 14×20 opening has less face than a 16×20, a 14×25, or a 16×25. At the same system CFM that smaller cardboard raises face velocity. A 14×20×1 rack is a poorer place to “just step up to MERV 13.” A dirty MERV 11 can out-restrict a clean MERV 13. The argument is ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13 in 1-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "Can I put a 4-inch filter in a 14×20×1 rack?",
+    answer: [
+      "No. A 14×20×4 will not crush into a 1-inch door, and a 1-inch pad standing in a 4-inch cabinet wastes the media area you already paid for. The size chart lists this face as commonly 1-inch only. A small return or older cabinet often cannot take a media cabinet without a remodel. If a technician already installed a deep rack, use the depth you already paid for. See ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch MERV 13" },
+      ".",
+    ],
+  },
+  {
+    question: "How often should I change a 14×20×1 filter?",
+    answer: [
+      "Change it by dust and runtime. The smaller face does not give you extra days, and the interval does not get longer because the pad is labeled air filter instead of furnace filter. On this face, MERV 8 is often 30–90 days, MERV 11 is closer to 30–60 days with pets, and MERV 13 only if you will pull it on a short interval and the equipment still moves design CFM. A printed “90-day” or “six-month” claim is a marketing interval. A black 14×20×1 is a blower restriction no matter what MERV it started as.",
+    ],
+  },
+  {
+    question: "Will a 14×25×1 fit a 14×20×1 slot?",
+    answer: [
+      "No. The five-inch height gap versus ",
+      { href: "/14x25x1-furnace-filters", label: "14×25×1" },
+      " and the two-inch width gap versus ",
+      { href: "/16x20x1-furnace-filters", label: "16×20×1" },
+      " are the usual mix-ups. Hardware-store walls stock the larger faces first. 14×20 is not 14×25, not 16×20, and not 16×25. A filter that “almost” fits either leaks or collapses. 14×20 and 20×14 are the same cardboard rotated. Match the door so the pad seats flat. The airflow arrow points at the equipment, not at the room.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +74,7 @@ export default function Size14x20Page() {
           path: "/14x20x1-furnace-filters",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="14×20 face"
         title="14×20×1 furnace filters and 14×20×1 air filters, compared without fake scores"
@@ -224,6 +269,24 @@ export default function Size14x20Page() {
           Still unsure whether 13 is legal for the blower? Use{" "}
           <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <RelatedGuides except="/14x20x1-furnace-filters" />
     </article>
