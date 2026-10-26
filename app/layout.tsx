@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Newsreader } from "next/font/google";
+import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
+import { RouteWash } from "@/components/route-wash";
 import { ogImage, openGraphImage } from "@/lib/metadata";
 import { websiteJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const plex = IBM_Plex_Sans({
+const source = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plex",
+  weight: ["400", "500", "600"],
+  variable: "--font-source",
   display: "swap",
 });
 
-const newsreader = Newsreader({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-newsreader",
+  weight: ["500", "600"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -50,9 +51,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${plex.variable} ${newsreader.variable}`}>
+    <html lang="en" className={`${source.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">
         <JsonLd data={websiteJsonLd()} />
+        <RouteWash />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-card focus:px-3 focus:py-2"
@@ -60,7 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <SiteHeader />
-        <div className="pleat-rule" aria-hidden />
         <main id="main">{children}</main>
         <SiteFooter />
       </body>

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function SizeChartPage() {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <article className="ff-article ff-wide">
       <JsonLd
         data={articleJsonLd({
           headline: title,
@@ -123,7 +123,7 @@ export default function SizeChartPage() {
                     <>
                       {" "}
                       <Link
-                        className="text-air underline underline-offset-3 hover:text-copper-dark"
+                        className="ff-text-link"
                         href={chartGuideHref[row.nominal]}
                       >
                         {row.nominal} comparison

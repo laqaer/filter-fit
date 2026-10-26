@@ -1,0 +1,11 @@
+ts	phase	decision	why	evidence	result
+2026-10-26T01:08:00Z	start	logged the visual overhaul after the checks, on branch cursor/visual-overhaul-3b8f	the reviewer needs a trail for a site-wide look change they will merge later	docs/vis-overhaul-ff-001-decisions.tsv	open
+2026-10-26T01:10:00Z	frame	done means verify-filter-fit passes, CLS does not rise, LCP median stays within 10 percent, and JSON-LD plus tag=laqaer-20 counts match main	those are the checks that can fail	.cursor/skills/verify-filter-fit/SKILL.md	predicate set
+2026-10-26T01:14:00Z	harness	saved main screenshots and three Lighthouse runs before editing	so the after numbers compare with the old build, not a memory of it	/opt/cursor/artifacts/screenshots/before-home-1280.png /opt/cursor/artifacts/lighthouse/before/summary.json	baseline saved
+2026-10-26T01:18:00Z	design	kept a light reading page, deep green actions, brass labels, Fraunces headlines, and Source Sans 3 body text	a homeowner reads long guides, so a full dark page would fight the text	app/globals.css app/layout.tsx	shipped
+2026-10-26T01:20:00Z	design	drew original pleat SVGs and a route bar, and froze motion on shop blocks and the disclosure	the brief asked for drawings and motion, and forbade motion on affiliate blocks	components/filter-airflow.tsx components/route-wash.tsx app/globals.css	shipped
+2026-10-26T01:24:00Z	craft	removed the 01 02 03 cards, the thick side bars, and the scroll-in fade	those patterns made every section the same entrance	app/page.tsx app/globals.css	removed
+2026-10-26T01:26:00Z	parity	compared sitemap HTML for JSON-LD and laqaer-20 hrefs	a visual edit must not drop schema or affiliate links	scripts/html-parity.mjs /opt/cursor/artifacts/lighthouse/parity.txt	parity zero loss
+2026-10-26T01:28:00Z	lighthouse	kept the new build	CLS stayed 0 and the worst LCP median change was +1.9 percent on the guide, desktop	/opt/cursor/artifacts/lighthouse/after/summary.json	within gate
+2026-10-26T01:30:00Z	verify	drove the local reader paths, picker, guides, about, privacy, and crawler files	the skill is the pass condition	filter-fit doctor pass and SUITE_FAIL=0	pass
+2026-10-26T01:30:22Z	log	earlier stamps are the order of the work, written together at the end	a logger was not running during the edits, so these are not per-event clock times	date -u output 2026-10-26T01:30:22Z	logged at the end

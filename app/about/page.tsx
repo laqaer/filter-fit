@@ -28,12 +28,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <article className="ff-article">
       <JsonLd data={organizationJsonLd()} />
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper-dark">About</p>
-      <h1 className="mt-2 font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-        FilterFit is a directory, not a filter brand
-      </h1>
+      <p className="ff-kicker">About</p>
+      <h1 className="ff-display">FilterFit is a directory, not a filter brand</h1>
+      <div className="ff-sig" aria-hidden />
       <div className="prose-fit mt-8">
         <p>
           <strong>FilterFit</strong> helps people match furnace filters by{" "}

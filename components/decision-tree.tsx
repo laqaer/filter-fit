@@ -15,6 +15,13 @@ import {
 } from "@/lib/filters";
 import { guideByHref } from "@/lib/guides";
 
+function faceMark(width: number, height: number) {
+  const max = Math.max(width, height);
+  const w = (width / max) * 22;
+  const h = (height / max) * 22;
+  return { x: (32 - w) / 2, y: (32 - h) / 2, w, h };
+}
+
 export function DecisionTree() {
   const [faceId, setFaceId] = useState("16x25");
   const [depth, setDepth] = useState<DepthInches>(1);
@@ -25,41 +32,43 @@ export function DecisionTree() {
   const face = faceSizes.find((item) => item.id === faceId);
 
   return (
-    <div className="border border-rule bg-card shadow-[0_18px_40px_-28px_rgba(31,26,20,0.45)]">
-      <div className="border-b border-rule bg-paper-deep/60 px-5 py-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper-dark">
-          Decision tree
-        </p>
-        <h2 className="mt-1 font-serif text-2xl text-ink">Size → depth → MERV → brands</h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-ink-soft">
+    <div className="ff-panel">
+      <div className="ff-panel-head">
+        <p className="ff-kicker">Decision tree</p>
+        <h2 className="ff-panel-title">Size → depth → MERV → brands</h2>
+        <p className="ff-panel-copy mt-2 max-w-2xl">
           Start with the rack you already have. Raising MERV without checking depth is how 1-inch
           filters choke blowers.
         </p>
       </div>
 
-      <div className="grid gap-8 px-5 py-6 sm:px-6">
+      <div className="ff-panel-body ff-fields">
         <fieldset>
-          <legend className="font-serif text-lg text-ink">1. Nominal face size</legend>
-          <p className="mt-1 text-sm text-ink-soft">
+          <legend className="ff-legend">1. Nominal face size</legend>
+          <p className="ff-field-note mt-1">
             Read the slot or the old filter, not the marketing photo. {face?.label} is selected.
           </p>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="ff-face-grid">
             {faceSizes.map((item) => {
               const selected = item.id === faceId;
+              const mark = faceMark(item.width, item.height);
               return (
                 <button
                   key={item.id}
                   type="button"
                   aria-pressed={selected}
                   onClick={() => setFaceId(item.id)}
-                  className={`min-h-11 border px-3 py-2 text-sm ${
-                    selected
-                      ? "border-copper bg-copper text-white"
-                      : "border-rule bg-paper hover:border-copper"
-                  }`}
+                  className={selected ? "ff-choice is-on" : "ff-choice"}
                 >
-                  {item.label}
-                  {item.common ? "" : <span className="ml-1 text-[0.7rem] opacity-80">less common</span>}
+                  <span className="ff-face-mark" aria-hidden>
+                    <svg viewBox="0 0 32 32" width="28" height="28">
+                      <rect x={mark.x} y={mark.y} width={mark.w} height={mark.h} fill="currentColor" />
+                    </svg>
+                  </span>
+                  <span>
+                    {item.label}
+                    {item.common ? "" : <span className="ff-uncommon">less common</span>}
+                  </span>
                 </button>
               );
             })}
@@ -67,8 +76,8 @@ export function DecisionTree() {
         </fieldset>
 
         <fieldset>
-          <legend className="font-serif text-lg text-ink">2. Slot depth</legend>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <legend className="ff-legend">2. Slot depth</legend>
+          <div className="ff-depth-grid">
             {depths.map((item) => {
               const selected = item.inches === depth;
               return (
@@ -77,12 +86,15 @@ export function DecisionTree() {
                   type="button"
                   aria-pressed={selected}
                   onClick={() => setDepth(item.inches)}
-                  className={`min-h-20 border px-4 py-3 text-left ${
-                    selected ? "border-air bg-air-soft" : "border-rule bg-paper hover:border-air"
-                  }`}
+                  className={selected ? "ff-depth is-on" : "ff-depth"}
                 >
-                  <span className="block font-serif text-xl text-ink">{item.label}</span>
-                  <span className="mt-1 block text-sm text-ink-soft">{item.note}</span>
+                  <span className="ff-depth-track" aria-hidden>
+                    <span className="ff-depth-bar" data-depth={item.inches} />
+                  </span>
+                  <span>
+                    <span className="ff-choice-title">{item.label}</span>
+                    <span className="ff-choice-note mt-1 block">{item.note}</span>
+                  </span>
                 </button>
               );
             })}
@@ -90,8 +102,8 @@ export function DecisionTree() {
         </fieldset>
 
         <fieldset>
-          <legend className="font-serif text-lg text-ink">3. MERV target</legend>
-          <div className="mt-3 grid gap-3 md:grid-cols-3">
+          <legend className="ff-legend">3. MERV target</legend>
+          <div className="ff-merv-grid">
             {mervOptions.map((item) => {
               const selected = item.value === merv;
               return (
@@ -100,12 +112,12 @@ export function DecisionTree() {
                   type="button"
                   aria-pressed={selected}
                   onClick={() => setMerv(item.value)}
-                  className={`min-h-20 border px-4 py-3 text-left ${
-                    selected ? "border-copper-dark bg-warn-soft" : "border-rule bg-paper hover:border-copper"
-                  }`}
+                  className={selected ? "ff-merv is-on" : "ff-merv"}
                 >
-                  <span className="block font-serif text-xl text-ink">{item.label}</span>
-                  <span className="mt-1 block text-sm text-ink-soft">{item.job}</span>
+                  <span>
+                    <span className="ff-choice-title">{item.label}</span>
+                    <span className="ff-choice-note mt-1 block">{item.job}</span>
+                  </span>
                 </button>
               );
             })}
@@ -113,18 +125,14 @@ export function DecisionTree() {
         </fieldset>
       </div>
 
-      <div className="border-t border-rule bg-paper px-5 py-6 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-air">4. What to buy</p>
-        <h3 className="mt-2 font-serif text-2xl text-ink">{result.headline}</h3>
-        <p className="mt-3 max-w-3xl leading-7 text-ink-soft">{result.body}</p>
-        {result.caution ? (
-          <p className="mt-4 border-l-4 border-copper bg-warn-soft px-4 py-3 text-sm leading-6 text-warn">
-            {result.caution}
-          </p>
-        ) : null}
+      <div className="ff-result">
+        <p className="ff-result-kicker">4. What to buy</p>
+        <h3 className="ff-result-title">{result.headline}</h3>
+        <p className="ff-result-body">{result.body}</p>
+        {result.caution ? <p className="ff-caution">{result.caution}</p> : null}
 
         <a
-          className="mt-5 inline-flex min-h-11 items-center border border-copper bg-copper px-4 py-2 text-sm font-semibold text-white hover:bg-copper-dark"
+          className="ff-buy"
           href={amazonSearchUrl(
             `${faceId}x${depth} merv ${merv} furnace filter`,
             `ff-picker-${faceId}x${depth}-merv${merv}`,
@@ -133,17 +141,17 @@ export function DecisionTree() {
         >
           Shop MERV {merv} {face?.label ?? faceId}×{depth} filters on Amazon
         </a>
-        <p className="mt-2 max-w-3xl text-sm leading-6 text-ink-soft">
+        <p className="ff-associate mt-2 max-w-3xl text-sm leading-6 text-ink-soft">
           Affiliate link. As an Amazon Associate I earn from qualifying purchases, at no extra
           cost to you. This opens an Amazon search for that nominal size, depth, and MERV. It is
           not a test and not a ranking.
         </p>
 
-        <div className="mt-4 flex flex-wrap gap-3 text-sm">
+        <div className="ff-related-links">
           {result.related.map((href) => {
             const guide = guideByHref(href);
             return (
-              <Link key={href} className="text-air underline underline-offset-3 hover:text-copper-dark" href={href}>
+              <Link key={href} className="ff-text-link" href={href}>
                 {guide?.title ?? href}
               </Link>
             );

@@ -11,7 +11,7 @@ export function AmazonShopExamples({ face }: AmazonShopExamplesProps) {
   const faceLabel = face.replaceAll("x", "×");
 
   return (
-    <section className="mt-10 border border-rule bg-card p-5">
+    <section className="ff-shop mt-10 border border-rule bg-card p-5">
       <h2 className="font-serif text-2xl text-ink">Shop examples on Amazon</h2>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
         Affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra
@@ -22,7 +22,7 @@ export function AmazonShopExamples({ face }: AmazonShopExamplesProps) {
         {mervLevels.map((merv) => (
           <li key={merv}>
             <a
-              className="text-air underline underline-offset-3 hover:text-copper-dark"
+              className="text-air underline underline-offset-3"
               href={amazonSearchUrl(
                 `${face} merv ${merv} furnace filter`,
                 `ff-${face}-merv${merv}`,
@@ -53,7 +53,7 @@ type AmazonGuideExamplesProps = {
 /** Compact search block for guide pages. Same disclosure and link attrs as size pages. */
 export function AmazonGuideExamples({ note, examples }: AmazonGuideExamplesProps) {
   return (
-    <section className="mt-10 border border-rule bg-card p-5">
+    <section className="ff-shop mt-10 border border-rule bg-card p-5">
       <h2 className="font-serif text-2xl text-ink">Shop examples on Amazon</h2>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
         Affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra
@@ -63,7 +63,7 @@ export function AmazonGuideExamples({ note, examples }: AmazonGuideExamplesProps
         {examples.map((example) => (
           <li key={example.subtag}>
             <a
-              className="text-air underline underline-offset-3 hover:text-copper-dark"
+              className="text-air underline underline-offset-3"
               href={amazonSearchUrl(example.keywords, example.subtag)}
               {...amazonLinkAttrs}
             >
