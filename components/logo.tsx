@@ -2,28 +2,30 @@ import Link from "next/link";
 
 type LogoProps = {
   size?: "sm" | "md";
+  tone?: "ink" | "light";
 };
 
-export function Logo({ size = "md" }: LogoProps) {
-  const mark = size === "sm" ? "h-8 w-8" : "h-10 w-10";
-  const word = size === "sm" ? "text-lg" : "text-xl";
+export function Logo({ size = "md", tone = "ink" }: LogoProps) {
+  const classes = ["ff-logo", size === "sm" ? "is-sm" : "", tone === "light" ? "is-light" : ""]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <Link href="/" className="group inline-flex items-center gap-2.5">
-      <span
-        className={`relative inline-flex ${mark} items-center justify-center overflow-hidden border border-copper/40 bg-card`}
-        aria-hidden
-      >
-        <span className="absolute inset-0 bg-[repeating-linear-gradient(90deg,#c45c26_0_2px,#fffdf8_2px_6px)] opacity-80" />
-        <span className="relative font-serif text-[0.65rem] font-semibold tracking-wide text-ink">
-          FF
-        </span>
-      </span>
-      <span className={`font-serif ${word} font-semibold tracking-tight text-ink`}>
+    <Link href="/" className={classes}>
+      <svg className="ff-logo-mark" viewBox="0 0 32 32" aria-hidden>
+        <rect width="32" height="32" fill={tone === "light" ? "#f4f1ea" : "#1e4d3a"} />
+        <path
+          d="M7 7.5 L11.2 24.5 L16 7.5 L20.8 24.5 L25 7.5"
+          fill="none"
+          stroke={tone === "light" ? "#1e4d3a" : "#f4f1ea"}
+          strokeWidth="1.7"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+      </svg>
+      <span className="ff-logo-word">
         FilterFit
-        <span className="block text-[0.65rem] font-sans font-medium uppercase tracking-[0.16em] text-ink-soft group-hover:text-copper-dark">
-          Size · Depth · MERV
-        </span>
+        <span className="ff-logo-sub">Size · Depth · MERV</span>
       </span>
     </Link>
   );

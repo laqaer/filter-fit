@@ -10,17 +10,15 @@ export function RelatedGuides({ except }: RelatedGuidesProps) {
 
   return (
     <section className="mt-14 border-t border-rule pt-8">
-      <h2 className="font-serif text-2xl text-ink">Related FilterFit guides</h2>
-      <ul className="mt-4 grid gap-4 md:grid-cols-2">
+      <h2 className="ff-section-title">Related FilterFit guides</h2>
+      <ul className="ff-related-grid mt-4">
         {items.map((guide) => (
-          <li key={guide.href} className="motion-card border border-rule bg-card p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-copper-dark">
-              {guide.kicker}
-            </p>
-            <Link className="mt-1 block font-serif text-xl text-ink hover:text-copper-dark" href={guide.href}>
+          <li key={guide.href} className="ff-related-card">
+            <p className="ff-kicker">{guide.kicker}</p>
+            <Link className="ff-card-title-link" href={guide.href}>
               {guide.title}
             </Link>
-            <p className="mt-2 text-sm leading-6 text-ink-soft">{guide.dek}</p>
+            <p className="ff-card-copy">{guide.dek}</p>
           </li>
         ))}
       </ul>
