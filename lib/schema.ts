@@ -71,6 +71,30 @@ export function faqPageJsonLd(faqs: readonly FaqEntry[]) {
   };
 }
 
+export type HowToStepInput = {
+  name: string;
+  text: string;
+};
+
+export function howToJsonLd(input: {
+  name: string;
+  description: string;
+  steps: readonly HowToStepInput[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: input.name,
+    description: input.description,
+    step: input.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",

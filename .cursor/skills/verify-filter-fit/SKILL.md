@@ -102,6 +102,7 @@ Routes a reader can open:
 | `/1-inch-vs-4-inch-merv-13` | Depth beats MERV: 1-inch vs 4-inch MERV 13 |
 | `/merv-13-safe-for-furnace` | When MERV 13 is fine — and when it chokes the blower |
 | `/furnace-filter-size-depth-chart` | Nominal size and slot-depth chart |
+| `/how-often-to-change-furnace-filter` | How often to change a furnace filter |
 | `/about` | FilterFit is a directory, not a filter brand |
 | `/privacy` | Privacy policy |
 

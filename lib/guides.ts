@@ -159,6 +159,14 @@ export const guides: Guide[] = [
     description:
       "Nominal vs actual furnace filter sizes and slot-depth chart. How to measure the rack before you order.",
   },
+  {
+    href: "/how-often-to-change-furnace-filter",
+    title: "How often to change a furnace filter",
+    kicker: "Change interval",
+    dek: "1-inch vs 4-inch ranges, what pets and dust do to the date, and when weak airflow means change it now.",
+    description:
+      "How often to change a 1-inch or 4-inch furnace filter. Pets, dust, and the signs to change early: weak airflow and a loaded face.",
+  },
 ];
 
 export function guideByHref(href: string): Guide | undefined {

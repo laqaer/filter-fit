@@ -69,6 +69,7 @@ npm run build
 | `/1-inch-vs-4-inch-merv-13` | Depth beats MERV; when to upgrade the cabinet |
 | `/merv-13-safe-for-furnace` | When MERV 13 is OK vs when it chokes blowers |
 | `/furnace-filter-size-depth-chart` | Nominal size + depth chart, how to measure |
+| `/how-often-to-change-furnace-filter` | 1-inch vs 4-inch change intervals, pets and dust, when to change early |
 | `/about` | FilterFit / Laqaer Products, editorial standards, hello@filterfitguide.com |
 | `/privacy` | Privacy policy for a content + affiliate site |
 | `/robots.txt` | Generated |

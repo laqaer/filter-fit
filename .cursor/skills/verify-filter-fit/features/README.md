@@ -39,4 +39,5 @@ Each feature file has an H1, one opening paragraph, then these H2 sections in or
 - [MERV 11 vs 13 in a 1-inch slot](./merv-11-vs-13.md) is the thin-media guide reached from the header, the picker, the guide list, and the footer.
 - [Size guide](./size-guide.md) is a nominal-size comparison page. `16×25×1` is the fully specified example; the other size routes are separate entry points.
 - [About and privacy](./about-and-privacy.md) are the editorial and legal pages linked from the footer.
+- [How often to change a furnace filter](./change-interval.md) is the change-interval guide reached from the Guides list and the footer.
 - [SEO surfaces](./seo-surfaces.md) are `/robots.txt`, `/sitemap.xml`, and `/ads.txt` for this local instance.
