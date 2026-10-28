@@ -178,22 +178,22 @@ export default function HowOftenToChangePage() {
             <tr>
               <td>1-inch MERV 11</td>
               <td>30–60 days with pets</td>
-              <td>A clean house with short runtime can go longer. The thin pack still loads faster than 4-inch MERV 11.</td>
+              <td>Pets, dust, and long runtime. A clean house is the long end of this range, not a second calendar.</td>
             </tr>
             <tr>
               <td>1-inch MERV 13</td>
               <td>Often 30–45 days in winter</td>
-              <td>Not set-and-forget. Use this only when the blower can take a thin MERV 13 at all.</td>
+              <td>Winter runtime, pets, and a loaded face. A thin MERV 13 is not set-and-forget.</td>
             </tr>
             <tr>
               <td>4-inch MERV 11</td>
               <td>Often 60–90 days</td>
-              <td>Pets and renovation dust still win. More media is not a reason to stop looking.</td>
+              <td>Pets and renovation dust. More media is not a reason to stop looking.</td>
             </tr>
             <tr>
               <td>4-inch MERV 13</td>
               <td>Longer than 1-inch MERV 13 on the same face</td>
-              <td>A loaded MERV 13 is a different product than a clean one. A 6–12 month carton claim is still a sticker.</td>
+              <td>A gray face, pets, or heavy runtime. A 6–12 month carton claim is still a sticker.</td>
             </tr>
           </tbody>
         </table>

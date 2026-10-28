@@ -1,0 +1,4 @@
+feature: seo-surfaces
+command: filter-fit seo --dir .cursor/skills/verify-filter-fit/evidence/seo-surfaces --feature seo-surfaces
+at: 2026-10-28T16:25:00.530Z
+seo robots sitemap ads.txt

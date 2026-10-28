@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: filterfitguide.com
+Sitemap: https://filterfitguide.com/sitemap.xml

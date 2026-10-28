@@ -1,0 +1,8 @@
+from: /
+name: How often to change a furnace filter
+nth: 1/2
+href: /how-often-to-change-furnace-filter
+dest: http://127.0.0.1:4321/how-often-to-change-furnace-filter
+status: 200
+title: How often to change a furnace filter · FilterFit
+h1: How often to change a furnace filter

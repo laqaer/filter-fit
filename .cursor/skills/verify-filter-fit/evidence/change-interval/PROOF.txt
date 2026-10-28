@@ -1,0 +1,12 @@
+feature: change-interval
+command: filter-fit follow --from / --name 'How often to change a furnace filter' --nth 1 --expect 'How often to change a furnace filter' --expect FAQPage --expect HowTo --dir .cursor/skills/verify-filter-fit/evidence/change-interval --action guides-card.txt --feature change-interval
+at: 2026-10-28T16:24:32.040Z
+followed How often to change a furnace filter -> /how-often-to-change-furnace-filter
+feature: change-interval
+command: filter-fit snapshot /how-often-to-change-furnace-filter --dir .cursor/skills/verify-filter-fit/evidence/change-interval --as guide --screenshot --feature change-interval
+at: 2026-10-28T16:24:52.514Z
+snapshot /how-often-to-change-furnace-filter
+feature: change-interval
+command: filter-fit snapshot /how-often-to-change-furnace-filter --dir .cursor/skills/verify-filter-fit/evidence/change-interval --as guide --screenshot --feature change-interval
+at: 2026-10-28T16:29:31.663Z
+snapshot /how-often-to-change-furnace-filter
