@@ -1,0 +1,92 @@
+url: http://127.0.0.1:4321/1-inch-vs-4-inch-merv-13
+status: 200
+title: 1-inch vs 4-inch MERV 13 furnace filters · FilterFit
+h1: Depth beats MERV: 1-inch vs 4-inch MERV 13
+h2:
+- Why more depth usually means less resistance
+- When a 1-inch rack is enough
+- When to upgrade the cabinet
+- Cost is a cabinet once, or a 1-inch pad forever
+- 5-inch, 2-inch, and “almost 4”
+- Questions
+- Shop examples on Amazon
+- Related FilterFit guides
+- Guides
+- Site
+nav Primary:
+- Picker -> /#picker
+- Thin media -> /merv-11-vs-13-1-inch
+- Common size -> /16x25x1-furnace-filters
+- 20×25 face -> /20x25x1-furnace-filters
+- About -> /about
+jsonld:
+- WebSite
+- Article
+- FAQPage
+links:
+- Skip to content -> #main
+- FilterFit Size · Depth · MERV -> /
+- Picker -> /#picker
+- Thin media -> /merv-11-vs-13-1-inch
+- Common size -> /16x25x1-furnace-filters
+- 20×25 face -> /20x25x1-furnace-filters
+- About -> /about
+- 16×25 -> /16x25x1-furnace-filters
+- 20×25 -> /20x25x1-furnace-filters
+- 16×20 -> /16x20x1-furnace-filters
+- the 1-inch MERV 11 vs 13 guide -> /merv-11-vs-13-1-inch
+- 16×25×4 -> /16x25x4-furnace-filters
+- 16×20×4 -> /16x20x4-furnace-filters
+- 20×20×4 -> /20x20x4-furnace-filters
+- 20×25×4 -> /20x25x4-furnace-filters
+- 20×30×4 -> /20x30x4-furnace-filters
+- size and depth chart -> /furnace-filter-size-depth-chart
+- check whether MERV 13 is still the right rating -> /merv-13-safe-for-furnace
+- 1-inch MERV 11 vs 13 guide -> /merv-11-vs-13-1-inch
+- 16×25×4 -> /16x25x4-furnace-filters
+- size and depth chart -> /furnace-filter-size-depth-chart
+- 1-inch MERV 13 furnace filters -> https://www.amazon.com/s?k=1+inch+merv+13+furnace+filter&tag=laqaer-20&ascsubtag=ff-guide-1v4-merv13-1in
+- 4-inch MERV 13 furnace filters -> https://www.amazon.com/s?k=4+inch+merv+13+furnace+filter&tag=laqaer-20&ascsubtag=ff-guide-1v4-merv13-4in
+- MERV 11 vs 13 in a 1-inch slot -> /merv-11-vs-13-1-inch
+- 16×25×1 furnace filters -> /16x25x1-furnace-filters
+- 20×25×1 furnace filters -> /20x25x1-furnace-filters
+- 16×20×1 furnace filters -> /16x20x1-furnace-filters
+- 16×20×4 furnace and air filters -> /16x20x4-furnace-filters
+- 14×25×1 furnace filters -> /14x25x1-furnace-filters
+- 20×20×1 furnace filters -> /20x20x1-furnace-filters
+- 20×20×4 furnace filters -> /20x20x4-furnace-filters
+- 14×20×1 furnace filters -> /14x20x1-furnace-filters
+- 20×30×1 furnace filters -> /20x30x1-furnace-filters
+- 20×30×4 furnace and air filters -> /20x30x4-furnace-filters
+- 12×24×1 furnace filters -> /12x24x1-furnace-filters
+- 24×24×1 furnace filters -> /24x24x1-furnace-filters
+- 24×30×1 furnace filters -> /24x30x1-furnace-filters
+- 16×25×4 furnace and air filters -> /16x25x4-furnace-filters
+- 20×25×4 furnace and air filters -> /20x25x4-furnace-filters
+- Is MERV 13 safe for your furnace? -> /merv-13-safe-for-furnace
+- Furnace filter size and depth chart -> /furnace-filter-size-depth-chart
+- How often to change a furnace filter -> /how-often-to-change-furnace-filter
+- FilterFit Size · Depth · MERV -> /
+- MERV 11 vs 13 in a 1-inch slot -> /merv-11-vs-13-1-inch
+- 16×25×1 furnace filters -> /16x25x1-furnace-filters
+- 20×25×1 furnace filters -> /20x25x1-furnace-filters
+- 16×20×1 furnace filters -> /16x20x1-furnace-filters
+- 16×20×4 furnace and air filters -> /16x20x4-furnace-filters
+- 14×25×1 furnace filters -> /14x25x1-furnace-filters
+- 20×20×1 furnace filters -> /20x20x1-furnace-filters
+- 20×20×4 furnace filters -> /20x20x4-furnace-filters
+- 14×20×1 furnace filters -> /14x20x1-furnace-filters
+- 20×30×1 furnace filters -> /20x30x1-furnace-filters
+- 20×30×4 furnace and air filters -> /20x30x4-furnace-filters
+- 12×24×1 furnace filters -> /12x24x1-furnace-filters
+- 24×24×1 furnace filters -> /24x24x1-furnace-filters
+- 24×30×1 furnace filters -> /24x30x1-furnace-filters
+- 16×25×4 furnace and air filters -> /16x25x4-furnace-filters
+- 20×25×4 furnace and air filters -> /20x25x4-furnace-filters
+- 1-inch vs 4-inch MERV 13 -> /1-inch-vs-4-inch-merv-13
+- Is MERV 13 safe for your furnace? -> /merv-13-safe-for-furnace
+- Furnace filter size and depth chart -> /furnace-filter-size-depth-chart
+- How often to change a furnace filter -> /how-often-to-change-furnace-filter
+- About & editorial standards -> /about
+- Privacy -> /privacy
+- hello@filterfitguide.com -> mailto:hello@filterfitguide.com

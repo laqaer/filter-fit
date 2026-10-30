@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -6,11 +7,48 @@ import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "Is MERV 13 safe for your furnace?";
 const description =
   "When a MERV 13 furnace filter is fine, when it chokes PSC blowers, and the warning signs that airflow — not the MERV badge — is the problem.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "Will a MERV 13 filter ruin a furnace?",
+    answer: [
+      "MERV 13 is safe when the system can still move its design airflow after the filter resistance is included. It is a problem when the filter is the tightest fitting on a system that already had no static-pressure leftover. If the furnace or air-handler literature names a maximum MERV, a filter type, or a maximum external static pressure, that document wins.",
+    ],
+  },
+  {
+    question: "What does a choked blower look like?",
+    answer: [
+      "Supply registers feel weaker after the swap, especially on the longest run. In cooling, the coil can ice, weep, and then dump water when it thaws. In heating, the high limit can trip, cycles get short, and a hot heat exchanger can smell like burning dust. A PSC motor hums harder. An ECM ramps, and the electric bill ticks up. The frame can collapse into the rack. A dirty MERV 8, a closed return, or crushed flex can look the same. Do not diagnose from the carton alone.",
+    ],
+  },
+  {
+    question: "When is MERV 13 usually fine?",
+    answer: [
+      "It is usually fine at 4 inches of depth or more, on a variable-speed ECM blower whose return static was already in spec, and with a generous return. A large grille, a short straight drop, or two filters sharing face velocity all count. The pad still has to be changed, because a loaded MERV 13 is a different product. The manufacturer allows it, or measured static stays inside the published maximum. Depth is the first of those checks. See ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch" },
+      ".",
+    ],
+  },
+  {
+    question: "When is 1-inch MERV 13 the wrong filter?",
+    answer: [
+      "Do not use it on an older single-speed PSC furnace with a 1-inch slide-in and a small return. Do not use it when the current cheap filter is already packed in a month, when static is already high, or when the manual says pleated MERV 8 or forbids high-MERV throwaways. In those houses, ",
+      { href: "/merv-11-vs-13-1-inch", label: "stay at 1-inch MERV 11" },
+      " or change the depth.",
+    ],
+  },
+  {
+    question: "How do PSC and ECM blowers respond to MERV 13?",
+    answer: [
+      "A PSC blower is roughly a fixed-speed machine. Raise resistance and airflow falls. An ECM can increase torque to hold airflow, which is why some variable-speed systems tolerate MERV 13. That extra torque costs watts, and the motor still has a ceiling. Past that ceiling the coil ices, the high limit trips, and the motor works at the top of its range.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -29,6 +67,7 @@ export default function Merv13SafePage() {
           path: "/merv-13-safe-for-furnace",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Airflow first"
         title="When MERV 13 is fine — and when it chokes the blower"
@@ -122,6 +161,24 @@ export default function Merv13SafePage() {
           <Link href="/16x20x1-furnace-filters">16×20×1 page</Link>. Everyone else should{" "}
           <Link href="/furnace-filter-size-depth-chart">confirm size and depth</Link> first.
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <AmazonGuideExamples
         note="These are Amazon searches for a MERV 13 furnace filter, a 4-inch MERV 13, and a 1-inch MERV 11, not a ranked list and not products we tested."

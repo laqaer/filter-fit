@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -6,11 +7,44 @@ import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "1-inch vs 4-inch MERV 13 furnace filters";
 const description =
   "Why filter depth beats a MERV number. When a 4-inch media cabinet is the real MERV 13 upgrade, and when to keep a 1-inch rack.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "Does a 4-inch MERV 13 restrict less than a 1-inch MERV 13?",
+    answer: [
+      "Often, at the same face size. A 4-inch pack has a longer path and, in a competent design, much more media than a 1-inch pad. Air slows down through that media. A 4-inch MERV 13 often feels closer to a 1-inch MERV 8 or 11 than to a 1-inch MERV 13. If the rack cannot grow, use the ",
+      { href: "/merv-11-vs-13-1-inch", label: "1-inch MERV 11 vs 13 guide" },
+      ".",
+    ],
+  },
+  {
+    question: "When is a 1-inch rack enough?",
+    answer: [
+      "Keep the 1-inch rack when MERV 8 or 11 meets the house and the pad is changed on time, when the furnace manual is conservative about high-MERV 1-inch media, or when the closet has no room for a media cabinet. A large return-grille filter can also leave the cabinet filter as a secondary screen. MERV 13 in that closet still needs more depth.",
+    ],
+  },
+  {
+    question: "When should the cabinet grow to 4 inches?",
+    answer: [
+      "Grow the cabinet when MERV 13 is the everyday filter, the 1-inch pad loads fast, or supply air got weaker after a thicker 1-inch pad. High external static, or a coil that ices after a filter change, is the same signal. Cabinet work moves clearance, door swing, condensate, and coil access. Have someone measure static before and after.",
+    ],
+  },
+  {
+    question: "Can two 1-inch pads stand in for a deeper filter?",
+    answer: [
+      "No. A filter that misses the cabinet gasket leaks dirty air around the frame. Do not stack two 1-inch pads to make 2 inches. Seat the deep filter fully. A 5-inch cabinet also holds more media and runs at lower velocity. Do not assume a ",
+      { href: "/16x25x4-furnace-filters", label: "16×25×4" },
+      " drops into a 5-inch cabinet without the spacer the manufacturer specified. Confirm depth on the ",
+      { href: "/furnace-filter-size-depth-chart", label: "size and depth chart" },
+      ".",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -29,6 +63,7 @@ export default function InchVsFourPage() {
           path: "/1-inch-vs-4-inch-merv-13",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Depth first"
         title="Depth beats MERV: 1-inch vs 4-inch MERV 13"
@@ -132,6 +167,24 @@ export default function InchVsFourPage() {
           <Link href="/merv-13-safe-for-furnace">check whether MERV 13 is still the right rating</Link>{" "}
           for that blower and duct system.
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <AmazonGuideExamples
         note="These are Amazon searches for a 1-inch MERV 13 and a 4-inch MERV 13 furnace filter, not a ranked list and not products we tested."

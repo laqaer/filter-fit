@@ -1,0 +1,8 @@
+from: /
+name: Is MERV 13 safe for your furnace?
+nth: 1/2
+href: /merv-13-safe-for-furnace
+dest: http://127.0.0.1:4321/merv-13-safe-for-furnace
+status: 200
+title: Is MERV 13 safe for your furnace? · FilterFit
+h1: When MERV 13 is fine — and when it chokes the blower

@@ -1,0 +1,8 @@
+from: /
+name: 1-inch vs 4-inch MERV 13
+nth: 1/2
+href: /1-inch-vs-4-inch-merv-13
+dest: http://127.0.0.1:4321/1-inch-vs-4-inch-merv-13
+status: 200
+title: 1-inch vs 4-inch MERV 13 furnace filters · FilterFit
+h1: Depth beats MERV: 1-inch vs 4-inch MERV 13
