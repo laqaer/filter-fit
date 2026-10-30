@@ -1,0 +1,12 @@
+feature: merv-11-vs-13
+command: filter-fit follow --from / --name 'Thin media' --expect 'MERV 11 vs 13 when the rack is only an inch deep' --expect FAQPage --expect Questions --expect 'Is 1-inch MERV 13 the same upgrade as MERV 13 in a 4-inch cabinet?' --expect tag=laqaer-20 --expect 'As an Amazon Associate I earn from qualifying purchases' --dir .cursor/skills/verify-filter-fit/evidence/merv-11-vs-13 --action header-faq.txt --feature merv-11-vs-13
+at: 2026-10-30T16:17:44.234Z
+followed Thin media -> /merv-11-vs-13-1-inch
+feature: merv-11-vs-13
+command: filter-fit snapshot /merv-11-vs-13-1-inch --dir .cursor/skills/verify-filter-fit/evidence/merv-11-vs-13 --as guide --feature merv-11-vs-13
+at: 2026-10-30T16:18:01.574Z
+snapshot /merv-11-vs-13-1-inch
+feature: merv-11-vs-13
+command: filter-fit snapshot /merv-11-vs-13-1-inch --dir .cursor/skills/verify-filter-fit/evidence/merv-11-vs-13 --as guide --feature merv-11-vs-13
+at: 2026-10-30T16:19:08.398Z
+snapshot /merv-11-vs-13-1-inch

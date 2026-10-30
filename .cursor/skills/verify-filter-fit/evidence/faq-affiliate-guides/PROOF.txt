@@ -1,0 +1,24 @@
+feature: faq-affiliate-guides
+command: filter-fit follow --from / --name '1-inch vs 4-inch MERV 13' --nth 1 --expect 'Depth beats MERV: 1-inch vs 4-inch MERV 13' --expect FAQPage --expect 'Does a 4-inch MERV 13 restrict less than a 1-inch MERV 13?' --expect tag=laqaer-20 --dir .cursor/skills/verify-filter-fit/evidence/faq-affiliate-guides --action depth-card.txt --feature faq-affiliate-guides
+at: 2026-10-30T16:17:44.541Z
+followed 1-inch vs 4-inch MERV 13 -> /1-inch-vs-4-inch-merv-13
+feature: faq-affiliate-guides
+command: filter-fit follow --from / --name 'Is MERV 13 safe for your furnace?' --nth 1 --expect 'When MERV 13 is fine — and when it chokes the blower' --expect FAQPage --expect 'Will a MERV 13 filter ruin a furnace?' --expect tag=laqaer-20 --dir .cursor/skills/verify-filter-fit/evidence/faq-affiliate-guides --action safe-card.txt --feature faq-affiliate-guides
+at: 2026-10-30T16:17:44.837Z
+followed Is MERV 13 safe for your furnace? -> /merv-13-safe-for-furnace
+feature: faq-affiliate-guides
+command: filter-fit follow --from / --name 'Furnace filter size and depth chart' --nth 2 --expect 'Nominal size and slot-depth chart' --expect FAQPage --expect 'Is the size printed on the box the size that fits?' --expect tag=laqaer-20 --dir .cursor/skills/verify-filter-fit/evidence/faq-affiliate-guides --action chart-card.txt --feature faq-affiliate-guides
+at: 2026-10-30T16:17:45.133Z
+followed Furnace filter size and depth chart -> /furnace-filter-size-depth-chart
+feature: faq-affiliate-guides
+command: filter-fit snapshot /1-inch-vs-4-inch-merv-13 --dir .cursor/skills/verify-filter-fit/evidence/faq-affiliate-guides --as depth --feature faq-affiliate-guides
+at: 2026-10-30T16:18:01.697Z
+snapshot /1-inch-vs-4-inch-merv-13
+feature: faq-affiliate-guides
+command: filter-fit snapshot /merv-13-safe-for-furnace --dir .cursor/skills/verify-filter-fit/evidence/faq-affiliate-guides --as safe --feature faq-affiliate-guides
+at: 2026-10-30T16:18:01.796Z
+snapshot /merv-13-safe-for-furnace
+feature: faq-affiliate-guides
+command: filter-fit snapshot /furnace-filter-size-depth-chart --dir .cursor/skills/verify-filter-fit/evidence/faq-affiliate-guides --as chart --feature faq-affiliate-guides
+at: 2026-10-30T16:18:01.899Z
+snapshot /furnace-filter-size-depth-chart

@@ -1,0 +1,8 @@
+from: /
+name: Furnace filter size and depth chart
+nth: 2/3
+href: /furnace-filter-size-depth-chart
+dest: http://127.0.0.1:4321/furnace-filter-size-depth-chart
+status: 200
+title: Furnace filter size and depth chart · FilterFit
+h1: Nominal size and slot-depth chart

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,11 +8,42 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const title = "MERV 11 vs MERV 13 in a 1-inch furnace filter";
 const description =
   "Why 1-inch MERV 13 raises pressure drop and short-cycle risk compared with MERV 11, and when a thin MERV 13 is still reasonable.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "Is 1-inch MERV 13 the same upgrade as MERV 13 in a 4-inch cabinet?",
+    answer: [
+      "No. A 1-inch filter is a thin pack of media. Raising MERV on that pack is a different change from raising MERV in a 4-inch cabinet. A 4-inch MERV 13 often presents less resistance than a 1-inch MERV 13 at the same face size, because there is more media. If the cabinet can change, read ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "1-inch vs 4-inch MERV 13" },
+      " first.",
+    ],
+  },
+  {
+    question: "Why does a 1-inch MERV 13 raise pressure drop?",
+    answer: [
+      "Air has to pass through a short path with limited pleat area, so face velocity is high. Tighter media raises the resistance of that path. A clean 1-inch MERV 13 is usually the highest-resistance common household pad. A dirty 1-inch MERV 11 can exceed a clean 1-inch MERV 13 once the pad loads. This page does not publish a Pascal number for a filter it did not test.",
+    ],
+  },
+  {
+    question: "When is 1-inch MERV 11 the better buy?",
+    answer: [
+      "Choose MERV 11 when the rack is truly 1 inch, the furnace is a single-speed PSC, or the return is already a tight flex run. Pets, drywall dust, and a late change habit also favor MERV 11. If the current MERV 8 already looks used at 30 days, shorten the change interval before you raise MERV.",
+    ],
+  },
+  {
+    question: "When can a 1-inch MERV 13 still be reasonable?",
+    answer: [
+      "It can be reasonable on a variable-speed ECM air handler when return static already has room, the house has a large filter grille or two returns, and the pad is changed on a short interval, often 30 to 45 days in winter. The furnace literature also has to allow high-MERV 1-inch media. The ",
+      { href: "/merv-13-safe-for-furnace", label: "MERV 13 safety check" },
+      " asks whether the blower can still move air.",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +62,7 @@ export default function Merv11Vs13Page() {
           path: "/merv-11-vs-13-1-inch",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="1-inch slots"
         title="MERV 11 vs 13 when the rack is only an inch deep"
@@ -139,6 +172,24 @@ export default function Merv11Vs13Page() {
           the change interval you will keep. That is the whole product table that matters in a
           1-inch slot.
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <AmazonGuideExamples
         note="These are Amazon searches for a 1-inch MERV 11 and a 1-inch MERV 13 furnace filter, not a ranked list and not products we tested."

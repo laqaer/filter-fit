@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
 import { Callout } from "@/components/callout";
@@ -7,7 +8,7 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedGuides } from "@/components/related-guides";
 import { sizeChart } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
-import { articleJsonLd } from "@/lib/schema";
+import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const chartGuideHref: Record<string, string> = {
   "16×20×4": "/16x20x4-furnace-filters",
@@ -20,6 +21,39 @@ const chartGuideHref: Record<string, string> = {
 const title = "Furnace filter size and depth chart";
 const description =
   "Nominal vs actual furnace filter sizes and 1 / 2 / 4 / 5-inch slot depths. How to measure the rack before you order.";
+
+const faq: readonly FaqEntry[] = [
+  {
+    question: "Is the size printed on the box the size that fits?",
+    answer: [
+      "The number on the box is a nominal name. The cardboard that fits is the actual size. Read the old filter, then measure the cardboard. Brands vary by a quarter inch. If the opening sits between two sizes, take the smaller actual. A filter that rattles leaks. A filter that has to be forced in collapses. The table on this page lists usual North American cardboard sizes. Match the spec line on the filter you order, because mills differ.",
+    ],
+  },
+  {
+    question: "What does the last number in 16×25×1 mean?",
+    answer: [
+      "It is slot depth. 16×25×1 means a 1-inch-class depth. 16×25×4 is a different product. Measure the depth the frame can occupy without bowing the door. Ordering the wrong third number is the common mismatch.",
+    ],
+  },
+  {
+    question: "How do 1-inch, 2-inch, 4-inch, and 5-inch slots differ?",
+    answer: [
+      "A 1-inch slot is a retail slide-in with the least media. MERV 13 in that slot is the risky upgrade. See ",
+      { href: "/merv-11-vs-13-1-inch", label: "MERV 11 vs 13" },
+      ". A 2-inch rack adds pleat area and is still a throwaway filter. Confirm the door closes on 2 inches. A 4-inch cabinet is the usual aftermarket media cabinet, and the depth most homes should use for MERV 13. See ",
+      { href: "/1-inch-vs-4-inch-merv-13", label: "depth vs MERV" },
+      ". A 5-inch cabinet is deep media. Do not assume a 4-inch pad fills it without the specified spacer.",
+    ],
+  },
+  {
+    question: "Can the return grille and the furnace take different filters?",
+    answer: [
+      "Yes. Some systems use one filter at the furnace and one at a return grille, and those two pads are not always the same size. A grille that takes 20×25×1 while the furnace cabinet takes 16×25×1 is a common trap. Count the filters and measure each slot before you order. After size and depth are known, check the blower on ",
+      { href: "/merv-13-safe-for-furnace", label: "Is MERV 13 safe for your furnace?" },
+      ".",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -38,6 +72,7 @@ export default function SizeChartPage() {
           path: "/furnace-filter-size-depth-chart",
         })}
       />
+      <JsonLd data={faqPageJsonLd(faq)} />
       <GuideHero
         kicker="Measure twice"
         title="Nominal size and slot-depth chart"
@@ -170,6 +205,24 @@ export default function SizeChartPage() {
           After size and depth are known, the last question is whether the rating is safe for the
           blower: <Link href="/merv-13-safe-for-furnace">Is MERV 13 safe for your furnace?</Link>
         </p>
+
+        <h2>Questions</h2>
+        {faq.map((item) => (
+          <Fragment key={item.question}>
+            <h3>{item.question}</h3>
+            <p>
+              {item.answer.map((part, index) =>
+                typeof part === "string" ? (
+                  part
+                ) : (
+                  <Link key={index} href={part.href}>
+                    {part.label}
+                  </Link>
+                ),
+              )}
+            </p>
+          </Fragment>
+        ))}
       </div>
       <AmazonGuideExamples
         note="These are Amazon searches for two common nominal sizes, 16×25×1 and 16×25×4, not a ranked list and not products we tested."
