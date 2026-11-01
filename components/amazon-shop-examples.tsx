@@ -11,7 +11,7 @@ export function AmazonShopExamples({ face }: AmazonShopExamplesProps) {
   const faceLabel = face.replaceAll("x", "×");
 
   return (
-    <section className="ff-shop mt-10 border border-rule bg-card p-5">
+    <section className="ff-shop mt-10">
       <h2 className="font-serif text-2xl text-ink">Shop examples on Amazon</h2>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
         Affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra
@@ -52,7 +52,7 @@ type AmazonGuideExamplesProps = {
 
 export function AmazonGuideExamples({ note, examples }: AmazonGuideExamplesProps) {
   return (
-    <section className="ff-shop mt-10 border border-rule bg-card p-5">
+    <section className="ff-shop mt-10">
       <h2 className="font-serif text-2xl text-ink">Shop examples on Amazon</h2>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
         Affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra

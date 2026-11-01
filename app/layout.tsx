@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
-import { RouteWash } from "@/components/route-wash";
 import { ogImage, openGraphImage } from "@/lib/metadata";
 import { websiteJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -61,7 +60,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${source.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">
         <JsonLd data={websiteJsonLd()} />
-        <RouteWash />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-card focus:px-3 focus:py-2"

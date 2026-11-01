@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionTree } from "@/components/decision-tree";
-import { FilterAirflow } from "@/components/filter-airflow";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
 
@@ -56,17 +55,13 @@ export default function HomePage() {
   return (
     <div>
       <section className="ff-wrap ff-hero">
-        <div>
-          <p className="ff-kicker">Independent filter directory</p>
-          <h1 className="ff-display">Pick a furnace filter by size, slot depth, then MERV</h1>
-          <div className="ff-sig" aria-hidden />
-          <p className="ff-lede">
-            FilterFit is a comparison hub for homeowners who want MERV 11 or 13 without turning the
-            return into a plugged straw. Nominal size tells you the face. Depth tells you how much
-            media you actually have. MERV is last — not first.
-          </p>
-        </div>
-        <FilterAirflow />
+        <p className="ff-kicker">Independent filter directory</p>
+        <h1 className="ff-display">Pick a furnace filter by size, slot depth, then MERV</h1>
+        <p className="ff-lede">
+          FilterFit is a comparison hub for homeowners who want MERV 11 or 13 without turning the
+          return into a plugged straw. Nominal size tells you the face. Depth tells you how much
+          media you actually have. MERV is last — not first.
+        </p>
       </section>
 
       <section id="picker" className="ff-band">

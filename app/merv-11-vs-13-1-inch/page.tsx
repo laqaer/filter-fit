@@ -74,7 +74,7 @@ export default function Merv11Vs13Page() {
           Homeowners jump from a gray 1-inch MERV 8 to a 1-inch MERV 13 because the box promises
           finer particles. Sometimes that works. Often the furnace answers with weaker supply air,
           a frosting indoor coil, or a heat cycle that slams off on the high-limit switch. The MERV
-          number did not become “unsafe.” The <em>slot</em> ran out of media area.
+          number did not become “unsafe.” The slot ran out of media area.
         </p>
         <p>
           If you are shopping the common 16×25 face, start at the{" "}

@@ -68,7 +68,7 @@ Harness: `helpers/filter-fit`. Stable handles are **accessible names and routes*
 | Face buttons | `12×24`, `14×20`, `14×25`, `16×20`, `16×24`, `16×25`, `20×20`, `20×25`, `20×30`, `24×24`, `24×30` (`aria-pressed`; less-common faces append `less common`) |
 | Depth buttons | `1 inch`, `2 inch`, `4 inch`, `5 inch` |
 | MERV buttons | `MERV 8`, `MERV 11`, `MERV 13` |
-| Result `h3` | headline inside `4. What to buy` |
+| Result `h3` | headline inside `What to buy` |
 | Result-panel links | guide titles rendered next to that headline; `click --follow-name` reads only these |
 | `Shop MERV … filters on Amazon` | affiliate search in the result panel; do not open |
 | Guides-list titles | each `guides[].title` from `lib/guides.ts` |

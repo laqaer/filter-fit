@@ -17,7 +17,6 @@ export function SiteHeader() {
           <Link href="/about">About</Link>
         </nav>
       </div>
-      <div className="ff-pleat" aria-hidden />
     </header>
   );
 }

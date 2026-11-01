@@ -28,7 +28,6 @@ export default function PrivacyPage() {
     <article className="ff-article">
       <p className="ff-kicker">Legal</p>
       <h1 className="ff-display">Privacy policy</h1>
-      <div className="ff-sig" aria-hidden />
       <p className="mt-4 text-sm text-ink-soft">Last updated {site.updated}.</p>
       <div className="prose-fit mt-8">
         <p>
