@@ -32,7 +32,6 @@ export default function AboutPage() {
       <JsonLd data={organizationJsonLd()} />
       <p className="ff-kicker">About</p>
       <h1 className="ff-display">FilterFit is a directory, not a filter brand</h1>
-      <div className="ff-sig" aria-hidden />
       <div className="prose-fit mt-8">
         <p>
           <strong>FilterFit</strong> helps people match furnace filters by{" "}

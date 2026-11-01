@@ -32,7 +32,7 @@ export function DecisionTree() {
   const face = faceSizes.find((item) => item.id === faceId);
 
   return (
-    <div className="ff-panel">
+    <div>
       <div className="ff-panel-head">
         <p className="ff-kicker">Decision tree</p>
         <h2 className="ff-panel-title">Size → depth → MERV → brands</h2>
@@ -44,7 +44,7 @@ export function DecisionTree() {
 
       <div className="ff-panel-body ff-fields">
         <fieldset>
-          <legend className="ff-legend">1. Nominal face size</legend>
+          <legend className="ff-legend">Nominal face size</legend>
           <p className="ff-field-note mt-1">
             Read the slot or the old filter, not the marketing photo. {face?.label} is selected.
           </p>
@@ -76,7 +76,7 @@ export function DecisionTree() {
         </fieldset>
 
         <fieldset>
-          <legend className="ff-legend">2. Slot depth</legend>
+          <legend className="ff-legend">Slot depth</legend>
           <div className="ff-depth-grid">
             {depths.map((item) => {
               const selected = item.inches === depth;
@@ -102,7 +102,7 @@ export function DecisionTree() {
         </fieldset>
 
         <fieldset>
-          <legend className="ff-legend">3. MERV target</legend>
+          <legend className="ff-legend">MERV target</legend>
           <div className="ff-merv-grid">
             {mervOptions.map((item) => {
               const selected = item.value === merv;
@@ -126,7 +126,7 @@ export function DecisionTree() {
       </div>
 
       <div className="ff-result">
-        <p className="ff-result-kicker">4. What to buy</p>
+        <p className="ff-result-kicker">What to buy</p>
         <h3 className="ff-result-title">{result.headline}</h3>
         <p className="ff-result-body">{result.body}</p>
         {result.caution ? <p className="ff-caution">{result.caution}</p> : null}
