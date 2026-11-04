@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
+import { BestFilterForThis } from "@/components/best-filter-for-this";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -67,6 +68,29 @@ export default function Merv11Vs13Page() {
         kicker="1-inch slots"
         title="MERV 11 vs 13 when the rack is only an inch deep"
         dek="A 1-inch filter is a thin pack of media. Raising MERV on that pack is not the same upgrade as raising MERV in a 4-inch cabinet."
+      />
+
+      <BestFilterForThis
+        rows={[
+          {
+            pick: "1 inch MERV 11 furnace filter",
+            spec: "MERV 11 / 1 inch",
+            who: "The rack is 1 inch, the blower is a single-speed PSC, or the return is a tight flex run. Pets, drywall dust, and a late change habit also favor this over a 1-inch MERV 13.",
+            subtag: "ff-compare-merv-11-vs-13-1-inch-1",
+          },
+          {
+            pick: "1 inch MERV 13 furnace filter",
+            spec: "MERV 13 / 1 inch",
+            who: "A variable-speed ECM handler has return static to spare, the grille is large or there are two returns, you change it in 30 to 45 winter days, and the furnace literature allows high-MERV 1-inch media.",
+            subtag: "ff-compare-merv-11-vs-13-1-inch-2",
+          },
+          {
+            pick: "4 inch MERV 13 furnace filter",
+            spec: "MERV 13 / 4 inch",
+            who: "The cabinet can change. A 4-inch MERV 13 often has less resistance than a 1-inch MERV 13 at the same face size.",
+            subtag: "ff-compare-merv-11-vs-13-1-inch-3",
+          },
+        ]}
       />
 
       <div className="prose-fit mt-10">
