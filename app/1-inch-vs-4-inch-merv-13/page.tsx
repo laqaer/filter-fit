@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
+import { BestFilterForThis } from "@/components/best-filter-for-this";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -68,6 +69,29 @@ export default function InchVsFourPage() {
         kicker="Depth first"
         title="Depth beats MERV: 1-inch vs 4-inch MERV 13"
         dek="Same printed rating, different amount of media. The 4-inch cabinet is how most houses get finer filtration without choking the blower."
+      />
+
+      <BestFilterForThis
+        rows={[
+          {
+            pick: "4 inch MERV 13 furnace filter",
+            spec: "MERV 13 / 4 inch",
+            who: "You want MERV 13 as the everyday filter. A 4-inch pack has more media and often less resistance than a 1-inch MERV 13.",
+            subtag: "ff-compare-1-inch-vs-4-inch-merv-13-1",
+          },
+          {
+            pick: "1 inch MERV 11 furnace filter",
+            spec: "MERV 11 / 1 inch",
+            who: "MERV 11 meets the house and you change the pad on time.",
+            subtag: "ff-compare-1-inch-vs-4-inch-merv-13-2",
+          },
+          {
+            pick: "1 inch MERV 8 furnace filter",
+            spec: "MERV 8 / 1 inch",
+            who: "MERV 8 meets the house and you change the pad on time, or the furnace manual is conservative about high-MERV 1-inch media.",
+            subtag: "ff-compare-1-inch-vs-4-inch-merv-13-3",
+          },
+        ]}
       />
 
       <div className="prose-fit mt-10">

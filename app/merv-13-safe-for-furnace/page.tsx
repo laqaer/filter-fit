@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import Link from "next/link";
 import { AmazonGuideExamples } from "@/components/amazon-shop-examples";
+import { BestFilterForThis } from "@/components/best-filter-for-this";
 import { Callout } from "@/components/callout";
 import { GuideHero } from "@/components/guide-hero";
 import { JsonLd } from "@/components/json-ld";
@@ -72,6 +73,29 @@ export default function Merv13SafePage() {
         kicker="Airflow first"
         title="When MERV 13 is fine — and when it chokes the blower"
         dek="MERV 13 is not a hazard class. A filter that the air handler cannot breathe through is. Use the manual, the slot depth, and the equipment’s behavior — not the aisle label."
+      />
+
+      <BestFilterForThis
+        rows={[
+          {
+            pick: "4 inch MERV 13 furnace filter",
+            spec: "MERV 13 / 4 inch",
+            who: "Depth is 4 inches or more, return static already has room, the return is generous, you will change the pad, and the manual allows MERV 13.",
+            subtag: "ff-compare-merv-13-safe-for-furnace-1",
+          },
+          {
+            pick: "1 inch MERV 11 furnace filter",
+            spec: "MERV 11 / 1 inch",
+            who: "An older single-speed PSC furnace, a 1-inch slide-in, a small return, a pad that packs up in a month, or static that is already high.",
+            subtag: "ff-compare-merv-13-safe-for-furnace-2",
+          },
+          {
+            pick: "1 inch MERV 8 furnace filter",
+            spec: "MERV 8 / 1 inch",
+            who: "The manual names pleated MERV 8 or forbids high-MERV throwaways. That document wins.",
+            subtag: "ff-compare-merv-13-safe-for-furnace-3",
+          },
+        ]}
       />
 
       <div className="prose-fit mt-10">
