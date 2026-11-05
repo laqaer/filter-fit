@@ -1,0 +1,16 @@
+# FilterFit
+
+> Independent guides to furnace filters by nominal size, slot depth, and MERV.
+
+## Money guides
+
+- [16×25×1 furnace filters](https://filterfitguide.com/16x25x1-furnace-filters): Nominal 16×25×1 is usually about 15½ × 24½ × ¾ inches, compared at MERV 8, 11, and 13.
+- [20×25×1 furnace filters](https://filterfitguide.com/20x25x1-furnace-filters): Nominal 20×25×1 is usually about 19½ × 24½ × ¾ inches, compared at MERV 8, 11, and 13.
+- [16×20×1 furnace filters](https://filterfitguide.com/16x20x1-furnace-filters): Nominal 16×20×1 is usually about 15½ × 19½ × ¾ inches, compared at MERV 8, 11, and 13.
+- [20×20×1 furnace filters](https://filterfitguide.com/20x20x1-furnace-filters): Nominal 20×20×1 is usually about 19½ × 19½ × ¾ inches, compared at MERV 8, 11, and 13.
+- [14×25×1 furnace filters](https://filterfitguide.com/14x25x1-furnace-filters): Nominal 14×25×1 is usually about 13½ × 24½ × ¾ inches on a common upflow-closet face, compared at MERV 8, 11, and 13.
+- [16×25×4 furnace and air filters](https://filterfitguide.com/16x25x4-furnace-filters): Nominal 16×25×4 has no single actual size. Furnace filter and air filter name the same pad, and depth examples span 3⅝ to 4⅜ inches.
+- [20×25×4 furnace and air filters](https://filterfitguide.com/20x25x4-furnace-filters): Nominal 20×25×4 has no single actual size. Furnace filter and air filter name the same pad. Filterbuy lists its standard cut at 19.5 × 24.5 × 3.63 inches.
+- [16×20×4 furnace and air filters](https://filterfitguide.com/16x20x4-furnace-filters): Nominal 16×20×4 has no single actual size. Furnace filter and air filter name the same pad. Filterbuy lists its standard cut at 15.50 × 19.50 × 3.63 inches.
+- [20×20×4 furnace filters](https://filterfitguide.com/20x20x4-furnace-filters): Nominal 20×20×4 has no single actual size. Filterbuy's 20×20×4 page lists both 19.50 × 19.50 × 3.63 inches and 19.5 × 19.5 × 3.75 inches.
+- [20×30×4 furnace and air filters](https://filterfitguide.com/20x30x4-furnace-filters): Nominal 20×30×4 has no single actual size. Furnace filter and air filter name the same pad. Filterbuy lists one cut at 19.5 × 29.5 × 3.63 inches.
