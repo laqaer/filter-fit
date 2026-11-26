@@ -1,0 +1,8 @@
+from: /
+name: 13.25×13.25×4 furnace and air filters
+nth: 1/2
+href: /13.25x13.25x4-furnace-filters
+dest: http://127.0.0.1:4321/13.25x13.25x4-furnace-filters
+status: 200
+title: 13.25×13.25×4 furnace and air filters · FilterFit
+h1: 13.25×13.25×4 furnace filters and air filters are the same pad

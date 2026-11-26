@@ -136,6 +136,30 @@ export const guides: Guide[] = [
       "Compare 20x25x4 furnace filters and air filters — the same pad — at MERV 8, 11, and 13. Actual size, 4-inch vs 1-inch, and brand-class notes.",
   },
   {
+    href: "/11.5x11.5x1-furnace-filters",
+    title: "11.5×11.5×1 furnace and air filters",
+    kicker: "11.5 face",
+    dek: "MERV 8 / 11 / 13 on a small square face. Filterbuy’s actual face matches the nominal. The 1-inch name is 0.75 thick. No fake scores.",
+    description:
+      "Compare 11.5x11.5x1 furnace and air filters at MERV 8, 11, and 13. Filterbuy lists actual size 11.5 x 11.5 x 0.75. No fake scores.",
+  },
+  {
+    href: "/13.25x13.25x4-furnace-filters",
+    title: "13.25×13.25×4 furnace and air filters",
+    kicker: "Media cabinet",
+    dek: "Furnace filter and air filter name the same 13.25×13.25×4 pad. MERV 8 / 11 / 13. Actual size is not one number. No fake scores.",
+    description:
+      "Compare 13.25x13.25x4 furnace and air filters, the same pad, at MERV 8, 11, and 13. Actual size varies by maker. No fake scores.",
+  },
+  {
+    href: "/8x20x4-furnace-filters",
+    title: "8×20×4 furnace and air filters",
+    kicker: "Media cabinet",
+    dek: "Furnace filter and air filter name the same 8×20×4 pad. MERV 8 / 11 / 13 on a narrow face. Actual depth is not one number. No fake scores.",
+    description:
+      "Compare 8x20x4 furnace and air filters, the same pad, at MERV 8, 11, and 13. Actual size varies by maker. No fake scores.",
+  },
+  {
     href: "/1-inch-vs-4-inch-merv-13",
     title: "1-inch vs 4-inch MERV 13",
     kicker: "Depth first",
