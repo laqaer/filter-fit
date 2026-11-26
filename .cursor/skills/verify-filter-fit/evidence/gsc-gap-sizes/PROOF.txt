@@ -1,0 +1,36 @@
+feature: gsc-gap-sizes
+command: filter-fit follow --from / --name '11.5×11.5×1 furnace and air filters' --nth 1 --expect '11.5×11.5×1 furnace filters and air filters, compared without fake scores' --expect '11.5 × 11.5 × 0.75' --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --action arrive-11.txt --feature gsc-gap-sizes
+at: 2026-11-26T20:49:19.842Z
+followed 11.5×11.5×1 furnace and air filters -> /11.5x11.5x1-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit follow --from / --name '13.25×13.25×4 furnace and air filters' --nth 1 --expect '13.25×13.25×4 furnace filters and air filters are the same pad' --expect '13.25 × 13.25 × 3.63' --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --action arrive-13.txt --feature gsc-gap-sizes
+at: 2026-11-26T20:49:20.095Z
+followed 13.25×13.25×4 furnace and air filters -> /13.25x13.25x4-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit follow --from / --name '8×20×4 furnace and air filters' --nth 1 --expect '8×20×4 furnace filters and air filters are the same pad' --expect '8.0 × 20.0 × 3.63' --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --action arrive-8.txt --feature gsc-gap-sizes
+at: 2026-11-26T20:49:20.314Z
+followed 8×20×4 furnace and air filters -> /8x20x4-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit snapshot /11.5x11.5x1-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --as page-11 --feature gsc-gap-sizes
+at: 2026-11-26T20:49:20.497Z
+snapshot /11.5x11.5x1-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit snapshot /13.25x13.25x4-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --as page-13 --feature gsc-gap-sizes
+at: 2026-11-26T20:49:20.638Z
+snapshot /13.25x13.25x4-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit snapshot /8x20x4-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --as page-8 --feature gsc-gap-sizes
+at: 2026-11-26T20:49:20.775Z
+snapshot /8x20x4-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit snapshot /16x20x4-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --as page-16x20 --feature gsc-gap-sizes
+at: 2026-11-26T20:49:20.928Z
+snapshot /16x20x4-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit snapshot /16x25x4-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --as page-16x25 --feature gsc-gap-sizes
+at: 2026-11-26T20:49:21.069Z
+snapshot /16x25x4-furnace-filters
+feature: gsc-gap-sizes
+command: filter-fit seo --dir .cursor/skills/verify-filter-fit/evidence/gsc-gap-sizes --feature gsc-gap-sizes
+at: 2026-11-26T20:49:21.261Z
+seo robots sitemap ads.txt

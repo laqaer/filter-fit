@@ -11,6 +11,9 @@ import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
 const chartGuideHref: Record<string, string> = {
+  "8×20×4": "/8x20x4-furnace-filters",
+  "11.5×11.5×1": "/11.5x11.5x1-furnace-filters",
+  "13.25×13.25×4": "/13.25x13.25x4-furnace-filters",
   "16×20×4": "/16x20x4-furnace-filters",
   "16×25×4": "/16x25x4-furnace-filters",
   "20×20×4": "/20x20x4-furnace-filters",

@@ -1,0 +1,8 @@
+from: /
+name: 11.5×11.5×1 furnace and air filters
+nth: 1/2
+href: /11.5x11.5x1-furnace-filters
+dest: http://127.0.0.1:4321/11.5x11.5x1-furnace-filters
+status: 200
+title: 11.5×11.5×1 furnace and air filters · FilterFit
+h1: 11.5×11.5×1 furnace filters and air filters, compared without fake scores

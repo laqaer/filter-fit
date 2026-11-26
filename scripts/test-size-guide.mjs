@@ -36,6 +36,73 @@ for (const href of [face14, face20x30, face24x24, face24x30, "/12x24x1-furnace-f
   assert.ok(guides.some((item) => item.href === href), `guides registry must include ${href}`);
 }
 
+const gapPages = {
+  "/11.5x11.5x1-furnace-filters": {
+    face: "11.5x11.5x1",
+    must: ["11.5 × 11.5 × 0.75", "https://filterbuy.com/air-filters/11-5x11-5x1/"],
+    cabinet: false,
+  },
+  "/13.25x13.25x4-furnace-filters": {
+    face: "13.25x13.25x4",
+    must: [
+      "13.25 × 13.25 × 3.63",
+      "https://filterbuy.com/air-filters/13-25x13-25x4/merv-8/",
+      "not a compatibility range",
+      "all three actual dimensions",
+      "same pad",
+    ],
+    cabinet: true,
+  },
+  "/8x20x4-furnace-filters": {
+    face: "8x20x4",
+    must: [
+      "8.0 × 20.0 × 3.63",
+      "https://filterbuy.com/air-filters/8x20x4/",
+      "not a compatibility range",
+      "all three actual dimensions",
+      "same pad",
+    ],
+    cabinet: true,
+  },
+};
+const lengthPages = [
+  ...Object.keys(gapPages),
+  "/16x20x4-furnace-filters",
+  "/16x25x4-furnace-filters",
+];
+for (const href of lengthPages) {
+  assert.ok(guides.some((item) => item.href === href), `guides registry must include ${href}`);
+  const pageSource = readFileSync(`app${href}/page.tsx`, "utf8");
+  const pageTitle = pageSource.match(/const title = "([^"]+)"/);
+  const pageDescription = pageSource.match(/const description =\n  "([^"]+)"/);
+  assert.ok(pageTitle && pageDescription, `${href}: title and description constants`);
+  const renderedTitle = `${pageTitle[1]} · FilterFit`;
+  assert.ok(
+    renderedTitle.length >= 30 && renderedTitle.length <= 65,
+    `${href}: rendered title length ${renderedTitle.length}`,
+  );
+  assert.ok(
+    pageDescription[1].length >= 70 && pageDescription[1].length <= 160,
+    `${href}: description length ${pageDescription[1].length}`,
+  );
+}
+for (const [href, spec] of Object.entries(gapPages)) {
+  const pageSource = readFileSync(`app${href}/page.tsx`, "utf8");
+  assert.match(pageSource, /manufacturer-specific/);
+  assert.match(pageSource, /data-sheet/);
+  assert.doesNotMatch(pageSource, /therefore raises resistance unless/);
+  assert.doesNotMatch(pageSource, /amazon\.com|B0[A-Z0-9]{8}/);
+  assert.equal(pageSource.split("<AmazonShopExamples").length - 1, 1);
+  const shopAt = pageSource.indexOf("<AmazonShopExamples");
+  const brandsAt = pageSource.indexOf("Brand classes, not a leaderboard");
+  assert.ok(shopAt > 0 && brandsAt > shopAt, `${href}: shop links must precede the brand essay`);
+  assert.match(pageSource, new RegExp(`face="${spec.face}"`));
+  for (const text of spec.must) assert.match(pageSource, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  if (spec.cabinet) assert.doesNotMatch(pageSource, /3⅝–4⅜/);
+  const row = sizeChart.find((item) => item.nominal === spec.face.replaceAll("x", "×"));
+  assert.ok(row, `size chart must include ${spec.face}`);
+}
+
 for (const face of faceSizes) {
   for (const { inches } of depths) {
     for (const { value } of mervOptions) {
@@ -287,6 +354,9 @@ if (process.env.SMOKE_BASE_URL) {
   }
 
   await assertSizeSmoke(guide, "16x25x4");
+  for (const [href, spec] of Object.entries(gapPages)) {
+    await assertSizeSmoke(href, spec.face);
+  }
   await assertSizeSmoke(face14, "14x20x1");
   await assertSizeSmoke(face20x30, "20x30x1");
   await assertSizeSmoke(face24x24, "24x24x1");

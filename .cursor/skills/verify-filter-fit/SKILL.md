@@ -91,11 +91,14 @@ Routes a reader can open:
 | `/20x20x1-furnace-filters` | 20×20×1 furnace filters, compared without fake scores |
 | `/14x20x1-furnace-filters` | 14×20×1 furnace filters and 14×20×1 air filters, compared without fake scores |
 | `/20x30x1-furnace-filters` | 20×30×1 furnace filters, compared without fake scores |
+| `/11.5x11.5x1-furnace-filters` | 11.5×11.5×1 furnace filters and air filters, compared without fake scores |
 | `/12x24x1-furnace-filters` | 12×24×1 furnace filters, compared without fake scores |
 | `/24x24x1-furnace-filters` | 24×24×1 furnace filters, compared without fake scores |
 | `/24x30x1-furnace-filters` | 24×30×1 furnace filters, compared without fake scores |
 | `/16x25x4-furnace-filters` | 16×25×4 furnace filters and air filters are the same pad |
 | `/20x25x4-furnace-filters` | 20×25×4 furnace filters and air filters are the same pad |
+| `/8x20x4-furnace-filters` | 8×20×4 furnace filters and air filters are the same pad |
+| `/13.25x13.25x4-furnace-filters` | 13.25×13.25×4 furnace filters and air filters are the same pad |
 | `/16x20x4-furnace-filters` | 16×20×4 furnace filters and air filters are the same pad |
 | `/20x20x4-furnace-filters` | 20×20×4 furnace filters, compared without trusting one depth |
 | `/20x30x4-furnace-filters` | 20×30×4 furnace filters and air filters are the same pad |

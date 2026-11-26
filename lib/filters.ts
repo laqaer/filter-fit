@@ -98,10 +98,31 @@ export type SizeRow = {
 
 export const sizeChart: SizeRow[] = [
   {
+    nominal: "8×20×4",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Narrow media cabinet. Match all three actual dimensions and the cabinet-approved part. See the linked guide.",
+  },
+  {
+    nominal: "11.5×11.5×1",
+    typicalActual: "11.5 × 11.5 × 0.75",
+    commonDepths: "1",
+    notes:
+      "Filterbuy’s face matches the nominal. The 1-inch name is 0.75 thick on that cut. Match the spec line. See the linked guide.",
+  },
+  {
     nominal: "12×24×1",
     typicalActual: "11½ × 23½ × ¾",
     commonDepths: "1",
     notes: "Less-common face. Measure the slot; do not substitute 16×24 or 12×20.",
+  },
+  {
+    nominal: "13.25×13.25×4",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Square media cabinet. Match all three actual dimensions and the cabinet-approved part. See the linked guide.",
   },
   {
     nominal: "14×20×1",
