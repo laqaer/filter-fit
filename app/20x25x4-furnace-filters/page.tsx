@@ -11,9 +11,9 @@ import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 import { site } from "@/lib/site";
 
-const title = "20×25×4 furnace filters and air filters: MERV 8 vs 11 vs 13";
+const title = "20×25×4 furnace filters: MERV 8 vs 11 vs 13";
 const description =
-  "20x25x4 furnace filters and air filters are the same pad. MERV 8, 11, and 13 in a media cabinet — actual size, 4-inch vs 1-inch, and brand classes, no fake scores.";
+  "20x25x4 furnace filters and air filters are the same pad. MERV 8, 11, and 13 in a media cabinet — actual size, 4-inch vs 1-inch, brand classes, no fake scores.";
 
 const faq: readonly FaqEntry[] = [
   {

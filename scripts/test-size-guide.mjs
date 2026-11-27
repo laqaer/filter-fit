@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { relative } from "node:path";
 import vm from "node:vm";
 import ts from "typescript";
 
@@ -319,6 +320,70 @@ assert.match(pickerSource, /As an Amazon Associate I earn from qualifying purcha
 assert.match(pickerSource, /ascsubtag|ff-picker-/);
 
 console.log(`PASS: ${cases} selector cases and cabinet-sizing regression assertions`);
+
+const TITLE_MIN = 30;
+const TITLE_MAX = 65;
+const DESCRIPTION_MIN = 70;
+const DESCRIPTION_MAX = 160;
+
+function decodeHtml(value) {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, num) => String.fromCodePoint(Number(num)));
+}
+
+function htmlFiles(dir) {
+  const found = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = `${dir}/${entry.name}`;
+    if (entry.isDirectory()) found.push(...htmlFiles(path));
+    else if (entry.name.endsWith(".html")) found.push(path);
+  }
+  return found;
+}
+
+function exportRoute(file) {
+  const rel = relative("out", file).replaceAll("\\", "/");
+  if (rel === "index.html") return "/";
+  return `/${rel.replace(/\.html$/, "")}`;
+}
+
+function renderedMeta(html) {
+  const title = html.match(/<title>([^<]*)<\/title>/);
+  const description = html.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"/);
+  return {
+    title: title ? decodeHtml(title[1]) : null,
+    description: description ? decodeHtml(description[1]) : null,
+  };
+}
+
+if (process.env.SMOKE_BASE_URL) {
+  assert.ok(existsSync("out"), "rendered title check needs the static export in out/");
+}
+if (existsSync("out")) {
+  const pages = htmlFiles("out");
+  assert.ok(pages.length > 0, "static export must include HTML pages");
+  for (const file of pages) {
+    const route = exportRoute(file);
+    const { title, description } = renderedMeta(readFileSync(file, "utf8"));
+    assert.ok(title, `${route}: rendered title missing`);
+    assert.ok(
+      title.length >= TITLE_MIN && title.length <= TITLE_MAX,
+      `${route}: rendered title length ${title.length} (${JSON.stringify(title)})`,
+    );
+    assert.ok(description, `${route}: rendered meta description missing`);
+    assert.ok(
+      description.length >= DESCRIPTION_MIN && description.length <= DESCRIPTION_MAX,
+      `${route}: rendered meta description length ${description.length} (${JSON.stringify(description)})`,
+    );
+  }
+  console.log(`PASS: ${pages.length} exported pages have titles ${TITLE_MIN}-${TITLE_MAX} and descriptions ${DESCRIPTION_MIN}-${DESCRIPTION_MAX}`);
+}
 
 // CI supplies only a loopback Next server. No retailer or production URL is fetched.
 if (process.env.SMOKE_BASE_URL) {
