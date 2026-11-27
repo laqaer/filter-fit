@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ogImage, twitterWithImage } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
-const title = "Privacy policy";
+const title = "Privacy policy for FilterFit";
 const description =
   "Privacy policy for FilterFit, a content and affiliate furnace-filter comparison site.";
 

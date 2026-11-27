@@ -10,7 +10,7 @@ import { brandClasses, mervRows } from "@/lib/filters";
 import { openGraphImage } from "@/lib/metadata";
 import { articleJsonLd, faqPageJsonLd, type FaqEntry } from "@/lib/schema";
 
-const title = "14×20×1 furnace filter and 14×20×1 air filter: MERV 8 vs 11 vs 13";
+const title = "14×20×1 furnace filters: MERV 8 vs 11 vs 13";
 const description =
   "Compare 14x20x1 furnace filters and 14x20x1 air filters at MERV 8, 11, and 13. Filtrete-, Aerostar-, and Filterbuy-style brand classes — no fake review scores.";
 

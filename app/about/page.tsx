@@ -5,7 +5,7 @@ import { ogImage, twitterWithImage } from "@/lib/metadata";
 import { organizationJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
-const title = "About FilterFit";
+const title = "About the FilterFit directory";
 const description =
   "FilterFit is an independent furnace-filter directory from Laqaer Products. Editorial standards and contact.";
 
