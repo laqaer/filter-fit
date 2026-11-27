@@ -45,6 +45,12 @@ const faq: readonly FaqEntry[] = [
       ".",
     ],
   },
+  {
+    question: "What is the difference between a MERV 1 and a MERV 4 rating?",
+    answer: [
+      "MERV 1 and MERV 4 sit at the low end of ASHRAE 52.2. Neither has a minimum on E1 (0.3 to 1.0 μm) or E2 (1.0 to 3.0 μm). Both are reported with E3 (3.0 to 10.0 μm) under 20%. The standard separates them by average arrestance of test dust. Arrestance is a weight of coarse dust, not a finer particle band. MERV 1 is under 65% arrestance. MERV 4 is 75% or higher. Those are the standard's reporting floors. This page did not test a filter. A MERV 1 rating is not a 1-inch filter, and a MERV 4 rating is not a 4-inch filter.",
+    ],
+  },
 ];
 
 export const metadata: Metadata = {
@@ -95,6 +101,10 @@ export default function InchVsFourPage() {
       />
 
       <div className="prose-fit mt-10">
+        <p>
+          MERV 1 and MERV 4 are ratings. They are not the 1-inch and 4-inch depths compared on this
+          page.
+        </p>
         <p>
           MERV 13 describes how the media treats particles. It does not describe how much media is
           in the airstream. A 1-inch MERV 13 and a 4-inch MERV 13 can share a number on the carton
@@ -211,7 +221,7 @@ export default function InchVsFourPage() {
         ))}
       </div>
       <AmazonGuideExamples
-        note="These are Amazon searches for a 1-inch MERV 13 and a 4-inch MERV 13 furnace filter, not a ranked list and not products we tested."
+        note="These are Amazon searches for a 1-inch MERV 13, a 4-inch MERV 13, and a MERV 4 fiberglass furnace filter, not a ranked list and not products we tested."
         examples={[
           {
             label: "1-inch MERV 13 furnace filters",
@@ -222,6 +232,11 @@ export default function InchVsFourPage() {
             label: "4-inch MERV 13 furnace filters",
             keywords: "4 inch merv 13 furnace filter",
             subtag: "ff-guide-1v4-merv13-4in",
+          },
+          {
+            label: "MERV 4 fiberglass furnace filters",
+            keywords: "merv 4 fiberglass furnace filter",
+            subtag: "ff-guide-1v4-merv4",
           },
         ]}
       />

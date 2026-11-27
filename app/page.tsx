@@ -80,6 +80,124 @@ export default function HomePage() {
           ))}
         </section>
 
+        <section className="ff-section-head" aria-labelledby="comparison-chart">
+          <h2 id="comparison-chart" className="ff-section-title">
+            Furnace filter comparison chart
+          </h2>
+          <div className="prose-fit mt-6">
+            <p>
+              The capture column lists ASHRAE 52.2 minimums for E1, E2, and E3. A filter can test
+              above its minimum. FilterFit did not test the filters in this chart.
+            </p>
+            <h3>MERV 8, MERV 11, and MERV 13</h3>
+          </div>
+          <div className="table-scroll mt-6">
+            <table>
+              <caption className="sr-only">
+                MERV 8, MERV 11, and MERV 13 compared by particle capture, typical use, and airflow
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Rating</th>
+                  <th scope="col">What it captures</th>
+                  <th scope="col">Typical use</th>
+                  <th scope="col">Airflow</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="font-semibold text-ink">MERV 8</td>
+                  <td>
+                    No minimum on E1 (0.3 to 1.0 μm). At least 20% on E2 (1.0 to 3.0 μm) and 70% on
+                    E3 (3.0 to 10.0 μm). Lint, dust, and pollen-scale particles.
+                  </td>
+                  <td>Low-resistance everyday filter in a 1-inch slot. It protects the blower from lint.</td>
+                  <td>
+                    Usually the lowest initial resistance of these three in a 1-inch slot. A loaded
+                    filter is still a restriction.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-semibold text-ink">MERV 11</td>
+                  <td>
+                    At least 20% on E1 (0.3 to 1.0 μm), 65% on E2 (1.0 to 3.0 μm), and 85% on E3
+                    (3.0 to 10.0 μm).
+                  </td>
+                  <td>The usual everyday target for a 1-inch rack when the return is healthy.</td>
+                  <td>
+                    Tighter than MERV 8. A dirty MERV 11 can restrict more than a clean MERV 13.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-semibold text-ink">MERV 13</td>
+                  <td>
+                    At least 50% on E1 (0.3 to 1.0 μm), 85% on E2 (1.0 to 3.0 μm), and 90% on E3
+                    (3.0 to 10.0 μm). Finer household particles. It is not a HEPA room filter.
+                  </td>
+                  <td>
+                    The rating to run in a 4-inch cabinet. A 1-inch MERV 13 is the tightest common
+                    combination.
+                  </td>
+                  <td>
+                    Highest common resistance in a 1-inch slot. It can be fine on a variable-speed
+                    air handler with a large return. It can choke a PSC furnace with a small slot.
+                    A 4-inch MERV 13 has more media and lower velocity.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="prose-fit">
+            <h3>1-inch and 4-inch depth</h3>
+          </div>
+          <div className="table-scroll mt-6">
+            <table>
+              <caption className="sr-only">
+                1-inch and 4-inch furnace filter depth compared by replacement interval, airflow, and
+                fit
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Depth</th>
+                  <th scope="col">Replacement interval</th>
+                  <th scope="col">Airflow</th>
+                  <th scope="col">Fit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="font-semibold text-ink">1 inch</td>
+                  <td>
+                    MERV 8 is often 30 to 90 days. MERV 11 is closer to 30 to 60 days with pets.
+                    MERV 13 is often 30 to 45 days in winter. Change the filter when the media loads,
+                    or when that range arrives.
+                  </td>
+                  <td>Least media, and the highest face velocity at a given MERV.</td>
+                  <td>
+                    A retail slide-in. The nominal 1-inch filter is often about ¾ inch thick. Do not
+                    force a 4-inch filter into this slot.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="font-semibold text-ink">4 inch</td>
+                  <td>
+                    Longer than the same face in 1 inch. MERV 11 is often 60 to 90 days. A 4-inch
+                    MERV 13 still needs a look. A 6-month or 12-month carton claim is a sticker.
+                  </td>
+                  <td>
+                    More media and lower velocity. A 4-inch MERV 13 often flows closer to a 1-inch
+                    MERV 8 or MERV 11 than to a 1-inch MERV 13.
+                  </td>
+                  <td>
+                    A media cabinet. Match the actual depth. Do not leave a 1-inch filter in the deep
+                    slot.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         <section className="ff-section-head">
           <h2 className="ff-section-title">Guides</h2>
           <p className="ff-section-copy">

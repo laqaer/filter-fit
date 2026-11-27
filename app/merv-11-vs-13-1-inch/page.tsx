@@ -44,6 +44,12 @@ const faq: readonly FaqEntry[] = [
       " asks whether the blower can still move air.",
     ],
   },
+  {
+    question: "How do MERV 8, MERV 11, and MERV 13 differ?",
+    answer: [
+      "ASHRAE 52.2 sets the minimums below. A filter can test higher. MERV 8 has no minimum on E1 (0.3 to 1.0 μm). It requires at least 20% on E2 (1.0 to 3.0 μm) and at least 70% on E3 (3.0 to 10.0 μm). It is the low-resistance everyday filter in a 1-inch slot. MERV 11 requires at least 20% on E1, at least 65% on E2, and at least 85% on E3. It is the usual 1-inch step when the return is healthy. MERV 13 requires at least 50% on E1, at least 85% on E2, and at least 90% on E3. That rating covers finer household dust. In a 1-inch slot it is the highest common resistance.",
+    ],
+  },
 ];
 
 export const metadata: Metadata = {
