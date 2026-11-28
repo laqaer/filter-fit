@@ -105,6 +105,13 @@ export const sizeChart: SizeRow[] = [
       "Narrow media cabinet. Match all three actual dimensions and the cabinet-approved part. See the linked guide.",
   },
   {
+    nominal: "11.25×11.25×4",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Small square media cabinet. Match all three actual dimensions and the cabinet-approved part. See the linked guide.",
+  },
+  {
     nominal: "11.5×11.5×1",
     typicalActual: "11.5 × 11.5 × 0.75",
     commonDepths: "1",
@@ -160,6 +167,13 @@ export const sizeChart: SizeRow[] = [
     typicalActual: "Varies by SKU; depth examples ~3⅝–4⅜ inches, not a compatibility range",
     commonDepths: "4 (nominal; some replacements are sold as 5)",
     notes: "Match all three actual dimensions and the cabinet-approved replacement part. Do not substitute a 1-inch pad without a manufacturer-approved adapter. See the linked guide for manufacturer examples.",
+  },
+  {
+    nominal: "17.25×23.25×4",
+    typicalActual: "Varies by SKU; not a compatibility range",
+    commonDepths: "4 (nominal)",
+    notes:
+      "Odd media-cabinet face. Match all three actual dimensions and the cabinet-approved part. See the linked guide.",
   },
   {
     nominal: "20×20×1",

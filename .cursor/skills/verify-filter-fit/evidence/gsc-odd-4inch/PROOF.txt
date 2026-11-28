@@ -1,0 +1,16 @@
+feature: gsc-odd-4inch
+command: filter-fit follow --from /furnace-filter-size-depth-chart --name '11.25×11.25×4 comparison' --expect '11.25×11.25×4 furnace filters and air filters are the same pad' --expect FAQPage --expect tag=laqaer-20 --expect 'As an Amazon Associate I earn from qualifying purchases' --dir .cursor/skills/verify-filter-fit/evidence/gsc-odd-4inch --action arrive-11.txt --feature gsc-odd-4inch
+at: 2026-11-28T05:18:38.902Z
+followed 11.25×11.25×4 comparison -> /11.25x11.25x4-furnace-filters
+feature: gsc-odd-4inch
+command: filter-fit follow --from /furnace-filter-size-depth-chart --name '17.25×23.25×4 comparison' --expect '17.25×23.25×4 furnace filters and air filters are the same pad' --expect FAQPage --expect tag=laqaer-20 --expect 'As an Amazon Associate I earn from qualifying purchases' --dir .cursor/skills/verify-filter-fit/evidence/gsc-odd-4inch --action arrive-17.txt --feature gsc-odd-4inch
+at: 2026-11-28T05:18:39.215Z
+followed 17.25×23.25×4 comparison -> /17.25x23.25x4-furnace-filters
+feature: gsc-odd-4inch
+command: filter-fit snapshot /11.25x11.25x4-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-odd-4inch --as page-11 --feature gsc-odd-4inch
+at: 2026-11-28T05:18:39.347Z
+snapshot /11.25x11.25x4-furnace-filters
+feature: gsc-odd-4inch
+command: filter-fit snapshot /17.25x23.25x4-furnace-filters --dir .cursor/skills/verify-filter-fit/evidence/gsc-odd-4inch --as page-17 --feature gsc-odd-4inch
+at: 2026-11-28T05:18:39.444Z
+snapshot /17.25x23.25x4-furnace-filters
