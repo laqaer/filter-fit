@@ -14,7 +14,7 @@ A size guide compares one nominal face and depth at MERV 8, 11, and 13 using bra
 - On `/`, choose header `Common size` to open `/16x25x1-furnace-filters`.
 - On `/`, choose `16×25×1 furnace filters`. Document order is picker result (`--nth 1`), the sentence under Guides (`--nth 2`), the Guides card (`--nth 3`), then the footer (`--nth 4`).
 - Choose the matching title in the footer Guides list on any page.
-- Other size routes, each with its own h1 in `SKILL.md`: `/20x25x1-furnace-filters`, `/16x20x1-furnace-filters`, `/14x25x1-furnace-filters`, `/20x20x1-furnace-filters`, `/14x20x1-furnace-filters`, `/20x30x1-furnace-filters`, `/11.5x11.5x1-furnace-filters`, `/12x24x1-furnace-filters`, `/24x24x1-furnace-filters`, `/24x30x1-furnace-filters`, `/8x20x4-furnace-filters`, `/13.25x13.25x4-furnace-filters`, `/16x25x4-furnace-filters`, `/20x25x4-furnace-filters`, `/16x20x4-furnace-filters`, `/20x20x4-furnace-filters`, `/20x30x4-furnace-filters`.
+- Other size routes, each with its own h1 in `SKILL.md`: `/20x25x1-furnace-filters`, `/16x20x1-furnace-filters`, `/14x25x1-furnace-filters`, `/20x20x1-furnace-filters`, `/14x20x1-furnace-filters`, `/20x30x1-furnace-filters`, `/11.5x11.5x1-furnace-filters`, `/12x24x1-furnace-filters`, `/24x24x1-furnace-filters`, `/24x30x1-furnace-filters`, `/8x20x4-furnace-filters`, `/11.25x11.25x4-furnace-filters`, `/13.25x13.25x4-furnace-filters`, `/17.25x23.25x4-furnace-filters`, `/16x25x4-furnace-filters`, `/20x25x4-furnace-filters`, `/16x20x4-furnace-filters`, `/20x20x4-furnace-filters`, `/20x30x4-furnace-filters`.
 
 ## Driving it with filter-fit
 
@@ -30,7 +30,7 @@ Preconditions:
 
 ## Gotchas
 
-- Every size guide emits `FAQPage`. Require it for `/16x25x1-furnace-filters`, `/16x20x1-furnace-filters`, `/20x25x1-furnace-filters`, `/14x25x1-furnace-filters`, `/20x20x1-furnace-filters`, `/14x20x1-furnace-filters`, `/20x30x1-furnace-filters`, `/11.5x11.5x1-furnace-filters`, `/12x24x1-furnace-filters`, `/24x24x1-furnace-filters`, `/24x30x1-furnace-filters`, `/8x20x4-furnace-filters`, `/13.25x13.25x4-furnace-filters`, `/16x25x4-furnace-filters`, `/16x20x4-furnace-filters`, `/20x25x4-furnace-filters`, `/20x20x4-furnace-filters`, and `/20x30x4-furnace-filters`. Do not require it on non-size guides.
+- Every size guide emits `FAQPage`. Require it for `/16x25x1-furnace-filters`, `/16x20x1-furnace-filters`, `/20x25x1-furnace-filters`, `/14x25x1-furnace-filters`, `/20x20x1-furnace-filters`, `/14x20x1-furnace-filters`, `/20x30x1-furnace-filters`, `/11.5x11.5x1-furnace-filters`, `/12x24x1-furnace-filters`, `/24x24x1-furnace-filters`, `/24x30x1-furnace-filters`, `/8x20x4-furnace-filters`, `/11.25x11.25x4-furnace-filters`, `/13.25x13.25x4-furnace-filters`, `/17.25x23.25x4-furnace-filters`, `/16x25x4-furnace-filters`, `/16x20x4-furnace-filters`, `/20x25x4-furnace-filters`, `/20x20x4-furnace-filters`, and `/20x30x4-furnace-filters`. Do not require it on non-size guides.
 - `16×24` is selectable in the picker and has no size guide. Do not add a route to make a journey pass.
 - `/12x24x1-furnace-filters` is a real guide. The README route table does not list it. Drive the app, not that table.
 - Shop-example anchors use `rel="nofollow sponsored noopener noreferrer"` and `tag=laqaer-20`. Seeing them in the HTML is the side effect to record. Requesting them is out of bounds.

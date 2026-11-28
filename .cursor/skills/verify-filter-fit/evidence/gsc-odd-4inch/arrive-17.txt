@@ -1,0 +1,8 @@
+from: /furnace-filter-size-depth-chart
+name: 17.25×23.25×4 comparison
+nth: 1/1
+href: /17.25x23.25x4-furnace-filters
+dest: http://127.0.0.1:4321/17.25x23.25x4-furnace-filters
+status: 200
+title: 17.25×23.25×4 air filter MERV 13 · FilterFit
+h1: 17.25×23.25×4 furnace filters and air filters are the same pad

@@ -65,6 +65,28 @@ const gapPages = {
     ],
     cabinet: true,
   },
+  "/11.25x11.25x4-furnace-filters": {
+    face: "11.25x11.25x4",
+    must: [
+      "11.25 × 11.25 × 3.63",
+      "https://filterbuy.com/air-filters/11-25x11-25x4/",
+      "not a compatibility range",
+      "all three actual dimensions",
+      "same pad",
+    ],
+    cabinet: true,
+  },
+  "/17.25x23.25x4-furnace-filters": {
+    face: "17.25x23.25x4",
+    must: [
+      "17.25 × 23.25 × 3.63",
+      "https://filterbuy.com/air-filters/17-25x23-25x4/",
+      "not a compatibility range",
+      "all three actual dimensions",
+      "same pad",
+    ],
+    cabinet: true,
+  },
 };
 const lengthPages = [
   ...Object.keys(gapPages),

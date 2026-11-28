@@ -160,6 +160,22 @@ export const guides: Guide[] = [
       "Compare 8x20x4 furnace and air filters, the same pad, at MERV 8, 11, and 13. Actual size varies by maker. No fake scores.",
   },
   {
+    href: "/11.25x11.25x4-furnace-filters",
+    title: "11.25×11.25×4 air filter MERV 8",
+    kicker: "Media cabinet",
+    dek: "Furnace filter and air filter name the same 11.25×11.25×4 pad. MERV 8 / 11 / 13 on a small square. Actual depth is not one number. No fake scores.",
+    description:
+      "Compare 11.25x11.25x4 furnace and air filters, the same pad, at MERV 8, 11, and 13. Actual size varies by maker. No fake scores.",
+  },
+  {
+    href: "/17.25x23.25x4-furnace-filters",
+    title: "17.25×23.25×4 air filter MERV 13",
+    kicker: "Media cabinet",
+    dek: "Furnace filter and air filter name the same 17.25×23.25×4 pad. MERV 8 / 11 / 13. Actual depth is not one number. No fake scores.",
+    description:
+      "Compare 17.25x23.25x4 furnace and air filters, the same pad, at MERV 8, 11, and 13. Actual size varies by maker. No fake scores.",
+  },
+  {
     href: "/1-inch-vs-4-inch-merv-13",
     title: "1-inch vs 4-inch MERV 13",
     kicker: "Depth first",
